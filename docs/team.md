@@ -3,14 +3,12 @@ layout: default
 title:  Team
 ---
 
-# {{ page.title }}
+# {{ Our team members }}
 
 
 ## USER 1
-***UCI Net ID***: ucinetid1
+***UCI Net ID***: shiyuer
 
 ## USER 2
-***UCI Net ID***: ucinetid2
+***UCI Net ID***: aol10
 
-## USER 3
-***UCI Net ID***: ucinetid3
