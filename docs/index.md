@@ -3,7 +3,7 @@ layout: default
 title:  Home
 ---
 
-Source code: (https://github.com/SkellyDev/CouchPotato)
+Source code: [Source Code](https://github.com/SkellyDev/CouchPotato)
 
 Reports:
 
