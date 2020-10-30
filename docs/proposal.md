@@ -1,17 +1,19 @@
 # Proposal 
 
 ## Summary of the Project 
-Our project will include two main parts: language navigation and environment description. Both these parts are related with Natural Language Processing (NLP) area. For the language navigation part, we will use terminal to give commands, telling the agent what following action are expected from him to do. These actions will include but not limit to: move to the furthest object in your view, move towards the river, move back of the house. In this project, we also expect the agent to describe his following environemnt by answering our questions typed in terminal. These questions will include: "how many pigs can you see in your view", "what is the direction of the river". We will work with the Malmo platform as well in order to let our agent make corresponding actions. 
+In our project, by typing questions in the terminal, users can let the agent answer their questions based on agent's perception of the game world. Specifically, our project will focus on environment description. Questions will include but not limit to "how many pigs can you see in your view", "what is the river" and "How many black sheep can you see?". Our project is expected to use Natural Language Processing (NLP) models to parse semantics and action functions for agent to answer questions. In detail, we expect our agent to describe the range of scenery in front of him by answering the user input questions typed in terminal. We will also handle the situation that different semantics with one meaning in our project. 
+
 
 ## AI/ML Algorithms
-NLTK: tokenization and wordnet 
+AllenNLP - constituency parsing 
+Gensim 
 
 ## Evaluation Plan 
 ### Quantitative 
-Since our agent is asked to follow the user input commands, we will evaluate our success rate based on how accurate our agent understands the content of the command, as well as the corresponding time. In most cases, one action or a series of actions could be described in many different ways in synonyms words. To make our results more accurate, we will need to match different expressions to the same object or verbs to the actual action function which our agent could perform. If any action does not follow the correct comprehension of our command, we will modify the word similarity algorithm and add that word into the previous module. For describing the world based on the question user asked, we will evaluate the success rate based on both how our agent understands the question and check whether the answer is correct based on the current given range of the scenery.
+We will evaluate our success rate based on if our agent gives the answer with correct information, as well as the corresponding time. Since we also handle synonyms in users'question, we will manually check how accurate our model performs for synonyms. 
 
 ### Qualitative 
-We will expect the agent to make right action and describe environment with correct information. 
+We will expect the agent answering questions about environment with correct information. 
 
 ## Appointment
 2pm, Wednesday, Oct 28th, 2020
