@@ -11,7 +11,7 @@ class Mission:
 
     def spawn_type(self, type):
         result_xml = ""
-        for i in range(int((self._SIZE*2)**2*self._DENSITY)):
+        for _ in range(int((self._SIZE*2)**2*self._DENSITY)):
             xd, zd = random.randint(-self._SIZE,
                                     self._SIZE), random.randint(-self._SIZE, self._SIZE)
             result_xml += "<DrawEntity x='{}' y='2' z='{}' type='{}'/>".format(
