@@ -93,3 +93,11 @@
 [19:18:53] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_57ae685d-4339-48e7-8e9c-9561bb606876'/Overworld
 [19:18:53] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_57ae685d-4339-48e7-8e9c-9561bb606876'/Nether
 [19:18:53] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_57ae685d-4339-48e7-8e9c-9561bb606876'/The End
+[19:20:58] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10390) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[19:20:58] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10718) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[19:20:58] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10718) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[19:20:58] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10718) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[19:20:58] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10718) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[19:20:58] [Client thread/INFO]: [STDOUT]: ERROR: TCP messages are not getting through - quitting mission.
+[19:20:58] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
+[19:20:58] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
