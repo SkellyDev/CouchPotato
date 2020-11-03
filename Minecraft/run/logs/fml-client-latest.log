@@ -673,3 +673,225 @@
 [22:58:55] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
 [22:59:20] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
 [22:59:50] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:06:29] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:06:47] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:06:50] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:07:51] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:08:12] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:09:05] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:09:30] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:10:15] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:10:40] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:14:10] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:14:32] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:15:17] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:15:29] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:18:24] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:18:28] [Server thread/TRACE] [minecraft/minecraft]: Sending event FMLServerStoppingEvent to mod minecraft
+[23:18:28] [Server thread/TRACE] [minecraft/minecraft]: Sent event FMLServerStoppingEvent to mod minecraft
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopping - Minecraft took 0.001s
+[23:18:28] [Server thread/TRACE] [mcp/mcp]: Sending event FMLServerStoppingEvent to mod mcp
+[23:18:28] [Server thread/TRACE] [mcp/mcp]: Sent event FMLServerStoppingEvent to mod mcp
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopping - Minecraft Coder Pack took 0.003s
+[23:18:28] [Server thread/TRACE] [FML/FML]: Sending event FMLServerStoppingEvent to mod FML
+[23:18:28] [Server thread/TRACE] [FML/FML]: Sent event FMLServerStoppingEvent to mod FML
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopping - Forge Mod Loader took 0.003s
+[23:18:28] [Server thread/TRACE] [forge/forge]: Sending event FMLServerStoppingEvent to mod forge
+[23:18:28] [Server thread/TRACE] [forge/forge]: Sent event FMLServerStoppingEvent to mod forge
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopping - Minecraft Forge took 0.001s
+[23:18:28] [Server thread/TRACE] [malmomod/malmomod]: Sending event FMLServerStoppingEvent to mod malmomod
+[23:18:28] [Server thread/TRACE] [malmomod/malmomod]: Sent event FMLServerStoppingEvent to mod malmomod
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopping - Microsoft Malmo Mod took 0.002s
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Finished: ServerStopping took 0.009s
+[23:18:28] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850
+[23:18:28] [Server thread/INFO] [FML/]: Unloading dimension 0
+[23:18:28] [Server thread/INFO] [FML/]: Unloading dimension -1
+[23:18:28] [Server thread/INFO] [FML/]: Unloading dimension 1
+[23:18:28] [Server thread/DEBUG] [FML/]: Reverting to frozen data state.
+[23:18:28] [Server thread/TRACE] [minecraft/minecraft]: Sending event FMLModIdMappingEvent to mod minecraft
+[23:18:28] [Server thread/TRACE] [minecraft/minecraft]: Sent event FMLModIdMappingEvent to mod minecraft
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - Minecraft took 0.002s
+[23:18:28] [Server thread/TRACE] [mcp/mcp]: Sending event FMLModIdMappingEvent to mod mcp
+[23:18:28] [Server thread/TRACE] [mcp/mcp]: Sent event FMLModIdMappingEvent to mod mcp
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - Minecraft Coder Pack took 0.000s
+[23:18:28] [Server thread/TRACE] [FML/FML]: Sending event FMLModIdMappingEvent to mod FML
+[23:18:28] [Server thread/TRACE] [FML/FML]: Sent event FMLModIdMappingEvent to mod FML
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - Forge Mod Loader took 0.000s
+[23:18:28] [Server thread/TRACE] [forge/forge]: Sending event FMLModIdMappingEvent to mod forge
+[23:18:28] [Server thread/TRACE] [forge/forge]: Sent event FMLModIdMappingEvent to mod forge
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - Minecraft Forge took 0.034s
+[23:18:28] [Server thread/TRACE] [malmomod/malmomod]: Sending event FMLModIdMappingEvent to mod malmomod
+[23:18:28] [Server thread/TRACE] [malmomod/malmomod]: Sent event FMLModIdMappingEvent to mod malmomod
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - Microsoft Malmo Mod took 0.000s
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Finished: ModIdMapping took 0.038s
+[23:18:28] [Server thread/INFO] [FML/]: Applying holder lookups
+[23:18:28] [Server thread/INFO] [FML/]: Holder lookups applied
+[23:18:28] [Server thread/DEBUG] [FML/]: Frozen state restored.
+[23:18:28] [Server thread/TRACE] [minecraft/minecraft]: Sending event FMLServerStoppedEvent to mod minecraft
+[23:18:28] [Server thread/TRACE] [minecraft/minecraft]: Sent event FMLServerStoppedEvent to mod minecraft
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopped - Minecraft took 0.000s
+[23:18:28] [Server thread/TRACE] [mcp/mcp]: Sending event FMLServerStoppedEvent to mod mcp
+[23:18:28] [Server thread/TRACE] [mcp/mcp]: Sent event FMLServerStoppedEvent to mod mcp
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopped - Minecraft Coder Pack took 0.000s
+[23:18:28] [Server thread/TRACE] [FML/FML]: Sending event FMLServerStoppedEvent to mod FML
+[23:18:28] [Server thread/TRACE] [FML/FML]: Sent event FMLServerStoppedEvent to mod FML
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopped - Forge Mod Loader took 0.000s
+[23:18:28] [Server thread/TRACE] [forge/forge]: Sending event FMLServerStoppedEvent to mod forge
+[23:18:28] [Server thread/TRACE] [forge/forge]: Sent event FMLServerStoppedEvent to mod forge
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopped - Minecraft Forge took 0.000s
+[23:18:28] [Server thread/TRACE] [malmomod/malmomod]: Sending event FMLServerStoppedEvent to mod malmomod
+[23:18:28] [Server thread/TRACE] [malmomod/malmomod]: Sent event FMLServerStoppedEvent to mod malmomod
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopped - Microsoft Malmo Mod took 0.000s
+[23:18:28] [Server thread/DEBUG] [FML/]: Bar Finished: ServerStopped took 0.002s
+[23:18:39] [Client thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:18:39] [Server thread/TRACE] [minecraft/minecraft]: Sending event FMLServerAboutToStartEvent to mod minecraft
+[23:18:39] [Server thread/TRACE] [minecraft/minecraft]: Sent event FMLServerAboutToStartEvent to mod minecraft
+[23:18:39] [Server thread/DEBUG] [FML/]: Bar Step: ServerAboutToStart - Minecraft took 0.001s
+[23:18:39] [Server thread/TRACE] [mcp/mcp]: Sending event FMLServerAboutToStartEvent to mod mcp
+[23:18:39] [Server thread/TRACE] [mcp/mcp]: Sent event FMLServerAboutToStartEvent to mod mcp
+[23:18:39] [Server thread/DEBUG] [FML/]: Bar Step: ServerAboutToStart - Minecraft Coder Pack took 0.000s
+[23:18:39] [Server thread/TRACE] [FML/FML]: Sending event FMLServerAboutToStartEvent to mod FML
+[23:18:39] [Server thread/TRACE] [FML/FML]: Sent event FMLServerAboutToStartEvent to mod FML
+[23:18:39] [Server thread/DEBUG] [FML/]: Bar Step: ServerAboutToStart - Forge Mod Loader took 0.000s
+[23:18:39] [Server thread/TRACE] [forge/forge]: Sending event FMLServerAboutToStartEvent to mod forge
+[23:18:39] [Server thread/TRACE] [forge/forge]: Sent event FMLServerAboutToStartEvent to mod forge
+[23:18:39] [Server thread/DEBUG] [FML/]: Bar Step: ServerAboutToStart - Minecraft Forge took 0.000s
+[23:18:39] [Server thread/TRACE] [malmomod/malmomod]: Sending event FMLServerAboutToStartEvent to mod malmomod
+[23:18:39] [Server thread/TRACE] [malmomod/malmomod]: Sent event FMLServerAboutToStartEvent to mod malmomod
+[23:18:39] [Server thread/DEBUG] [FML/]: Bar Step: ServerAboutToStart - Microsoft Malmo Mod took 0.000s
+[23:18:39] [Server thread/DEBUG] [FML/]: Bar Finished: ServerAboutToStart took 0.002s
+[23:18:39] [Server thread/INFO] [FML/]: Injecting existing block and item data into this server instance
+[23:18:39] [Server thread/TRACE] [minecraft/minecraft]: Sending event FMLModIdMappingEvent to mod minecraft
+[23:18:39] [Server thread/TRACE] [minecraft/minecraft]: Sent event FMLModIdMappingEvent to mod minecraft
+[23:18:39] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - Minecraft took 0.000s
+[23:18:39] [Server thread/TRACE] [mcp/mcp]: Sending event FMLModIdMappingEvent to mod mcp
+[23:18:39] [Server thread/TRACE] [mcp/mcp]: Sent event FMLModIdMappingEvent to mod mcp
+[23:18:39] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - Minecraft Coder Pack took 0.000s
+[23:18:39] [Server thread/TRACE] [FML/FML]: Sending event FMLModIdMappingEvent to mod FML
+[23:18:39] [Server thread/TRACE] [FML/FML]: Sent event FMLModIdMappingEvent to mod FML
+[23:18:39] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - Forge Mod Loader took 0.000s
+[23:18:39] [Server thread/TRACE] [forge/forge]: Sending event FMLModIdMappingEvent to mod forge
+[23:18:39] [Server thread/TRACE] [forge/forge]: Sent event FMLModIdMappingEvent to mod forge
+[23:18:39] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - Minecraft Forge took 0.021s
+[23:18:39] [Server thread/TRACE] [malmomod/malmomod]: Sending event FMLModIdMappingEvent to mod malmomod
+[23:18:39] [Server thread/TRACE] [malmomod/malmomod]: Sent event FMLModIdMappingEvent to mod malmomod
+[23:18:39] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - Microsoft Malmo Mod took 0.002s
+[23:18:39] [Server thread/DEBUG] [FML/]: Bar Finished: ModIdMapping took 0.024s
+[23:18:39] [Server thread/INFO] [FML/]: Applying holder lookups
+[23:18:39] [Server thread/INFO] [FML/]: Holder lookups applied
+[23:18:39] [Server thread/DEBUG] [FML/]: Loading persistent fluid defaults from world
+[23:18:39] [Server thread/DEBUG] [FML/]: The fluid minecraft:lava has been selected as the default fluid for lava
+[23:18:39] [Server thread/DEBUG] [FML/]: The fluid minecraft:water has been selected as the default fluid for water
+[23:18:39] [Server thread/INFO] [FML/]: Loading dimension 0 (TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a) (net.minecraft.server.integrated.IntegratedServer@38932d8c)
+[23:18:40] [Server thread/INFO] [FML/]: Loading dimension 1 (TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a) (net.minecraft.server.integrated.IntegratedServer@38932d8c)
+[23:18:40] [Server thread/INFO] [FML/]: Loading dimension -1 (TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a) (net.minecraft.server.integrated.IntegratedServer@38932d8c)
+[23:18:41] [Server thread/TRACE] [minecraft/minecraft]: Sending event FMLServerStartingEvent to mod minecraft
+[23:18:41] [Server thread/TRACE] [minecraft/minecraft]: Sent event FMLServerStartingEvent to mod minecraft
+[23:18:41] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarting - Minecraft took 0.000s
+[23:18:41] [Server thread/TRACE] [mcp/mcp]: Sending event FMLServerStartingEvent to mod mcp
+[23:18:41] [Server thread/TRACE] [mcp/mcp]: Sent event FMLServerStartingEvent to mod mcp
+[23:18:41] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarting - Minecraft Coder Pack took 0.000s
+[23:18:41] [Server thread/TRACE] [FML/FML]: Sending event FMLServerStartingEvent to mod FML
+[23:18:41] [Server thread/TRACE] [FML/FML]: Sent event FMLServerStartingEvent to mod FML
+[23:18:41] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarting - Forge Mod Loader took 0.000s
+[23:18:41] [Server thread/TRACE] [forge/forge]: Sending event FMLServerStartingEvent to mod forge
+[23:18:41] [Server thread/TRACE] [forge/forge]: Sent event FMLServerStartingEvent to mod forge
+[23:18:41] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarting - Minecraft Forge took 0.001s
+[23:18:41] [Server thread/TRACE] [malmomod/malmomod]: Sending event FMLServerStartingEvent to mod malmomod
+[23:18:41] [Server thread/TRACE] [malmomod/malmomod]: Sent event FMLServerStartingEvent to mod malmomod
+[23:18:41] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarting - Microsoft Malmo Mod took 0.000s
+[23:18:41] [Server thread/DEBUG] [FML/]: Bar Finished: ServerStarting took 0.002s
+[23:18:41] [Server thread/TRACE] [minecraft/minecraft]: Sending event FMLServerStartedEvent to mod minecraft
+[23:18:41] [Server thread/TRACE] [minecraft/minecraft]: Sent event FMLServerStartedEvent to mod minecraft
+[23:18:41] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarted - Minecraft took 0.000s
+[23:18:41] [Server thread/TRACE] [mcp/mcp]: Sending event FMLServerStartedEvent to mod mcp
+[23:18:41] [Server thread/TRACE] [mcp/mcp]: Sent event FMLServerStartedEvent to mod mcp
+[23:18:41] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarted - Minecraft Coder Pack took 0.000s
+[23:18:41] [Server thread/TRACE] [FML/FML]: Sending event FMLServerStartedEvent to mod FML
+[23:18:41] [Server thread/TRACE] [FML/FML]: Sent event FMLServerStartedEvent to mod FML
+[23:18:41] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarted - Forge Mod Loader took 0.000s
+[23:18:41] [Server thread/TRACE] [forge/forge]: Sending event FMLServerStartedEvent to mod forge
+[23:18:41] [Server thread/TRACE] [forge/forge]: Sent event FMLServerStartedEvent to mod forge
+[23:18:41] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarted - Minecraft Forge took 0.000s
+[23:18:41] [Server thread/TRACE] [malmomod/malmomod]: Sending event FMLServerStartedEvent to mod malmomod
+[23:18:41] [Server thread/TRACE] [malmomod/malmomod]: Sent event FMLServerStartedEvent to mod malmomod
+[23:18:41] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarted - Microsoft Malmo Mod took 0.000s
+[23:18:41] [Server thread/DEBUG] [FML/]: Bar Finished: ServerStarted took 0.001s
+[23:18:41] [Netty Local Client IO #1/TRACE] [FML/]: Handshake channel activating
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]: FMLHandshakeClientState: null->FMLHandshakeClientState$1:START
+[23:18:41] [Netty Server IO #3/TRACE] [FML/]: Handshake channel activating
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]:   Next: HELLO
+[23:18:41] [Netty Server IO #3/DEBUG] [FML/]: FMLHandshakeServerState: null->FMLHandshakeServerState$1:START
+[23:18:41] [Netty Server IO #3/DEBUG] [FML/]:   Next: HELLO
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]: Server FML protocol version 2, 4 byte dimension received 0
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]: FMLHandshakeClientState: $ServerHello->FMLHandshakeClientState$2:HELLO
+[23:18:41] [Netty Local Client IO #1/INFO] [FML/]: Server protocol version 2
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]: Received override dimension 0
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]:   Next: WAITINGSERVERDATA
+[23:18:41] [Netty Server IO #3/DEBUG] [FML/]: FMLHandshakeServerState: $ClientHello->FMLHandshakeServerState$2:HELLO
+[23:18:41] [Netty Server IO #3/INFO] [FML/]: Client protocol version 2
+[23:18:41] [Netty Server IO #3/DEBUG] [FML/]:   Next: HELLO
+[23:18:41] [Netty Server IO #3/DEBUG] [FML/]: FMLHandshakeServerState: $ModList:5 mods->FMLHandshakeServerState$2:HELLO
+[23:18:41] [Netty Server IO #3/INFO] [FML/]: Client attempting to join with 5 mods : minecraft@1.11.2,FML@8.0.99.99,malmomod@0.37.0,forge@13.20.0.2228,mcp@9.19
+[23:18:41] [Netty Server IO #3/DEBUG] [FML/]:   Next: WAITINGCACK
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]: FMLHandshakeClientState: $ModList:5 mods->FMLHandshakeClientState$3:WAITINGSERVERDATA
+[23:18:41] [Netty Server IO #3/DEBUG] [FML/]: FMLHandshakeServerState: $HandshakeAck:{2}->FMLHandshakeServerState$3:WAITINGCACK
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]:   Next: PENDINGCOMPLETE
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]: FMLHandshakeClientState: $HandshakeAck:{2}->FMLHandshakeClientState$5:PENDINGCOMPLETE
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]:   Next: COMPLETE
+[23:18:41] [Netty Server IO #3/DEBUG] [FML/]:   Next: COMPLETE
+[23:18:41] [Netty Server IO #3/DEBUG] [FML/]: FMLHandshakeServerState: $HandshakeAck:{4}->FMLHandshakeServerState$4:COMPLETE
+[23:18:41] [Netty Server IO #3/DEBUG] [FML/]:   Next: DONE
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]: The fluid minecraft:lava has been selected as the default fluid for lava
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]: The fluid minecraft:water has been selected as the default fluid for water
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]: FMLHandshakeClientState: $HandshakeAck:{3}->FMLHandshakeClientState$6:COMPLETE
+[23:18:41] [Netty Local Client IO #1/DEBUG] [FML/]:   Next: DONE
+[23:18:41] [Netty Server IO #3/DEBUG] [FML/]: FMLHandshakeServerState: $HandshakeAck:{5}->FMLHandshakeServerState$5:DONE
+[23:18:41] [Netty Server IO #3/DEBUG] [FML/]:   Next: DONE
+[23:18:41] [Netty Local Client IO #1/INFO] [FML/]: [Netty Local Client IO #1] Client side modded connection established
+[23:18:41] [Server thread/INFO] [FML/]: [Server thread] Server side modded connection established
+[23:18:41] [Client thread/DEBUG] [FML/]: Overriding dimension: using 0
+[23:18:42] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:19:26] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:19:31] [Server thread/DEBUG] [FML/]: The world 2ebce2b1 (TEMP_10000_eeaeb86d-9c24-49ab-8246-716caa485850) may have leaked: first encounter (5 occurrences).
+
+[23:19:56] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:33:53] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:34:09] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:34:22] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:35:07] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:35:30] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:39:11] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:39:34] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:39:49] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:50:28] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:50:59] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[23:51:17] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:03:25] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:03:56] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:03:58] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:09:38] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:09:52] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:11:18] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:13:12] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:13:31] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:14:16] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:14:40] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:15:13] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:15:39] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:16:24] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:16:30] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:17:45] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:18:01] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:18:54] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:19:08] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:19:32] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:19:51] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:22:45] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:24:23] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:24:31] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:26:42] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:27:19] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:27:23] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:34:15] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
+[00:34:45] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save TEMP_10000_10d21ded-0094-4c15-8d08-90f6d4663a2a
