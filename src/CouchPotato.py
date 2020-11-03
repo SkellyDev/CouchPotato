@@ -16,7 +16,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from numpy.random import randint
 from Mission import Mission
-
+from CommandParse import CommandParse
+from CommandAction import CommandAction
 
 # Create default Malmo objects:
 agent_host = MalmoPython.AgentHost()
@@ -72,3 +73,13 @@ while world_state.is_mission_running:
 
     for error in world_state.errors:
         print("Error:", error.text)
+
+    # parse
+    user_command = input("Ask your question: ")
+    command_class = CommandParse(user_command)
+    final_command = command_class.parse()
+
+    # call correct action function
+    action_class = CommandAction(agent_host)
+    action_class.find_obj()
+    # give output from agent
