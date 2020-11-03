@@ -14,7 +14,7 @@ class Mission:
         for _ in range(int((self._SIZE*2)**2*self._DENSITY)):
             xd, zd = random.randint(-self._SIZE,
                                     self._SIZE), random.randint(-self._SIZE, self._SIZE)
-            result_xml += "<DrawEntity x='{}' y='2' z='{}' type='{}'/>".format(
+            result_xml += "<DrawEntity x='{}' y='4' z='{}' type='{}'/>".format(
                 xd, zd, type)
         return result_xml
 
@@ -39,7 +39,10 @@ class Mission:
             </ServerInitialConditions>
             <ServerHandlers>
                 <FlatWorldGenerator generatorString="3;7,2*3,2;1;biome_1,village(size=33 distance=15),lake,lava_lake"/>
-                <DrawingDecorator>''' + self.spawn_type('Pig') + \
+                <DrawingDecorator>''' +  \
+            "<DrawCuboid x1='{}' x2='{}' y1='2' y2='5' z1='{}' z2='{}' type='air'/>".format(-self._SIZE, self._SIZE, -self._SIZE, self._SIZE) + \
+            "<DrawCuboid x1='{}' x2='{}' y1='1' y2='4' z1='{}' z2='{}' type='stone'/>".format(-self._SIZE, self._SIZE, -self._SIZE, self._SIZE) + \
+            self.spawn_type('Pig') + \
             '''</DrawingDecorator>
                 <ServerQuitWhenAnyAgentFinishes/>
             </ServerHandlers>
