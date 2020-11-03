@@ -13,8 +13,15 @@ class CommandAction:
     def __init__(self, agentHost):
         self.agent = agentHost
     
+    def get_latest_world(self):
+        latest_world = self.agent.peekWorldState()
+        return latest_world 
+
     def find_obj(self):
-        return 0
+        lastest_world = self.get_latest_world()
+        observation = lastest_world.observations
+        print(observation)
+
 
     def count(self):
         return 0

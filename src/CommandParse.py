@@ -6,11 +6,11 @@ to call correct method
 
 
 class CommandParse:
-    def __init__(self, RowCommand):
-        self.row_command = RowCommand
+    def __init__(self, RawCommand):
+        self.raw_command = RawCommand
         self.parse = ""
 
     def parse(self):
         # Attenion!!!
         # return row command first before we finishing command parsing part
-        return self.row_command
+        return self.raw_command
