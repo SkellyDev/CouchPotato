@@ -38,28 +38,22 @@ class Mission:
                 <AllowSpawning>true</AllowSpawing>
             </ServerInitialConditions>
             <ServerHandlers>
-                <FlatWorldGenerator generatorString="3;1*minecraft:bedrock,7*minecraft:dirt,1*minecraft:grass;1;village"/>
-                <DrawingDecorator>''' + \
-            "<DrawCuboid x1='{}' x2='{}' y1='2' y2='2' z1='{}' z2='{}' type='air'/>".format(-self._SIZE, self._SIZE, -self._SIZE, self._SIZE) + \
-            "<DrawCuboid x1='{}' x2='{}' y1='1' y2='1' z1='{}' z2='{}' type='stone'/>".format(-self._SIZE, self._SIZE, -self._SIZE, self._SIZE) + \
-            self.spawn_type('Pig') + \
-            '''<DrawBlock x='0'  y='2' z='0' type='air' />
-                    <DrawBlock x='0'  y='1' z='0' type='stone' />
-                </DrawingDecorator>
+                <FlatWorldGenerator generatorString="3;7,2*3,2;1;biome_1,village(size=33 distance=15),lake,lava_lake"/>
+                <DrawingDecorator>''' + self.spawn_type('Pig') + \
+            '''</DrawingDecorator>
                 <ServerQuitWhenAnyAgentFinishes/>
             </ServerHandlers>
         </ServerSection>
         
          <AgentSection mode="Creative">
-                    <Name>Environment Description</Name>
-                    <AgentStart>
-                        <Placement x="0.5" y="2" z="0.5" pitch="45" yaw="0"/>
-                    </AgentStart>
-                    <AgentHandlers>
-                        <ObservationFromRecentCommands/>
-                        <DiscreteMovementCommands/>
-                        <ObservationFromFullStats/>
-                    </AgentHandlers>
+            <Name>Environment Description</Name>
+            <AgentStart>
+                <Placement x="0.5" y="4" z="0.5" yaw="0"/>
+            </AgentStart>
+            <AgentHandlers>
+                <ObservationFromFullStats/>
+                    <ContinuousMovementCommands turnSpeedDegs="180"/>
+            </AgentHandlers>
         </AgentSection>
         </Mission>
         '''

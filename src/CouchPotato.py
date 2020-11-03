@@ -52,7 +52,7 @@ for retry in range(max_retries):
             time.sleep(2)
 
 # Loop until mission starts:
-print("Waiting for the mission to start ",)
+print("Waiting for the mission to start ")
 world_state = agent_host.getWorldState()
 while not world_state.has_mission_begun:
 
@@ -66,7 +66,7 @@ while world_state.is_mission_running:
 
     time.sleep(0.1)
 
-    agent_host.sendCommand("move 1")  # Get new command
+    # agent_host.sendCommand("move 1")  # Get new command
 
     world_state = agent_host.getWorldState()
 
