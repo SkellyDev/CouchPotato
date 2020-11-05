@@ -77,7 +77,7 @@ while world_state.is_mission_running:
     # parse
     user_command = input("Ask your question: ")
     command_class = CommandParse(user_command)
-    final_command = command_class.parse()
+    final_command = command_class.parse_command()
 
     # call correct action function
     action_class = CommandAction(agent_host)

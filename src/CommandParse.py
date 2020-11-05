@@ -10,7 +10,7 @@ class CommandParse:
         self.raw_command = RawCommand
         self.parse = ""
 
-    def parse(self):
+    def parse_command(self):
         # Attenion!!!
         # return row command first before we finishing command parsing part
         return self.raw_command
