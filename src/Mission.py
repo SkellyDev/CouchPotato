@@ -80,7 +80,10 @@ class Mission:
 
     def draw_lake(self, x1, x2, z1, z2):
         result_xml = ""
-        result_xml += f"<DrawCuboid x1='{x1}' x2='{x2}' y1='3' y2='3' z1='{z1}' z2='{z2}' type='water'/>"
+        for x in range(x1, x2+1):
+            for z in range(z1, z2+1):
+                result_xml += f"<DrawBlock x='{x}'  y='3' z='{z}' type='water'/>"
+        #result_xml += f"<DrawCuboid x1='{x1}' x2='{x2}' y1='3' y2='3' z1='{z1}' z2='{z2}' type='water'/>"
         # Draw stairs
         result_xml += f"<DrawBlock x='{x1+3}'  y='4' z='{z1-1}' type='oak_stairs' face ='SOUTH'/>"
         result_xml += f"<DrawBlock x='{x1+3}'  y='4' z='{z2+1}' type='oak_stairs' />"
@@ -149,7 +152,6 @@ class Mission:
             <ServerHandlers>
                 <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/>
                 <DrawingDecorator>''' +  \
-            "<DrawCuboid x1='{}' x2='{}' y1='4' y2='4' z1='{}' z2='{}' type='air'/>".format(0, self._SIZE, 0, self._SIZE) + \
             "<DrawCuboid x1='{}' x2='{}' y1='3' y2='3' z1='{}' z2='{}' type='grass'/>".format(0, self._SIZE, 0, self._SIZE) + \
             self.spawn_type(['Pig', 'Cow', 'Sheep']) + self.draw_wall(0, self._SIZE, 0, self._SIZE) + self.draw_house(30, 40, 30, 40) + self.draw_tree(20, 41) + \
             self.draw_tree(7, 13) + self.draw_tree(43, 17) + self.draw_tree(38, 11) + self.draw_tree(7, 50) + \
@@ -162,14 +164,18 @@ class Mission:
          <AgentSection mode="Creative">
             <Name>Environment Description</Name>
             <AgentStart>
-                <Placement x="5" y="4" z="5" yaw="0"/>
+                <Placement x="1" y="4" z="1" yaw="0"/>
             </AgentStart>
             <AgentHandlers>
                 <ObservationFromFullStats/>
+                <ObservationFromRay/>
+                <ObservationFromNearbyEntities>
+                    <Range name="Entities" xrange="120" yrange="9" zrange="120"/>
+                </ObservationFromNearbyEntities>
                 <ObservationFromGrid>
-                    <Grid name="floor3x3">
-                        <min x="-1" y="-1" z="-1"/>
-                        <max x="1" y="-1" z="1"/>
+                    <Grid name="x">
+                        <min x="0" y="-1" z="0"/>
+                        <max x="60" y="1" z="60"/>
                     </Grid>
                 </ObservationFromGrid>
                     <ContinuousMovementCommands turnSpeedDegs="180"/>
