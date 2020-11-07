@@ -19,6 +19,10 @@ from Mission import Mission
 from CommandParse import CommandParse
 from CommandAction import CommandAction
 
+TREE_LST = [(7, 13), (43, 17), (38, 11), (7, 50)]
+HOUSE = [(30, 30), (40, 40)]
+LAKE = [(10, 20), (15, 25)]
+
 # Create default Malmo objects:
 agent_host = MalmoPython.AgentHost()
 try:
@@ -87,21 +91,33 @@ while world_state.is_mission_running:
     final_command = command_class.parse_command()
 
     action_class = CommandAction(agent_host)
-
     # Find animals in closest(in front of, next to...)
-    if final_command == "x":
+    # What is the closest entity (relative to agent)? ✅
+    # Where is the closest (entity) (relative to agent) ?
+    # Where is the (entity A) relative to (Block B)?  拿到block坐标，找离他最近的block，方向
+    # How many (entity/Block) can you see? question: min max observationfromgrid
+    # What is the clostest entity relative to a (Block)?
+
+    if final_command == "What is the closest animal around you? ":
         # call correct action function
         # could add num parameter as return quantity
-        animal = action_class.find_closest_animal()
-
+        animal = action_class.find_closest_animal("agent")
         print(''.join(animal))
 
-    elif final_command == "y":
+    elif final_command == "what is the cloest animal around house?":
         # where is the direction of closest sheep
-        print(action_class.get_direction_of_entity("Sheep"))
+        animal = action_class.find_closest_animal(HOUSE)
+        print("the closet animal around house is ", animal)
 
-    elif final_command == "test":
-        action_class.get_grid_from_observation()
+    elif final_command == "where is cloest sheep around you? ":
+        direction = action_class.get_direction_of_entity_relative_agent(
+            "Sheep")
+        print("the cloeset sheep around you is in", direction)
+
+    elif final_command == "where is cloest sheep around house? ":
+        direction = action_class.find_closest_entity_relative_to_block(
+            "Sheep", HOUSE)
+        print("the cloeset sheep around you is in", direction)
 
     elif user_command in ['move 1', 'move 0', 'turn 1', 'turn -1']:
         agent_host.sendCommand(user_command)
