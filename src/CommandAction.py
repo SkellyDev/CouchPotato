@@ -12,11 +12,18 @@ import math
 from collections import defaultdict
 import numpy as np
 
-# What is the closest entity (relative to agent)? 
+# What is the closest entity (relative to agent)?
 # Where is the closest (entity) (relative to agent) ?
 # Where is the (entity A) relative to (Block B)?  拿到block坐标，找离他最近的entity，方向
 # How many (entity/Block) can you see? question: min max observationfromgrid
-# What is the clostest entity relative to a (Block)? 
+# What is the clostest entity relative to a (Block)?
+
+
+#### GLOABL #####
+TREE_LST = [(7, 13), (43, 17), (38, 11), (7, 50)]
+HOUSE_LST = [(30, 30), (40, 40)]
+LAKE = [(10, 20), (15, 25)]
+###############
 
 
 class CommandAction:
@@ -24,7 +31,13 @@ class CommandAction:
     def __init__(self, agentHost):
         self.agent = agentHost
         self.observation = self.get_observation()
-        self.world_state = self.get_latest_world()
+        self.initial_state = self.get_orginal_state()
+        self.grid = self.get_grid_from_observation()
+
+    def get_orginal_state(self):
+        # Unmutable coordinate of agent when first entering the game
+        if self.get_agent_pos() == ((29.58557144543213, 30.0)):
+            return self.agent.peekWorldState()
 
     def get_latest_world(self):
         latest_world = self.agent.peekWorldState()
@@ -36,13 +49,13 @@ class CommandAction:
         return observation
 
     def get_grid_from_observation(self):
-        if self.world_state.number_of_observations_since_last_state > 0:
-            msg = world_state.observations[-1].text
+        if self.initial_state.number_of_observations_since_last_state > 0:
+            msg = self.initial_state.observations[-1].text
             observations = json.loads(msg)
             grid = observations.get(u'ground_layer', 0)
-        print(grid)
+
         return grid
-        
+
     def get_agent_pos(self):
         return (self.observation['XPos'], self.observation['ZPos'])
 

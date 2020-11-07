@@ -87,6 +87,7 @@ while world_state.is_mission_running:
     final_command = command_class.parse_command()
 
     action_class = CommandAction(agent_host)
+
     # Find animals in closest(in front of, next to...)
     if final_command == "x":
         # call correct action function
@@ -98,6 +99,9 @@ while world_state.is_mission_running:
     elif final_command == "y":
         # where is the direction of closest sheep
         print(action_class.get_direction_of_entity("Sheep"))
+
+    elif final_command == "test":
+        action_class.get_grid_from_observation()
 
     elif user_command in ['move 1', 'move 0', 'turn 1', 'turn -1']:
         agent_host.sendCommand(user_command)
