@@ -12,7 +12,11 @@ import math
 from collections import defaultdict
 import numpy as np
 
-# What animal is standing in front of you?
+# What is the closest entity (relative to agent)? 
+# Where is the closest (entity) (relative to agent) ?
+# Where is the (entity A) relative to (Block B)?  拿到block坐标，找离他最近的entity，方向
+# How many (entity/Block) can you see? question: min max observationfromgrid
+# What is the clostest entity relative to a (Block)? 
 
 
 class CommandAction:
@@ -20,6 +24,7 @@ class CommandAction:
     def __init__(self, agentHost):
         self.agent = agentHost
         self.observation = self.get_observation()
+        self.world_state = self.get_latest_world()
 
     def get_latest_world(self):
         latest_world = self.agent.peekWorldState()
@@ -30,6 +35,14 @@ class CommandAction:
         observation = json.loads(lastest_world.observations[-1].text)
         return observation
 
+    def get_grid_from_observation(self):
+        if self.world_state.number_of_observations_since_last_state > 0:
+            msg = world_state.observations[-1].text
+            observations = json.loads(msg)
+            grid = observations.get(u'ground_layer', 0)
+        print(grid)
+        return grid
+        
     def get_agent_pos(self):
         return (self.observation['XPos'], self.observation['ZPos'])
 
