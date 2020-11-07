@@ -195,9 +195,14 @@ class CommandAction:
             cor2_z1 = cor2[0][1]
             cor2_x2 = cor2[1][0]
             cor2_z2 = cor2[1][1]
-            center_x = (cor2_x2-cor2_x1)//2
-            center_y = (cor2_z2-cor2_z1)//2
+            center_x = cor2_x1+(cor2_x2-cor2_x1)//2
+            center_y = cor2_z1+(cor2_z2-cor2_z1)//2
+            print("center", center_x, center_y)
             # House or Lake
+            print(cor1[0] < center_x + 20)
+            print(cor1[0] > center_x - 20)
+            print(cor1[1] < center_y + 20)
+            print(cor1[1] > center_y - 20)
             if cor1[0] < center_x + 20 and cor1[0] > center_x - 20 and cor1[1] < center_y + 20 and cor1[1] > center_y - 20:
                 if cor1[1] > cor2_z2:
                     if cor1[0] > cor2_x2:
