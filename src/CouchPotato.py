@@ -75,11 +75,33 @@ while world_state.is_mission_running:
         print("Error:", error.text)
 
     # parse
+    print("""
+        User input Manual:\n
+        Move foward: 'movenorth 1'\n
+        Move backward: 'movesouth 1'\n
+        Move left: 'movewest 1'\n
+        Move right: 'moveeast 1'
+        """)
     user_command = input("Ask your question: ")
     command_class = CommandParse(user_command)
     final_command = command_class.parse_command()
 
-    # call correct action function
     action_class = CommandAction(agent_host)
-    action_class.find_obj()
-    # give output from agent
+    # Find animals in closest(in front of, next to...)
+    if final_command == "x":
+        # call correct action function
+        # could add num parameter as return quantity
+        animal = action_class.find_closest_animal()
+
+        print(''.join(animal))
+
+    elif final_command == "y":
+        # where is the direction of closest sheep
+        print(action_class.get_direction_of_entity("Sheep"))
+
+    elif user_command in ['move 1', 'move 0', 'turn 1', 'turn -1']:
+        agent_host.sendCommand(user_command)
+        time.sleep(0.2)
+        agent_host.sendCommand('move 0')
+
+        print("finished")

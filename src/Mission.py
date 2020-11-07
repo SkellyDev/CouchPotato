@@ -11,7 +11,7 @@ class Mission:
 
     def spawn_type(self, type_list):
         result_xml = ""
-        for _ in range(int((self._SIZE*2)**2*self._DENSITY)):
+        for _ in range(int(self._SIZE**2*self._DENSITY)):
             xd, zd = random.randint(
                 0, self._SIZE), random.randint(0, self._SIZE)
             type = random.choice(type_list)
@@ -164,7 +164,7 @@ class Mission:
          <AgentSection mode="Creative">
             <Name>Environment Description</Name>
             <AgentStart>
-                <Placement x="1" y="4" z="1" yaw="0"/>
+                <Placement x="2" y="4" z="2" yaw="0"/>
             </AgentStart>
             <AgentHandlers>
                 <ObservationFromFullStats/>
@@ -173,9 +173,13 @@ class Mission:
                     <Range name="Entities" xrange="120" yrange="9" zrange="120"/>
                 </ObservationFromNearbyEntities>
                 <ObservationFromGrid>
-                    <Grid name="x">
+                    <Grid name="ground_layer">
                         <min x="0" y="-1" z="0"/>
-                        <max x="60" y="1" z="60"/>
+                        <max x="60" y="-1" z="60"/>
+                    </Grid>
+                    <Grid name="first_layer">
+                        <min x="0" y="1" z="0"/>
+                        <max x="20" y="1" z="20"/>
                     </Grid>
                 </ObservationFromGrid>
                     <ContinuousMovementCommands turnSpeedDegs="180"/>
