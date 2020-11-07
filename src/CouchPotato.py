@@ -79,6 +79,7 @@ while world_state.is_mission_running:
         print("Error:", error.text)
 
     # parse
+    '''
     print("""
         User input Manual:\n
         Move foward: 'movenorth 1'\n
@@ -86,6 +87,7 @@ while world_state.is_mission_running:
         Move left: 'movewest 1'\n
         Move right: 'moveeast 1'
         """)
+    '''
     user_command = input("Ask your question: ")
     command_class = CommandParse(user_command)
     final_command = command_class.parse_command()
@@ -98,24 +100,24 @@ while world_state.is_mission_running:
     # How many (entity/Block) can you see? question: min max observationfromgrid
     # What is the clostest entity relative to a (Block)?
 
-    if final_command == "What is the closest animal around you? ":
+    if final_command == "What is the closest animal around you?":
         # call correct action function
         # could add num parameter as return quantity
         animal = action_class.find_closest_animal("agent")
         print(''.join(animal))
 
-    elif final_command == "what is the cloest animal around house?":
+    elif final_command == "What is the animal around house?":
         # where is the direction of closest sheep
         animal = action_class.find_closest_animal(HOUSE)
-        print("the closet animal around house is ", animal)
+        print("the closet animal around house is ", ''.join(animal))
 
-    elif final_command == "where is cloest sheep around you? ":
+    elif final_command == "Where is closest sheep around you?":
         direction = action_class.get_direction_of_entity_relative_agent(
             "Sheep")
-        print("the cloeset sheep around you is in", direction)
+        print("the closest sheep around you is in", direction)
 
-    elif final_command == "where is cloest sheep around house? ":
-        direction = action_class.find_closest_entity_relative_to_block(
+    elif final_command == "Where is closest sheep around house?":
+        direction = action_class.get_direction_of_entity_relative_block(
             "Sheep", HOUSE)
         print("the cloeset sheep around you is in", direction)
 

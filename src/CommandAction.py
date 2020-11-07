@@ -19,7 +19,7 @@ import numpy as np
 # What is the clostest entity relative to a (Block)?
 
 #### GLOABL #####
-TREE_LST = [(7, 13), (43, 17), (38, 11), (7, 50)]
+TREE_LIST = [(7, 13), (43, 17), (38, 11), (7, 50)]
 HOUSE = [(30, 30), (40, 40)]
 LAKE = [(10, 20), (15, 25)]
 ###############
@@ -44,7 +44,7 @@ class CommandAction:
 
     def get_grid_from_observation(self):
         if self.world_state.number_of_observations_since_last_state > 0:
-            msg = world_state.observations[-1].text
+            msg = self.world_state.observations[-1].text
             observations = json.loads(msg)
             grid = observations.get(u'ground_layer', 0)
         print(grid)
@@ -77,18 +77,21 @@ class CommandAction:
         """
         entity_dict = defaultdict(list)
         if block_type == "agent":
-            x = e["x"]
-            z = e["z"]
+            x = self.get_agent_pos()[0]
+            z = self.get_agent_pos()[1]
         else:
-            x = self.find_closest_block_relative_agent()[0]
-            z = self.find_closest_block_relative_agent()[1]
+
+            x = self.find_closest_block_relative_agent(block_type)[0]
+            z = self.find_closest_block_relative_agent(block_type)[1]
 
         for e in self.observation["Entities"][1:]:
+            entity_x = e["x"]
+            entity_z = e["z"]
             entity_name = e["name"]
             angle = self.entity_angle((x, z))
-            dist = self.get_distance(self.get_agent_pos()[
-                0], x, self.get_agent_pos()[1], z)
-            entity_dict[entity_name].append((dist, angle, (x, z)))
+            dist = self.get_distance(x, entity_x, z, entity_z)
+            entity_dict[entity_name].append(
+                (dist, angle, (entity_x, entity_z)))
         return entity_dict
 
     def get_entity_closest_relative_block(self, block_type):
@@ -101,26 +104,29 @@ class CommandAction:
             x = self.get_agent_pos()[0]
             z = self.get_agent_pos()[1]
         else:
-            x = self.find_closest_block_relative_agent()[0]
-            z = self.find_closest_block_relative_agent()[1]
+
+            x = self.find_closest_block_relative_agent(block_type)[0]
+            z = self.find_closest_block_relative_agent(block_type)[1]
 
         entity_distance_dict = []
         for e in self.observation["Entities"][1:]:
-            dist = self.get_distance(self.get_agent_pos()[
-                                     0], x, self.get_agent_pos()[1], z)
+            entity_x = e["x"]
+            entity_z = e["z"]
+            dist = self.get_distance(x, entity_x, z, entity_z)
             entity_distance_dict.append((e["name"], dist))
         entity_distance_dict.sort(key=lambda x: x[1])
         # print(entity_distance_dict)
         return entity_distance_dict
 
-     def find_closest_block_relative_agent(self, block_type: [tuple]):
-            '''
+    def find_closest_block_relative_agent(self, block_type: [tuple]):
+        '''
         根据agent找最近的block
         Find the closest bloack(e.g. tree) relative to agent
         input: a block type --- list of tuple 
         output: the cloest block coordinate --- tuple
         '''
-        if block_type == TREE:
+        print(block_type)
+        if block_type == TREE_LIST:
             dist_list = []
             for cor in block_type:
                 dist_list.append(self.get_distance(cor[0], self.get_agent_pos()[
@@ -140,20 +146,21 @@ class CommandAction:
         '''
         entity_list = self.get_entity_dict(block_type)[entity_type]
         entity_list = sorted(entity_list, key=lambda entity: entity[0])
-        return entity_list
+
+        return entity_list[0]
 
     ####### --------------------------- END OF HELPER FUNCTION ------------------------------------- ########
 
     ####### --------------------------- ACTION FUNCTION ------------------------------------- #############
-
-   
 
     def get_direction_of_entity_relative_agent(self, type):
         '''
         Get the direction of entity correlated to where agent face
         '''
         agent_yaw = self.observation['Yaw']
-        closest_entity = self.find_closest_entity_relative_agent(type)
+        closest_entity = self.find_closest_entity_relative_to_block(
+            "agent", type)
+
         direction_of_closet = agent_yaw-closest_entity[1]
         direction = ""
         if direction_of_closet >= -50 and direction_of_closet <= 50:
@@ -172,14 +179,16 @@ class CommandAction:
         '''
         cor1 = self.find_closest_entity_relative_to_block(
             block_type, entity_type)[2]
+        print('asdfasdfsa', cor1)
         direction = ''
 
-        if block_type == "house":
+        if block_type == HOUSE:
             cor2 = HOUSE
-        elif block_type == "lake":
+        elif block_type == LAKE:
             cor2 = LAKE
         else:  # Tree
             cor2 = [self.find_closest_block_relative_agent(block_type)]
+        print(cor2)
         #### Find direction ######
         if len(cor2) != 1:
             cor2_x1 = cor2[0][0]
@@ -191,23 +200,23 @@ class CommandAction:
             # House or Lake
             if cor1[0] < center_x + 20 and cor1[0] > center_x - 20 and cor1[1] < center_y + 20 and cor1[1] > center_y - 20:
                 if cor1[1] > cor2_z2:
-                    if cor[0] > cor2_x2:
+                    if cor1[0] > cor2_x2:
                         direction = "Top left corner"
-                    elif cor[0] > cor2_x1 and cor[0] < cor2_x2:
+                    elif cor1[0] > cor2_x1 and cor1[0] < cor2_x2:
                         direction = "Behind"
                     else:
                         direction = "Top right corner"
                 elif cor1[1] > cor2_z1 and cor1[1] < cor2_z2:
-                    if cor[0] > cor2_x2:
+                    if cor1[0] > cor2_x2:
                         direction = "Left"
-                    elif cor[0] > cor2_x1 and cor[0] < cor2_x2:
+                    elif cor1[0] > cor2_x1 and cor1[0] < cor2_x2:
                         direction = "inside"
                     else:
                         direction = "Right"
                 else:
-                    if cor[0] > cor2_x2:
+                    if cor1[0] > cor2_x2:
                         direction = "Bottom left corner"
-                    elif cor[0] > cor2_x1 and cor[0] < cor2_x2:
+                    elif cor1[0] > cor2_x1 and cor1[0] < cor2_x2:
                         direction = "Front"
                     else:
                         direction = "Bottom right corner"
@@ -222,18 +231,19 @@ class CommandAction:
                 direction = "This entity is not in the range."
         return direction
 
-    
-
     def find_closest_animal(self, block_type, num=1):
         '''
         input block type: "agent"/global variable(block type)
         output name of closest animal
         '''
         entity_list = self.get_entity_closest_relative_block(block_type)
+        print(entity_list)
         count = 0
         result = []
+        index = 0
         while count < num:
-            if entity_list[count][0] in ['Pig', 'Cow', 'Sheep']:
-                result.append(entity_list[count][0])
+            if entity_list[index][0] in ['Pig', 'Cow', 'Sheep']:
+                result.append(entity_list[index][0])
                 count += 1
+            index += 1
         return result
