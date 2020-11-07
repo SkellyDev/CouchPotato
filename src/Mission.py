@@ -21,7 +21,7 @@ class Mission:
 
     def draw_tree(self, x, z):
         result_xml = ""
-        for l in range(4, 9):
+        for l in range(3, 9):
             result_xml += f"<DrawBlock x='{x}'  y='{l}' z='{z}' type='dirt' />"
         # Draw leaves
         leave_density = 0.9
@@ -85,10 +85,10 @@ class Mission:
                 result_xml += f"<DrawBlock x='{x}'  y='3' z='{z}' type='water'/>"
         #result_xml += f"<DrawCuboid x1='{x1}' x2='{x2}' y1='3' y2='3' z1='{z1}' z2='{z2}' type='water'/>"
         # Draw stairs
-        result_xml += f"<DrawBlock x='{x1+3}'  y='4' z='{z1-1}' type='oak_stairs' face ='SOUTH'/>"
-        result_xml += f"<DrawBlock x='{x1+3}'  y='4' z='{z2+1}' type='oak_stairs' />"
-        result_xml += f"<DrawBlock x='{x1+4}'  y='4' z='{z1-1}' type='oak_stairs' face ='SOUTH'/>"
-        result_xml += f"<DrawBlock x='{x1+4}'  y='4' z='{z2+1}' type='oak_stairs' />"
+        result_xml += f"<DrawBlock x='{x1+3}'  y='3' z='{z1-1}' type='oak_stairs' face ='SOUTH'/>"
+        result_xml += f"<DrawBlock x='{x1+3}'  y='3' z='{z2+1}' type='oak_stairs' />"
+        result_xml += f"<DrawBlock x='{x1+4}'  y='3' z='{z1-1}' type='oak_stairs' face ='SOUTH'/>"
+        result_xml += f"<DrawBlock x='{x1+4}'  y='3' z='{z2+1}' type='oak_stairs' />"
         # Draw bridge
         result_xml += f"<DrawCuboid x1='{x1+3}' x2='{x1+4}' y1='5' y2='5' z1='{z1}' z2='{z2}' type='wooden_slab'/>"
         # Draw flowers
@@ -164,7 +164,7 @@ class Mission:
          <AgentSection mode="Creative">
             <Name>Environment Description</Name>
             <AgentStart>
-                <Placement x="2" y="4" z="2" yaw="0"/>
+                <Placement x="30" y="4" z="30" yaw="0"/>
             </AgentStart>
             <AgentHandlers>
                 <ObservationFromFullStats/>
@@ -174,12 +174,8 @@ class Mission:
                 </ObservationFromNearbyEntities>
                 <ObservationFromGrid>
                     <Grid name="ground_layer">
-                        <min x="0" y="-1" z="0"/>
-                        <max x="60" y="-1" z="60"/>
-                    </Grid>
-                    <Grid name="first_layer">
-                        <min x="0" y="1" z="0"/>
-                        <max x="20" y="1" z="20"/>
+                        <min x="-30" y="-1" z="-30"/>
+                        <max x="30" y="-1" z="30"/>
                     </Grid>
                 </ObservationFromGrid>
                     <ContinuousMovementCommands turnSpeedDegs="180"/>
