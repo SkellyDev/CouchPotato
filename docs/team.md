@@ -1,14 +1,17 @@
 ---
 layout: default
-title:  Team
+title: Team
 ---
 
-# {{ Our team members }}
+## Our team members
 
+<br>
+<br>
 
-## USER 1
-***UCI Net ID***: shiyuer
+### Shiyue Rong
 
-## USER 2
-***UCI Net ID***: aol10
+**_UCI Net ID_**: shiyuer
 
+### Ao Li
+
+**_UCI Net ID_**: aol10

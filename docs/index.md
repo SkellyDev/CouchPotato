@@ -13,7 +13,7 @@ Imagine you are a super lazy person who do not want to think about anything whil
 
 To achieve this goal, we build our project based on Natural Language Processing (NLP) concepts. For each user-input command, we will extract keywords based on the syntax of the phrase and then match them to our existing action functions. For example, commands like "Describe the position of the closest pig", "Tell me where is the pig standing" and "Where is the closest pig" will output the same answer.
 
-## To explore more about COUCH POTATO, feel free to check Our progress:
+## To explore more about Couch Potato, feel free to check our progress:
 
 #### [Click here to see our proposal page](https://skellydev.github.io/CouchPotato/proposal.html)
 
