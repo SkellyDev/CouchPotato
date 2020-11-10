@@ -1,40 +1,27 @@
 ---
 layout: default
-title:  Home
+title: Home
 ---
 
-Source code: [Source Code](https://github.com/SkellyDev/CouchPotato)
+<img src="assets/frontPage.png"/>
 
-Reports:
+### [Download Our Source Code Here](https://github.com/SkellyDev/CouchPotato)
 
-- [Proposal](proposal.html)
-- [Status](status.html)
-- [Final](final.html)
+## Welcome to Couch Potato!
 
-What's Markdown (`.md`)?
+Imagine you are a super lazy person who do not want to think about anything while playing the game, our **Couch Potato** could provide you with the opportunity to seek for any simple answers from the senario via command lines. Assume that you could only learn about the game world by asking our agent, when you type into your questions, our agent will answer your question based on what he could conceive and for sure, our tool will accept different expressions of the same meaning for user inputs.
 
-Markdown is markup that lets you write hypertext (HTML) documents
-in easy-to-read and easy-to-write plain text.
-No angle brackets `<></>` required for
-paragraphs, lists, blockquotes, tables, etc.
+To achieve this goal, we build our project based on Natural Language Processing (NLP) concepts. For each user-input command, we will extract keywords based on the syntax of the phrase and then match them to our existing action functions. For example, commands like "Describe the position of the closest pig", "Tell me where is the pig standing" and "Where is the closest pig" will output the same answer.
 
+## To explore more about COUCH POTATO, feel free to check Our progress:
 
-This is a paragraph (in Markdown). Some more
-text here.
+#### [Click here to see our proposal page](proposal.html)
 
-This is another paragraph.
+#### [Click here to see our status report](status.html)
 
-This is a list:
+#### [Click here to see our final report](final.html)
 
-- Orange
-- Apple
-- Blueberry
+## The tools we use
 
-$$x^2 = y^2$$
-
-
-Just getting started with Markdown?
-See the [HTML <-> Markdown Quick Reference (Cheat Sheet)][quickref].
-
-
-[quickref]: https://github.com/mundimark/quickrefs/blob/master/HTML.md
+<a href="https://github.com/microsoft/malmo">Project Malmo</a><br>
+More libraries to be added...

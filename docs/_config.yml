@@ -1,9 +1,8 @@
 ###########
 # site.title
 
-title:    'CouchPotato'
-subtitle: 'CS 175: Project in AI (in Minecraft)'
-
+title: "Couch Potato"
+subtitle: "A command based senario description project"
 
 #########################
 # more settings
@@ -11,5 +10,5 @@ subtitle: 'CS 175: Project in AI (in Minecraft)'
 markdown: kramdown
 
 exclude:
-- README.md
-- LICENSE.md
+  - README.md
+  - LICENSE.md
