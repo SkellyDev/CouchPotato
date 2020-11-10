@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-<img src="assets/frontPage.png"/>
+<img src="assets/frontPage.png" width="704" height="396"/>
 
 ### [Download Our Source Code Here](https://github.com/SkellyDev/CouchPotato)
 
@@ -15,11 +15,11 @@ To achieve this goal, we build our project based on Natural Language Processing 
 
 ## To explore more about COUCH POTATO, feel free to check Our progress:
 
-#### [Click here to see our proposal page](proposal.html)
+#### [Click here to see our proposal page](https://skellydev.github.io/CouchPotato/proposal.html)
 
-#### [Click here to see our status report](status.html)
+#### [Click here to see our status report](https://skellydev.github.io/CouchPotato/status.html)
 
-#### [Click here to see our final report](final.html)
+#### [Click here to see our final report](https://skellydev.github.io/CouchPotato/final.html)
 
 ## The tools we use
 
