@@ -10,6 +10,7 @@ import sys
 import time
 import json
 import random
+import numpy
 from tqdm import tqdm
 from collections import deque
 import matplotlib.pyplot as plt
@@ -90,7 +91,16 @@ while world_state.is_mission_running:
     '''
     user_command = input("Ask your question: ")
     command_class = CommandParse(user_command)
-    final_command = command_class.parse_command()
+    model = command_class.return_model()[0]
+    tag_lst = model = command_class.return_model()[2]
+    array = command_class.parse_command()
+    result = model.predict([array])[0]
+    result_index = numpy.argmax(result)
+    tag = tag_lst[result_index]
+    print(tag)
+
+    '''
+    final_command = ""
 
     action_class = CommandAction(agent_host)
     # Find animals in closest(in front of, next to...)
@@ -132,3 +142,4 @@ while world_state.is_mission_running:
         agent_host.sendCommand('move 0')
 
         print("finished")
+    '''
