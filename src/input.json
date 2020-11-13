@@ -1,60 +1,50 @@
 {
-    "commands": [
-        {
-            "tag": "greeting",
-            "patterns": [
-                "Hi",
-                "Hello",
-                "How are you",
-                "Is anyone there",
-                "Good Day"
-            ]
-        },
-        {
-            "tag": "goodbye",
-            "patterns": [
-                "Bye",
-                "See you later",
-                "Goodbye"
-            ]
-        },
-        {
-            "tag": "find_closest_animal",
-            "patterns": [
-                "What is the closest animal around you?",
-                "Tell me the closest animal",
-                "What is the nearest animal?",
-                "Tell me the nearest animal",
-                "Give me the name of a closest animal"
-            ]
-        },
-        {
-            "tag": "get_direction_of_entity_relative_agent",
-            "patterns": [
-                "Where is the closest sheep around you",
-                "Tell me where is the closest pig",
-                "Where is the closest cow",
-                "Tell me the location of the closest pig"
-            ]
-        },
-        {
-            "tag": "get_direction_of_entity_relative_block",
-            "patterns": [
-                "Where is the closest sheep around a house",
-                "Tell me where is the closest pig near the lake",
-                "Where is the closest cow around the house",
-                "Tell me the location of the closest pig near the lake",
-                "Where is the closest pig around the tree",
-                "Tell me the location of the closest cow around the tree"
-            ]
-        },
-        {
-            "tag": "find_animal_inside_house",
-            "patterns": [
-                "What animal can you see inside the house?",
-                "Which kind of animals are inside the house",
-                "Tell me animals which inside the house"
-            ]
-        }
-    ]
+  "commands": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "How are you", "Is anyone there", "Good Day"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"]
+    },
+    {
+      "tag": "find_closest_animal",
+      "patterns": [
+        "What is the closest animal around you?",
+        "Tell me the closest animal",
+        "What is the nearest animal?",
+        "Tell me the nearest animal",
+        "Give me the name of a closest animal"
+      ]
+    },
+    {
+      "tag": "get_direction_of_entity_relative_agent",
+      "patterns": [
+        "Where is the closest sheep around you",
+        "Tell me where is the closest pig",
+        "Where is the closest cow",
+        "Tell me the location of the closest pig"
+      ]
+    },
+    {
+      "tag": "get_direction_of_entity_relative_block",
+      "patterns": [
+        "Where is the closest sheep around a house",
+        "Tell me where is the closest pig near the lake",
+        "Where is the closest cow around the house",
+        "Tell me the location of the closest pig near the lake",
+        "Where is the closest pig around the tree",
+        "Tell me the location of the closest cow around the tree"
+      ]
+    },
+    {
+      "tag": "find_animal_inside_house",
+      "patterns": [
+        "What animal can you see inside the house?",
+        "Which kind of animals are inside the house",
+        "Tell me animals which inside the house"
+      ]
+    }
+  ]
 }

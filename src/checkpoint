@@ -1,0 +1,2 @@
+model_checkpoint_path: "/Users/shiyuerong/Desktop/CouchPotato/src/model.tflearn"
+all_model_checkpoint_paths: "/Users/shiyuerong/Desktop/CouchPotato/src/model.tflearn"

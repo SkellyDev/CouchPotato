@@ -68,6 +68,15 @@ while not world_state.has_mission_begun:
         print("Error:", error.text)
 
 action_index = 0
+CP = CommandParse("")
+CP.save_model()
+words = CP.get_words()
+labels = CP.get_labels()
+model = CP.save_model()
+model.load("model.tflearn")
+##### Model build finished ####
+
+
 while world_state.is_mission_running:
 
     time.sleep(0.1)
@@ -89,18 +98,16 @@ while world_state.is_mission_running:
         Move right: 'moveeast 1'
         """)
     '''
+
     user_command = input("Ask your question: ")
-    command_class = CommandParse(user_command)
-    model = command_class.return_model()[0]
-    tag_lst = model = command_class.return_model()[2]
-    array = command_class.parse_command()
-    result = model.predict([array])[0]
-    result_index = numpy.argmax(result)
-    tag = tag_lst[result_index]
+    if user_command.lower() == "quit":
+        break
+    CP = CommandParse(user_command)
+    tag = CP.return_tag(model, words, labels)
+
     print(tag)
 
     '''
-    final_command = ""
 
     action_class = CommandAction(agent_host)
     # Find animals in closest(in front of, next to...)
