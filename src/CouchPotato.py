@@ -99,6 +99,7 @@ while world_state.is_mission_running:
     # Where is the (entity A) relative to (Block B)?  拿到block坐标，找离他最近的block，方向
     # How many (entity/Block) can you see? question: min max observationfromgrid
     # What is the clostest entity relative to a (Block)?
+    # Which animal is inside the house?
 
     if final_command == "What is the closest animal around you?":
         # call correct action function
@@ -109,17 +110,21 @@ while world_state.is_mission_running:
     elif final_command == "What is the animal around house?":
         # where is the direction of closest sheep
         animal = action_class.find_closest_animal(HOUSE)
-        print("the closet animal around house is ", ''.join(animal))
+        print("The closet animal around house is ", ''.join(animal))
 
     elif final_command == "Where is closest sheep around you?":
         direction = action_class.get_direction_of_entity_relative_agent(
             "Sheep")
-        print("the closest sheep around you is in", direction)
+        print("The closest sheep around you is in", direction)
 
     elif final_command == "Where is closest sheep around house?":
         direction = action_class.get_direction_of_entity_relative_block(
             "Sheep", HOUSE)
-        print("the cloeset sheep around you is in", direction)
+        print("The cloeset sheep around you is in", direction)
+
+    elif final_command == "Which animal is inside the house?":
+        animal = action_class.find_animal_inside_house()
+        print("The animal inside house is ", animal)
 
     elif user_command in ['move 1', 'move 0', 'turn 1', 'turn -1']:
         agent_host.sendCommand(user_command)

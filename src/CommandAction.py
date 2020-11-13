@@ -47,7 +47,7 @@ class CommandAction:
             msg = self.world_state.observations[-1].text
             observations = json.loads(msg)
             grid = observations.get(u'ground_layer', 0)
-        print(grid)
+        # print(grid)
         return grid
 
     def get_agent_pos(self):
@@ -125,7 +125,7 @@ class CommandAction:
         input: a block type --- list of tuple 
         output: the cloest block coordinate --- tuple
         '''
-        print(block_type)
+        # print(block_type)
         if block_type == TREE_LIST:
             dist_list = []
             for cor in block_type:
@@ -163,14 +163,30 @@ class CommandAction:
 
         direction_of_closet = agent_yaw-closest_entity[1]
         direction = ""
-        if direction_of_closet >= -50 and direction_of_closet <= 50:
-            direction = "right in front of me"
-        elif direction_of_closet < -50 and direction_of_closet >= -160:
-            direction = "on my right hand"
-        elif direction_of_closet > 50 and direction_of_closet < 160:
-            direction = "on my left hand"
+        entity_dist = self.get_distance(
+            closest_entity[2][0], 0, closest_entity[2][1], 0)
+        agent_dist = self.get_distance(
+            self.get_agent_pos()[0], 0, self.get_agent_pos()[1], 0)
+        if entity_dist > agent_dist:
+            if direction_of_closet >= -50 and direction_of_closet <= 50:
+                direction = "right in front of me"
+            elif direction_of_closet < -50 and direction_of_closet >= -160:
+                direction = "on my right hand"
+            elif direction_of_closet > 50 and direction_of_closet < 160:
+                direction = "on my left hand"
+            else:
+                print('asdf')
+                direction = f"I cannot see any {type}, maybe it's behind me"
         else:
-            direction = f"I cannot see any {type}, maybe it's behind me"
+            if direction_of_closet >= -50 and direction_of_closet <= 50:
+                direction = "I cannot see any {type}, maybe it's behind me"
+            elif direction_of_closet < -50 and direction_of_closet >= -160:
+                direction = "on my left hand"
+            elif direction_of_closet > 50 and direction_of_closet < 160:
+                direction = "on my right hand"
+            else:
+                print('qwer')
+                direction = f"right in front of me"
         return direction
 
     def get_direction_of_entity_relative_block(self, entity_type: str, block_type: str):
@@ -179,7 +195,7 @@ class CommandAction:
         '''
         cor1 = self.find_closest_entity_relative_to_block(
             block_type, entity_type)[2]
-        print('asdfasdfsa', cor1)
+        #print('asdfasdfsa', cor1)
         direction = ''
 
         if block_type == HOUSE:
@@ -188,7 +204,7 @@ class CommandAction:
             cor2 = LAKE
         else:  # Tree
             cor2 = [self.find_closest_block_relative_agent(block_type)]
-        print(cor2)
+        # print(cor2)
         #### Find direction ######
         if len(cor2) != 1:
             cor2_x1 = cor2[0][0]
@@ -197,12 +213,12 @@ class CommandAction:
             cor2_z2 = cor2[1][1]
             center_x = cor2_x1+(cor2_x2-cor2_x1)//2
             center_y = cor2_z1+(cor2_z2-cor2_z1)//2
-            print("center", center_x, center_y)
+            #print("center", center_x, center_y)
             # House or Lake
-            print(cor1[0] < center_x + 20)
-            print(cor1[0] > center_x - 20)
-            print(cor1[1] < center_y + 20)
-            print(cor1[1] > center_y - 20)
+            #print(cor1[0] < center_x + 20)
+            #print(cor1[0] > center_x - 20)
+            #print(cor1[1] < center_y + 20)
+            #print(cor1[1] > center_y - 20)
             if cor1[0] < center_x + 20 and cor1[0] > center_x - 20 and cor1[1] < center_y + 20 and cor1[1] > center_y - 20:
                 if cor1[1] > cor2_z2:
                     if cor1[0] > cor2_x2:
@@ -242,7 +258,7 @@ class CommandAction:
         output name of closest animal
         '''
         entity_list = self.get_entity_closest_relative_block(block_type)
-        print(entity_list)
+        # print(entity_list)
         count = 0
         result = []
         index = 0
@@ -252,3 +268,12 @@ class CommandAction:
                 count += 1
             index += 1
         return result
+
+    def find_animal_inside_house(self):
+        inside = []
+        entity_dict = self.get_entity_dict(HOUSE)
+        for key in entity_dict.keys():
+            for each in entity_dict[key]:
+                if each[2][0] > 30 and each[2][0] < 40 and each[2][1] > 30 and each[2][1] < 40:
+                    inside.append(key)
+        return " ".join(set(inside))

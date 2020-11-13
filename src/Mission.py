@@ -11,6 +11,9 @@ class Mission:
 
     def spawn_type(self, type_list):
         result_xml = ""
+        type = random.choice(type_list)
+        result_xml += "<DrawEntity x='37' y='5' z='38' type='{}'/>".format(
+            type)
         for _ in range(int(self._SIZE**2*self._DENSITY)):
             xd, zd = random.randint(
                 0, self._SIZE), random.randint(0, self._SIZE)
@@ -85,10 +88,11 @@ class Mission:
                 result_xml += f"<DrawBlock x='{x}'  y='3' z='{z}' type='water'/>"
         #result_xml += f"<DrawCuboid x1='{x1}' x2='{x2}' y1='3' y2='3' z1='{z1}' z2='{z2}' type='water'/>"
         # Draw stairs
-        result_xml += f"<DrawBlock x='{x1+3}'  y='3' z='{z1-1}' type='oak_stairs' face ='SOUTH'/>"
-        result_xml += f"<DrawBlock x='{x1+3}'  y='3' z='{z2+1}' type='oak_stairs' />"
-        result_xml += f"<DrawBlock x='{x1+4}'  y='3' z='{z1-1}' type='oak_stairs' face ='SOUTH'/>"
-        result_xml += f"<DrawBlock x='{x1+4}'  y='3' z='{z2+1}' type='oak_stairs' />"
+        for l in range(3, 5):
+            result_xml += f"<DrawBlock x='{x1+3}'  y='{l}' z='{z1-1}' type='oak_stairs' face ='SOUTH'/>"
+            result_xml += f"<DrawBlock x='{x1+3}'  y='{l}' z='{z2+1}' type='oak_stairs' />"
+            result_xml += f"<DrawBlock x='{x1+4}'  y='{l}' z='{z1-1}' type='oak_stairs' face ='SOUTH'/>"
+            result_xml += f"<DrawBlock x='{x1+4}'  y='{l}' z='{z2+1}' type='oak_stairs' />"
         # Draw bridge
         result_xml += f"<DrawCuboid x1='{x1+3}' x2='{x1+4}' y1='5' y2='5' z1='{z1}' z2='{z2}' type='wooden_slab'/>"
         # Draw flowers

@@ -1,37 +1,9 @@
-[18:23:44] [Client thread/INFO]: Setting user: Player349
-[18:23:51] [Client thread/WARN]: Skipping bad option: lastServer:
-[18:23:51] [Client thread/INFO]: LWJGL Version: 2.9.2
-[18:23:52] [Client thread/INFO]: [STDOUT]: MALMO: Attempting to transform MinecraftServer
-[18:23:52] [Client thread/INFO]: [STDOUT]: MALMO: Found GlStateManager, attempting to transform it
-[18:23:52] [Client thread/INFO]: [STDOUT]: MALMO: Found GlStateManager.bindTexture() method, attempting to transform it
-[18:23:52] [Client thread/INFO]: [STDOUT]: MALMO: Hooked into call to GlStateManager.bindTexture()
-[18:23:55] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Microsoft Malmo Mod
-[18:23:55] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
-[18:23:55] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
-[18:23:55] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
-[18:23:55] [Client thread/INFO]: [STDOUT]: Testing schemas against internal version number: 0.37
-[18:23:57] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[18:23:57] [Thread-6/INFO]: Initializing LWJGL OpenAL
-[18:23:57] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[18:23:57] [Thread-6/INFO]: OpenAL initialized.
-[18:23:58] [Sound Library Loader/INFO]: Sound engine started
-[18:24:01] [Client thread/INFO]: Created: 16x16 textures-atlas
-[18:24:02] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_MOD_READY
-[18:24:02] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Microsoft Malmo Mod
-[18:24:02] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
-[18:24:02] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
-[18:24:02] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
-[18:24:03] [Client thread/INFO]: SoundSystem shutting down...
-[18:24:03] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
-[18:24:03] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[18:24:03] [Thread-8/INFO]: Initializing LWJGL OpenAL
-[18:24:03] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[18:24:03] [Thread-8/INFO]: OpenAL initialized.
-[18:24:04] [Sound Library Loader/INFO]: Sound engine started
-[18:24:05] [Client thread/INFO]: Created: 512x512 textures-atlas
-[18:24:07] [Client thread/WARN]: Skipping bad option: lastServer:
-[18:24:07] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_MOD_READY
-[18:24:07] [Thread-10/INFO]: [STDOUT]: INFO: ->mcp(0) Listening for messages on port 10000
-[18:24:07] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
-[18:24:07] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
-[18:24:08] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[19:19:25] [Client thread/INFO]: Stopping!
+[19:19:25] [Server thread/INFO]: Stopping server
+[19:19:25] [Server thread/INFO]: Saving players
+[19:19:25] [Server thread/INFO]: Saving worlds
+[19:19:25] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_dec422f5-b38a-460a-81b7-b11cf17eced5'/Overworld
+[19:19:26] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_dec422f5-b38a-460a-81b7-b11cf17eced5'/Nether
+[19:19:26] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_dec422f5-b38a-460a-81b7-b11cf17eced5'/The End
+[19:19:26] [Client thread/INFO]: SoundSystem shutting down...
+[19:19:26] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
