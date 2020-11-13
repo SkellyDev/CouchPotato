@@ -28,7 +28,7 @@ Evaluation will be divided into two parts based on our project stages (1) check 
 <br> In order to check the information accuracy returned from our environement describing function, we mainly use the black box testing technique and manually test our function by giving multiple inputs and comparing output with expected output.
 <br> To check DNN model accuracy, we see the accuracy rate returned from our trained DNN model. (Figure 2)
 
-<p><img src="assets/accuracy_graph.png" width="650" alt/><em>Figure 2: NN model accuracy</em></p>
+<p><img src="assets/accuracy_graph.png" width="650" alt/><em>Figure 2: DNN model accuracy</em></p>
 
 ## Remaining Goals and Challenges
 
