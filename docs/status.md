@@ -32,11 +32,16 @@ Evaluation will be divided into two parts based on our project stages (1) check 
 
 ## Remaining Goals and Challenges
 
-(1) Improve the flexibility of entity types ()
+(1) Improve the flexibility of entity types
+<br>Fow now, our model only support animal types "Pig", "Cow" and "Sheep" for all entity types; later on, we will add flower types and mushroom types, so that we will implement new questions like "What's the color of the flower in front of you" and "How many red flowers are planted aroung the lake".
 <br> (2) Create new envrionment describing functions (Current only includes “what” and “where” questions)
+<br>Currently, we only have questions and answers to the "what entity" and "relative position" questions; we plan to enrich those answers with more features constructed in our map, like "standing on the grass", "standing on the hill" and "standing under the tree". Also, we are going to include more questions or elements on describing textures of the architects. (e.g. "What's the house made of?" will get response "It's made of golden ores".)
 <br> (3) Allow users to combine several commands in one input, seperated in sentences.
+<br> This is also one of our challenges which intend to add up or merge several answers together, so that users can ask several different things in one question seperated by "and", commas or semicolons. (e.g. What is the closest animal relative to house and what is that house made of?)
 <br> (4) Enable real action functions (e.g. Ask the agent to go to a certain location [front of the house, swim in the lake…], implementing shortest path function)
+<br>Our goal is that wherever the agent is standing in the map, when user commands our agent to go to somewhere, the agent will always find the shortest and fastest (Avoid walking in the lake) path to the target location. Based on the data structure's size and run time, we may change the algorithm for the shortest path fucntion.
 <br> (5) Enable input-based command options, so that users don’t need to pause the game
+<br> Right now, everytime when we want to input the command, we will need to press "ESC" to leave the game and then resume the game to change our agent's current location. If we could implement commands for totally manipulating the agent, users will not need to pause the game.
 
 ## Resources Used
 
