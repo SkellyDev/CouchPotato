@@ -104,16 +104,16 @@ class CommandParse:
         ops.reset_default_graph()
 
         net = tflearn.input_data(shape=[None, len(training[0])])
-        net = tflearn.fully_connected(net, 6)
-        net = tflearn.fully_connected(net, 6)
+        net = tflearn.fully_connected(net, 5)
+        net = tflearn.fully_connected(net, 5)
         net = tflearn.fully_connected(
             net, len(output[0]), activation="softmax")
         net = tflearn.regression(net)
 
-        model = tflearn.DNN(net)
+        model = tflearn.DNN(net, tensorboard_verbose=3)
 
         model.fit(training, output, n_epoch=1000,
-                  batch_size=6, show_metric=True)
+                  batch_size=5, show_metric=True)
         model.save("model.tflearn")
         return model
 

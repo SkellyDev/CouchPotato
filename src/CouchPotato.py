@@ -76,6 +76,7 @@ words = CP.get_words()
 labels = CP.get_labels()
 
 model.load("model.tflearn")
+
 ##### Model build finished ####
 
 
