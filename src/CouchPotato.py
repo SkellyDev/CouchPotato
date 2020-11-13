@@ -19,6 +19,7 @@ from numpy.random import randint
 from Mission import Mission
 from CommandParse import CommandParse
 from CommandAction import CommandAction
+from CommandTagger import CommandTagger
 
 TREE_LST = [(7, 13), (43, 17), (38, 11), (7, 50)]
 HOUSE = [(30, 30), (40, 40)]
@@ -69,10 +70,11 @@ while not world_state.has_mission_begun:
 
 action_index = 0
 CP = CommandParse("")
-CP.save_model()
+model = CP.save_model()
+
 words = CP.get_words()
 labels = CP.get_labels()
-model = CP.save_model()
+
 model.load("model.tflearn")
 ##### Model build finished ####
 
@@ -106,6 +108,34 @@ while world_state.is_mission_running:
     tag = CP.return_tag(model, words, labels)
 
     print(tag)
+    action_class = CommandAction(agent_host)
+
+    if tag == 'find_closest_animal':
+        CT = CommandTagger(user_command)
+        block = CT.get_full_tag_list(tag)
+
+        animal = action_class.find_closest_animal(block)
+        print(animal)
+
+    elif tag == 'get_direction_of_entity_relative_agent':
+        CT = CommandTagger(user_command)
+        animal = CT.get_full_tag_list(tag)
+
+        direction = action_class.get_direction_of_entity_relative_agent(animal)
+        print(direction)
+
+    elif tag == 'get_direction_of_entity_relative_block':
+        CT = CommandTagger(user_command)
+        animal, block = CT.get_full_tag_list(tag)
+        print(animal, block)
+        direction = action_class.get_direction_of_entity_relative_block(
+            animal, block)
+        print(direction)
+
+    elif tag == 'find_animal_inside_house':
+
+        animal = action_class.find_animal_inside_house()
+        print(animal)
 
     '''
 
@@ -124,7 +154,7 @@ while world_state.is_mission_running:
         animal = action_class.find_closest_animal("agent")
         print(''.join(animal))
 
-    elif final_command == "What is the animal around house?":
+    elif final_command == "What is the closest animal around house?":
         # where is the direction of closest sheep
         animal = action_class.find_closest_animal(HOUSE)
         print("The closet animal around house is ", ''.join(animal))
