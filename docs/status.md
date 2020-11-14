@@ -5,7 +5,7 @@ title: Status
 
 # Couch Potato
 
-<iframe width="580" src="https://www.youtube.com/embed/xQtStXg-zQg" frameborder="0" allowfullscreen></iframe>
+<iframe width="580" height="325" src="https://www.youtube.com/embed/xQtStXg-zQg" frameborder="0" allowfullscreen></iframe>
 
 ## Project Summary
 
