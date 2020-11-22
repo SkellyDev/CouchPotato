@@ -79,7 +79,7 @@ model.load("model.tflearn")
 
 ##### Model build finished ####
 
-
+print("Usage: Type any question or 'Perform action' to move and 'Finish' to stop.")
 while world_state.is_mission_running:
 
     time.sleep(0.1)
@@ -91,94 +91,77 @@ while world_state.is_mission_running:
     for error in world_state.errors:
         print("Error:", error.text)
 
-    # parse
-    '''
-    print("""
-        User input Manual:\n
-        Move foward: 'movenorth 1'\n
-        Move backward: 'movesouth 1'\n
-        Move left: 'movewest 1'\n
-        Move right: 'moveeast 1'
-        """)
-    '''
-
     user_command = input("Ask your question: ")
     if user_command.lower() == "quit":
         break
-    CP = CommandParse(user_command)
-    tag = CP.return_tag(model, words, labels)
+    if user_command == "Perform action":
+        while user_command == "Perform action":
+            print('''Action command usage:
+            1)Move forward: "move {#steps}"
+            2)Move backward: "move -{#steps}"
+            3)Turn right: "turn 1"
+            4)Turn left: "turn -1"''')
+            move_command = input("Give your move command: ")
 
-    print("question tag is this=========", tag)
-    action_class = CommandAction(agent_host)
+            if move_command.startswith('move'):
+                step = int(move_command.split(' ')[1])
+                print(step)
+                if step > 0:
+                    for i in range(abs(step)):
+                        print(i)
+                        agent_host.sendCommand('move 1')
+                        time.sleep(0.3)
+                        agent_host.sendCommand('move 0')
+                else:
+                    for i in range(abs(step)):
+                        print(i)
+                        agent_host.sendCommand('move -1')
+                        time.sleep(0.3)
+                        agent_host.sendCommand('move 0')
 
-    if tag == 'find_closest_animal':
-        CT = CommandTagger(user_command)
-        block = CT.get_full_tag_list(tag)
+            elif move_command in ['turn 1', 'turn -1']:
+                agent_host.sendCommand(move_command)
+                time.sleep(0.3)
+                agent_host.sendCommand('turn 0')
 
-        animal = action_class.find_closest_animal(block)
-        print(animal)
+            elif move_command == 'Finish':
+                break
+            else:
+                print('Invalid move command')
+    else:
+        # Get question tag returned from NN model
+        CP = CommandParse(user_command)
+        tag = CP.return_tag(model, words, labels)
+        print("question tag is this ========= ", tag)
 
-    elif tag == 'get_direction_of_entity_relative_agent':
-        CT = CommandTagger(user_command)
-        animal = CT.get_full_tag_list(tag)
+        # Match Command with correct describing function
+        action_class = CommandAction(agent_host)
+        action_class.get_grid_from_observation()
 
-        direction = action_class.get_direction_of_entity_relative_agent(animal)
-        print(direction)
+        if tag == 'find_closest_animal':
+            CT = CommandTagger(user_command)
+            block = CT.get_full_tag_list(tag)
+            animal = action_class.find_closest_animal(block)
+            print(f"The closest animal near {block} is {animal}")
 
-    elif tag == 'get_direction_of_entity_relative_block':
-        CT = CommandTagger(user_command)
-        animal, block = CT.get_full_tag_list(tag)
-        print("animal,block here =====", animal, block)
+        elif tag == 'get_direction_of_entity_relative_agent':
+            CT = CommandTagger(user_command)
+            animal = CT.get_full_tag_list(tag)
+            direction = action_class.get_direction_of_entity_relative_agent(
+                animal)
+            print(f"The closest {animal} is {direction}")
 
-        direction = action_class.get_direction_of_entity_relative_block(
-            animal, block)
-        print("direction here ===", direction)
+        elif tag == 'get_direction_of_entity_relative_block':
+            CT = CommandTagger(user_command)
+            animal, block = CT.get_full_tag_list(tag)
+            direction = action_class.get_direction_of_entity_relative_block(
+                animal, block)
+            print(
+                f"The cloest {animal} is on {direction} relative to the {block}")
 
-    elif tag == 'find_animal_inside_house':
+        elif tag == 'find_animal_inside_house':
+            animal = action_class.find_animal_inside_house()
+            print(f"I can see {animal} in the house")
 
-        animal = action_class.find_animal_inside_house()
-        print(animal)
-
-    '''
-
-    action_class = CommandAction(agent_host)
-    # Find animals in closest(in front of, next to...)
-    # What is the closest entity (relative to agent)? ✅
-    # Where is the closest (entity) (relative to agent) ?
-    # Where is the (entity A) relative to (Block B)?  拿到block坐标，找离他最近的block，方向
-    # How many (entity/Block) can you see? question: min max observationfromgrid
-    # What is the clostest entity relative to a (Block)?
-    # Which animal is inside the house?
-
-    if final_command == "What is the closest animal around you?":
-        # call correct action function
-        # could add num parameter as return quantity
-        animal = action_class.find_closest_animal("agent")
-        print(''.join(animal))
-
-    elif final_command == "What is the closest animal around house?":
-        # where is the direction of closest sheep
-        animal = action_class.find_closest_animal(HOUSE)
-        print("The closet animal around house is ", ''.join(animal))
-
-    elif final_command == "Where is closest sheep around you?":
-        direction = action_class.get_direction_of_entity_relative_agent(
-            "Sheep")
-        print("The closest sheep around you is in", direction)
-
-    elif final_command == "Where is closest sheep around house?":
-        direction = action_class.get_direction_of_entity_relative_block(
-            "Sheep", HOUSE)
-        print("The cloeset sheep around you is in", direction)
-
-    elif final_command == "Which animal is inside the house?":
-        animal = action_class.find_animal_inside_house()
-        print("The animal inside house is ", animal)
-
-    elif user_command in ['move 1', 'move 0', 'turn 1', 'turn -1']:
-        agent_host.sendCommand(user_command)
-        time.sleep(0.2)
-        agent_host.sendCommand('move 0')
-
-        print("finished")
-    '''
+        elif tag == 'describe_environment':
+            print(action_class.describe_agent_location())

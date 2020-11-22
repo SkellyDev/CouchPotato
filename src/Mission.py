@@ -178,8 +178,8 @@ class Mission:
                 </ObservationFromNearbyEntities>
                 <ObservationFromGrid>
                     <Grid name="ground_layer">
-                        <min x="-30" y="-1" z="-30"/>
-                        <max x="30" y="-1" z="30"/>
+                        <min x="-1" y="-1" z="-1"/>
+                        <max x="1" y="-1" z="1"/>
                     </Grid>
                 </ObservationFromGrid>
                     <ContinuousMovementCommands turnSpeedDegs="180"/>

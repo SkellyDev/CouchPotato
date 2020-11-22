@@ -60,6 +60,14 @@
         "Which kind of animals are inside the house?",
         "Tell me animals which inside the house."
       ]
+    },
+    {
+      "tag": "describe_environment",
+      "patterns": [
+        "Describe your surrounding",
+        "Tell me what you can see",
+        "Describe the environment"
+      ]
     }
   ]
 }

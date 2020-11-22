@@ -17,6 +17,8 @@ import numpy as np
 # Where is the (entity A) relative to (Block B)?  拿到block坐标，找离他最近的block，方向
 # How many (entity/Block) can you see? question: min max observationfromgrid
 # What is the clostest entity relative to a (Block)?
+# ------- after status -------
+# Where are you? / Describe your location
 
 #### GLOABL #####
 TREE_LIST = [(7, 13), (43, 17), (38, 11), (7, 50)]
@@ -47,7 +49,6 @@ class CommandAction:
             msg = self.world_state.observations[-1].text
             observations = json.loads(msg)
             grid = observations.get(u'ground_layer', 0)
-        # print(grid)
         return grid
 
     def get_agent_pos(self):
@@ -276,3 +277,21 @@ class CommandAction:
                 if each[2][0] > 30 and each[2][0] < 40 and each[2][1] > 30 and each[2][1] < 40:
                     inside.append(key)
         return " ".join(set(inside))
+
+    def describe_agent_location(self):
+        ground = self.get_grid_from_observation()
+        agent_x, agent_z = self.get_agent_pos()
+
+        stand = ""
+        if ground[1] == "grass":
+            stand = "on the grass"
+        elif ground[1] == "sand":
+            stand = "inside the house"
+        elif ground[1] == "water":
+            stand = "in the water"
+
+        entity = self.find_closest_animal("agent", 3)
+        entity = ",".join(entity)
+
+        result = f"I am standing {stand}, and I can see there are {entity} near me"
+        return result
