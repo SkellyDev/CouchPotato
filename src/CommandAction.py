@@ -139,7 +139,6 @@ class CommandAction:
 
     def find_closest_entity_relative_to_block(self, block_type, entity_type: str):
         '''
-        根据agent/block找最近的entity 
         Find the closest entity(type) relative to agent
         input: an entity type : string
         output: a list [distance, angle, coord] of closest entity(type)
@@ -175,17 +174,17 @@ class CommandAction:
             elif direction_of_closet > 50 and direction_of_closet < 160:
                 direction = "on my left hand"
             else:
-                print('asdf')
+
                 direction = f"I cannot see any {type}, maybe it's behind me"
         else:
             if direction_of_closet >= -50 and direction_of_closet <= 50:
-                direction = "I cannot see any {type}, maybe it's behind me"
+                direction = f"I cannot see any {type}, maybe it's behind me"
             elif direction_of_closet < -50 and direction_of_closet >= -160:
                 direction = "on my left hand"
             elif direction_of_closet > 50 and direction_of_closet < 160:
                 direction = "on my right hand"
             else:
-                print('qwer')
+
                 direction = f"right in front of me"
         return direction
 

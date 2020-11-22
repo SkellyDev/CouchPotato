@@ -18,6 +18,8 @@
       "tag": "find_closest_animal",
       "patterns": [
         "What is the closest animal around you?",
+        "What is the closest animal around the house?",
+        "What is the closest animal around the lake?",
         "Tell me the closest animal.",
         "What is the nearest animal?",
         "Tell me the nearest animal.",
@@ -39,6 +41,8 @@
         "Where is the closest sheep around a house?",
         "Tell me where is the closest pig near the lake.",
         "Where is the closest cow around the house?",
+        "Where is the closest sheep around the house?",
+        "Where is the closest pig around the house?",
         "Tell me the location of the closest pig near the lake.",
         "Where is the closest pig around the tree?",
         "Tell me the location of the closest cow around the tree."

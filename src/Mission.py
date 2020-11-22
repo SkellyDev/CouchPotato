@@ -7,7 +7,7 @@ import random
 class Mission:
     def __init__(self):
         self._SIZE = 60
-        self._DENSITY = 0.001
+        self._DENSITY = 0.003
 
     def spawn_type(self, type_list):
         result_xml = ""
