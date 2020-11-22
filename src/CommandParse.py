@@ -3,17 +3,16 @@ This is a script for parsing command
 and pass it as input for action script
 to call correct method
 '''
+from nltk.stem.lancaster import LancasterStemmer
+import pickle
+import tflearn
+from tensorflow.python.framework import ops
+import random
+import numpy
 import json
 import nltk
-import numpy
-import random
-from tensorflow.python.framework import ops
-import tflearn
-import pickle
-
-from nltk.stem.lancaster import LancasterStemmer
-
 nltk.download('punkt')
+
 stemmer = LancasterStemmer()
 
 

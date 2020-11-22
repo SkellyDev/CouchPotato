@@ -35,6 +35,7 @@ class CommandTagger:
                         return 'Sheep'
                     else:
                         return 'Pig'
+        
         elif func == 'get_direction_of_entity_relative_block':
             animal = ""
             block = ""

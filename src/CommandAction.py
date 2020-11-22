@@ -179,7 +179,7 @@ class CommandAction:
                 direction = f"I cannot see any {type}, maybe it's behind me"
         else:
             if direction_of_closet >= -50 and direction_of_closet <= 50:
-                direction = "I cannot see any {type}, maybe it's behind me"
+                direction = f"I cannot see any {type}, maybe it's behind me"
             elif direction_of_closet < -50 and direction_of_closet >= -160:
                 direction = "on my left hand"
             elif direction_of_closet > 50 and direction_of_closet < 160:

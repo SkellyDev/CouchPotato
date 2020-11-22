@@ -108,7 +108,7 @@ while world_state.is_mission_running:
     CP = CommandParse(user_command)
     tag = CP.return_tag(model, words, labels)
 
-    print(tag)
+    print("question tag is this=========", tag)
     action_class = CommandAction(agent_host)
 
     if tag == 'find_closest_animal':
@@ -128,10 +128,11 @@ while world_state.is_mission_running:
     elif tag == 'get_direction_of_entity_relative_block':
         CT = CommandTagger(user_command)
         animal, block = CT.get_full_tag_list(tag)
-        print(animal, block)
+        print("animal,block here =====", animal, block)
+
         direction = action_class.get_direction_of_entity_relative_block(
             animal, block)
-        print(direction)
+        print("direction here ===", direction)
 
     elif tag == 'find_animal_inside_house':
 
