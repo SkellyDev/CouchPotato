@@ -20,6 +20,10 @@ import numpy as np
 # ------- after status -------
 # Where are you? / Describe your location
 
+#direction, nearest, color,
+# train model to have multiple tags?
+
+
 #### GLOABL #####
 TREE_LIST = [(7, 13), (43, 17), (38, 11), (7, 50)]
 HOUSE = [(30, 30), (40, 40)]
@@ -42,6 +46,7 @@ class CommandAction:
     def get_observation(self):
         lastest_world = self.get_latest_world()
         observation = json.loads(lastest_world.observations[-1].text)
+        print(observation)
         return observation
 
     def get_grid_from_observation(self):

@@ -130,18 +130,18 @@ while world_state.is_mission_running:
                 print('Invalid move command')
     else:
         # Get question tag returned from NN model
-        CP = CommandParse(user_command)
-        tag = CP.return_tag(model, words, labels)
-        print("question tag is this ========= ", tag)
+        #CP = CommandParse(user_command)
+        #tag = CP.return_tag(model, words, labels)
+        #print("question tag is this ========= ", tag)
 
         # Match Command with correct describing function
         action_class = CommandAction(agent_host)
-        action_class.get_grid_from_observation()
-
+        action_class.get_observation()
+        '''
         if tag == 'find_closest_animal':
             CT = CommandTagger(user_command)
             block = CT.get_full_tag_list(tag)
-            animal = action_class.find_closest_animal(block)
+            animal = action_class.nearest(block)
             print(f"The closest animal near {block} is {animal}")
 
         elif tag == 'get_direction_of_entity_relative_agent':
@@ -165,3 +165,4 @@ while world_state.is_mission_running:
 
         elif tag == 'describe_environment':
             print(action_class.describe_agent_location())
+        '''
