@@ -12,11 +12,7 @@
     },
     {
       "tag": "goodbye",
-      "patterns": [
-        "Bye.",
-        "See you later.",
-        "Goodbye."
-      ]
+      "patterns": ["Bye.", "See you later.", "Goodbye."]
     },
     {
       "tag": "find_closest_animal",
@@ -54,8 +50,9 @@
       ]
     },
     {
-      "tag": "find_animal_inside_house",
+      "tag": "find_animal_inside_block",
       "patterns": [
+        "What animal can you see inside the lake?",
         "What animal can you see inside the house?",
         "Which kind of animals are inside the house?",
         "Tell me animals which inside the house."
@@ -64,9 +61,20 @@
     {
       "tag": "describe_environment",
       "patterns": [
-        "Describe your surrounding",
-        "Tell me what you can see",
-        "Describe the environment"
+        "Describe your surrounding.",
+        "Tell me what you can see.",
+        "Describe the environment."
+      ]
+    },
+    {
+      "tag": "count_quantity",
+      "patterns": [
+        "Count pigs in the house",
+        "Count cows in the lake",
+        "How many sheeps are inside lake",
+        "How many cows are inside the house",
+        "How many animals are inside the house",
+        "Count animals in the lake"
       ]
     }
   ]

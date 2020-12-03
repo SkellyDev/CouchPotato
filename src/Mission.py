@@ -11,9 +11,6 @@ class Mission:
 
     def spawn_type(self, type_list):
         result_xml = ""
-        type = random.choice(type_list)
-        result_xml += "<DrawEntity x='37' y='5' z='38' type='{}'/>".format(
-            type)
         for _ in range(int(self._SIZE**2*self._DENSITY)):
             xd, zd = random.randint(
                 0, self._SIZE), random.randint(0, self._SIZE)
@@ -47,12 +44,16 @@ class Mission:
         # Draw wall
         for l in range(4, 8):
             for i in range(x1, x2+1):
-                if i != (x1+x2)//2 and i != (x1+x2)//2+1:
+                if i not in range((x1+x2)//2-3, (x1+x2)//2+3):
                     result_xml += f"<DrawBlock x='{i}'  y='{l}' z='{z1}' type='gold_ore' />"
                 result_xml += f"<DrawBlock x='{i}'  y='{l}' z='{z2}' type='gold_ore' />"
             for j in range(z1, z2+1):
                 result_xml += f"<DrawBlock x='{x1}'  y='{l}' z='{j}' type='gold_ore' />"
                 result_xml += f"<DrawBlock x='{x2}'  y='{l}' z='{j}' type='gold_ore' />"
+        # Draw fence
+        for i in range(x1, x2+1):
+            if i in range((x1+x2)//2-3, (x1+x2)//2+3):
+                result_xml += f"<DrawBlock x='{i}'  y='4' z='{z1}' type='dark_oak_fence' />"
         # Draw roof
         for i in range(x1, x2+1):
             result_xml += f"<DrawBlock x='{i}'  y='9' z='{z1}' type='oak_stairs' />"
@@ -65,7 +66,13 @@ class Mission:
         result_xml += f"<DrawBlock x='{x2-1}'  y='4' z='{z2-1}' type='torch' />"
         result_xml += f"<DrawBlock x='{x1+1}'  y='4' z='{z1+1}' type='torch' />"
         result_xml += f"<DrawBlock x='{x2-1}'  y='4' z='{z1+1}' type='torch' />"
-
+        # Draw animal
+        num = 4
+        for i in range(num):
+            x = random.randint(x1+1, x2-1)
+            z = random.randint(z1+1, z2-1)
+            type = random.choice(['Pig', 'Cow', 'Sheep'])
+            result_xml += f"<DrawEntity x='{x}' y='4' z='{z}' type='{type}'/>"
         return result_xml
 
     def draw_wall(self, x1, x2, z1, z2):
@@ -86,6 +93,7 @@ class Mission:
         for x in range(x1, x2+1):
             for z in range(z1, z2+1):
                 result_xml += f"<DrawBlock x='{x}'  y='3' z='{z}' type='water'/>"
+                result_xml += f"<DrawBlock x='{x}'  y='2' z='{z}' type='water'/>"
         #result_xml += f"<DrawCuboid x1='{x1}' x2='{x2}' y1='3' y2='3' z1='{z1}' z2='{z2}' type='water'/>"
         # Draw stairs
         for l in range(3, 5):
@@ -131,7 +139,13 @@ class Mission:
                 zd2 = random.randint(z1-1, z2+1)
             result_xml += f"<DrawBlock x='{x2+1}'  y='4' z='{zd2}' type='{random.choice(flower_list)}' />"
             zd_list2.append(zd2)
-
+        # Draw fish
+        fish_num = 4
+        for i in range(fish_num):
+            x = random.randint(x1+1, x2-1)
+            z = random.randint(z1+1, z2-1)
+            type = random.choice(['Pig', 'Cow', 'Sheep'])
+            result_xml += f"<DrawEntity x='{x}' y='3' z='{z}' type='{type}'/>"
         return result_xml
 
     def GetMission(self):
@@ -158,8 +172,7 @@ class Mission:
                 <DrawingDecorator>''' +  \
             "<DrawCuboid x1='{}' x2='{}' y1='3' y2='3' z1='{}' z2='{}' type='grass'/>".format(0, self._SIZE, 0, self._SIZE) + \
             self.spawn_type(['Pig', 'Cow', 'Sheep']) + self.draw_wall(0, self._SIZE, 0, self._SIZE) + self.draw_house(30, 40, 30, 40) + self.draw_tree(20, 41) + \
-            self.draw_tree(7, 13) + self.draw_tree(43, 17) + self.draw_tree(38, 11) + self.draw_tree(7, 50) + \
-            self.draw_lake(15, 25, 10, 20) + \
+            self.draw_tree(7, 13) + self.draw_tree(43, 17) + self.draw_tree(38, 11) + self.draw_tree(7, 50) + self.draw_lake(15, 25, 10, 20) + \
             '''</DrawingDecorator>
                 <ServerQuitWhenAnyAgentFinishes/>
             </ServerHandlers>

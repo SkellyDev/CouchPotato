@@ -35,7 +35,6 @@ class CommandTagger:
                         return 'Sheep'
                     else:
                         return 'Pig'
-        
         elif func == 'get_direction_of_entity_relative_block':
             animal = ""
             block = ""
@@ -55,6 +54,37 @@ class CommandTagger:
                         animal = 'Sheep'
                     else:
                         animal = 'Pig'
+            return animal, block
+        elif func == 'find_animal_inside_block':
+            block = ""
+            for i in tags:
+                nn = i[0].lower()
+                if i[1] == 'NN' and nn in ['house', 'lake']:
+                    if nn == 'house':
+                        block = 'house'
+                    elif nn == 'lake':
+                        block = 'lake'
+            return block
+        elif func == 'count_quantity':
+            block = ""
+            animal = ""
+            block = ""
+            for i in tags:
+                nn = i[0].lower()
+                if i[1] == 'NN' and nn in ['house', 'lake']:
+                    if nn == 'house':
+                        block = 'house'
+                    elif nn == 'lake':
+                        block = 'lake'
+                if i[1] == 'NNS' and nn in ['cows', 'sheeps', 'pigs', 'animals']:
+                    if nn == 'cows':
+                        animal = 'Cow'
+                    elif nn == 'sheeps':
+                        animal = 'Sheep'
+                    elif nn == 'pigs':
+                        animal = 'Pig'
+                    else:
+                        animal = nn
             return animal, block
         else:
             pass

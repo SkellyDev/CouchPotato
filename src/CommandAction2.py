@@ -77,7 +77,7 @@ class CommandAction:
         '''
         根据agent找最近的block
         Find the closest block(e.g. tree) relative to agent
-        input: a block type --- list of tuple 
+        input: a block type --- list of tuple
         output: the cloest block coordinate --- tuple
         '''
         if block_type == TREE_LIST:
@@ -161,3 +161,18 @@ class CommandAction:
                 count += 1
             index += 1
         return result
+
+        def direction(self, original, target):
+            '''
+             purpose: use to find the direction of one object relative to another object
+             input: original---"agent"/block  target---"agent"/block/entity
+             output: direction string
+             Assume agent <--- block/entity; block <--- "agent"/block/entity
+             '''
+               if original == "agent":
+                    agent_pos = self.get_agent_pos()
+                    if target in ['Pig', 'Cow', 'Sheep']:
+
+                    else:  # block
+
+                else if type(original) == list:

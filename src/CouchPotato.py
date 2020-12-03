@@ -130,18 +130,18 @@ while world_state.is_mission_running:
                 print('Invalid move command')
     else:
         # Get question tag returned from NN model
-        #CP = CommandParse(user_command)
-        #tag = CP.return_tag(model, words, labels)
-        #print("question tag is this ========= ", tag)
+        CP = CommandParse(user_command)
+        tag = CP.return_tag(model, words, labels)
+        print("question tag is this ========= ", tag)
 
         # Match Command with correct describing function
         action_class = CommandAction(agent_host)
         action_class.get_observation()
-        '''
+
         if tag == 'find_closest_animal':
             CT = CommandTagger(user_command)
             block = CT.get_full_tag_list(tag)
-            animal = action_class.nearest(block)
+            animal = action_class.find_closest_animal(block)
             print(f"The closest animal near {block} is {animal}")
 
         elif tag == 'get_direction_of_entity_relative_agent':
@@ -159,10 +159,19 @@ while world_state.is_mission_running:
             print(
                 f"The cloest {animal} is on {direction} relative to the {block}")
 
-        elif tag == 'find_animal_inside_house':
-            animal = action_class.find_animal_inside_house()
-            print(f"I can see {animal} in the house")
+        elif tag == 'find_animal_inside_block':
+            CT = CommandTagger(user_command)
+            block = CT.get_full_tag_list(tag)
+            animal = action_class.find_animal_inside_block(block)
+            animal = list(set(animal))
+            animal_result = " ".join(set(animal))
+            print(f"I can see {animal_result} inside the {block}")
+
+        elif tag == 'count_quantity':
+            CT = CommandTagger(user_command)
+            animal, block = CT.get_full_tag_list(tag)
+            num = action_class.count_quantity(animal, block)
+            print(f"There are {num} {animal} inside the {block}.")
 
         elif tag == 'describe_environment':
             print(action_class.describe_agent_location())
-        '''

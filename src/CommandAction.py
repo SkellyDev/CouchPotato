@@ -46,7 +46,6 @@ class CommandAction:
     def get_observation(self):
         lastest_world = self.get_latest_world()
         observation = json.loads(lastest_world.observations[-1].text)
-        print(observation)
         return observation
 
     def get_grid_from_observation(self):
@@ -274,14 +273,30 @@ class CommandAction:
             index += 1
         return result
 
-    def find_animal_inside_house(self):
+    def find_animal_inside_block(self, block):
         inside = []
-        entity_dict = self.get_entity_dict(HOUSE)
+        if block == "house":
+            block = HOUSE
+        elif block == "lake":
+            block = LAKE
+        entity_dict = self.get_entity_dict(block)
+        x1 = block[0][0]
+        x2 = block[1][0]
+        z1 = block[0][1]
+        z2 = block[1][1]
         for key in entity_dict.keys():
             for each in entity_dict[key]:
-                if each[2][0] > 30 and each[2][0] < 40 and each[2][1] > 30 and each[2][1] < 40:
+                if each[2][0] > x1 and each[2][0] < x2 and each[2][1] > z1 and each[2][1] < z2:
                     inside.append(key)
-        return " ".join(set(inside))
+        return inside
+
+    def count_quantity(self, animal, block):
+        inside = self.find_animal_inside_block(block)
+        if animal != 'animals':
+            num = inside.count(animal)
+        else:
+            num = len(inside)
+        return num
 
     def describe_agent_location(self):
         ground = self.get_grid_from_observation()
