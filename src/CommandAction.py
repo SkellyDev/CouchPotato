@@ -157,103 +157,85 @@ class CommandAction:
 
     ####### --------------------------- ACTION FUNCTION ------------------------------------- #############
 
-    def get_direction_of_entity_relative_agent(self, type):
+    def get_direction_of_entity_relative(self, entity_type, target):
         '''
-        Get the direction of entity correlated to where agent face
+        Get the direction of entity correlated to the agent or an architect
         '''
-        agent_yaw = self.observation['Yaw']
         closest_entity = self.find_closest_entity_relative_to_block(
-            "agent", type)
-
-        direction_of_closet = agent_yaw-closest_entity[1]
+            target, entity_type)
         direction = ""
-        entity_dist = self.get_distance(
-            closest_entity[2][0], 0, closest_entity[2][1], 0)
-        agent_dist = self.get_distance(
-            self.get_agent_pos()[0], 0, self.get_agent_pos()[1], 0)
-        if entity_dist > agent_dist:
-            if direction_of_closet >= -50 and direction_of_closet <= 50:
-                direction = "right in front of me"
-            elif direction_of_closet < -50 and direction_of_closet >= -160:
-                direction = "on my right hand"
-            elif direction_of_closet > 50 and direction_of_closet < 160:
-                direction = "on my left hand"
-            else:
-
-                direction = f"I cannot see any {type}, maybe it's behind me"
-        else:
-            if direction_of_closet >= -50 and direction_of_closet <= 50:
-                direction = f"I cannot see any {type}, maybe it's behind me"
-            elif direction_of_closet < -50 and direction_of_closet >= -160:
-                direction = "on my left hand"
-            elif direction_of_closet > 50 and direction_of_closet < 160:
-                direction = "on my right hand"
-            else:
-
-                direction = f"right in front of me"
-        return direction
-
-    def get_direction_of_entity_relative_block(self, entity_type: str, block_type: str):
-        '''
-        Get the direction of entity correlated to an architect
-        '''
-        cor1 = self.find_closest_entity_relative_to_block(
-            block_type, entity_type)[2]
-        #print('asdfasdfsa', cor1)
-        direction = ''
-
-        if block_type == HOUSE:
-            cor2 = HOUSE
-        elif block_type == LAKE:
-            cor2 = LAKE
-        else:  # Tree
-            cor2 = [self.find_closest_block_relative_agent(block_type)]
-        # print(cor2)
-        #### Find direction ######
-        if len(cor2) != 1:
-            cor2_x1 = cor2[0][0]
-            cor2_z1 = cor2[0][1]
-            cor2_x2 = cor2[1][0]
-            cor2_z2 = cor2[1][1]
-            center_x = cor2_x1+(cor2_x2-cor2_x1)//2
-            center_y = cor2_z1+(cor2_z2-cor2_z1)//2
-            #print("center", center_x, center_y)
-            # House or Lake
-            #print(cor1[0] < center_x + 20)
-            #print(cor1[0] > center_x - 20)
-            #print(cor1[1] < center_y + 20)
-            #print(cor1[1] > center_y - 20)
-            if cor1[0] < center_x + 20 and cor1[0] > center_x - 20 and cor1[1] < center_y + 20 and cor1[1] > center_y - 20:
-                if cor1[1] > cor2_z2:
-                    if cor1[0] > cor2_x2:
-                        direction = "Top left corner"
-                    elif cor1[0] > cor2_x1 and cor1[0] < cor2_x2:
-                        direction = "Behind"
-                    else:
-                        direction = "Top right corner"
-                elif cor1[1] > cor2_z1 and cor1[1] < cor2_z2:
-                    if cor1[0] > cor2_x2:
-                        direction = "Left"
-                    elif cor1[0] > cor2_x1 and cor1[0] < cor2_x2:
-                        direction = "inside"
-                    else:
-                        direction = "Right"
+        if target == "agent":
+            agent_yaw = self.observation['Yaw']
+            direction_of_closet = agent_yaw-closest_entity[1]
+            entity_dist = self.get_distance(
+                closest_entity[2][0], 0, closest_entity[2][1], 0)
+            agent_dist = self.get_distance(
+                self.get_agent_pos()[0], 0, self.get_agent_pos()[1], 0)
+            if entity_dist > agent_dist:
+                if direction_of_closet >= -50 and direction_of_closet <= 50:
+                    direction = "right in front of me"
+                elif direction_of_closet < -50 and direction_of_closet >= -160:
+                    direction = "on my right hand"
+                elif direction_of_closet > 50 and direction_of_closet < 160:
+                    direction = "on my left hand"
                 else:
-                    if cor1[0] > cor2_x2:
-                        direction = "Bottom left corner"
-                    elif cor1[0] > cor2_x1 and cor1[0] < cor2_x2:
-                        direction = "Front"
+                    direction = f"I cannot see any {entity_type}, maybe it's behind me"
+            else:
+                if direction_of_closet >= -50 and direction_of_closet <= 50:
+                    direction = f"I cannot see any {entity_type}, maybe it's behind me"
+                elif direction_of_closet < -50 and direction_of_closet >= -160:
+                    direction = "on my left hand"
+                elif direction_of_closet > 50 and direction_of_closet < 160:
+                    direction = "on my right hand"
+                else:
+                    direction = f"right in front of me"
+        else:
+            cor1 = closest_entity[2]
+            if target == HOUSE:
+                cor2 = HOUSE
+            elif target == LAKE:
+                cor2 = LAKE
+            else:  # Tree
+                cor2 = [self.find_closest_block_relative_agent(target)]
+            if len(cor2) != 1:
+                cor2_x1 = cor2[0][0]
+                cor2_z1 = cor2[0][1]
+                cor2_x2 = cor2[1][0]
+                cor2_z2 = cor2[1][1]
+                center_x = cor2_x1+(cor2_x2-cor2_x1)//2
+                center_y = cor2_z1+(cor2_z2-cor2_z1)//2
+
+                if cor1[0] < center_x + 20 and cor1[0] > center_x - 20 and cor1[1] < center_y + 20 and cor1[1] > center_y - 20:
+                    if cor1[1] > cor2_z2:
+                        if cor1[0] > cor2_x2:
+                            direction = "Top left corner"
+                        elif cor1[0] > cor2_x1 and cor1[0] < cor2_x2:
+                            direction = "Behind"
+                        else:
+                            direction = "Top right corner"
+                    elif cor1[1] > cor2_z1 and cor1[1] < cor2_z2:
+                        if cor1[0] > cor2_x2:
+                            direction = "Left"
+                        elif cor1[0] > cor2_x1 and cor1[0] < cor2_x2:
+                            direction = "inside"
+                        else:
+                            direction = "Right"
                     else:
-                        direction = "Bottom right corner"
-            else:
-                direction = "This entity is not in the range."
-        else:  # Tree
-            cor2_x = cor2[0][0]
-            cor2_z = cor2[0][1]
-            if cor1[0] < cor2_x + 4 and cor1[0] > cor2_x - 4 and cor1[1] < cor2_z + 4 and cor1[1] > cor2_z - 4:
-                direction = "This entity is around the tree."
-            else:
-                direction = "This entity is not in the range."
+                        if cor1[0] > cor2_x2:
+                            direction = "Bottom left corner"
+                        elif cor1[0] > cor2_x1 and cor1[0] < cor2_x2:
+                            direction = "Front"
+                        else:
+                            direction = "Bottom right corner"
+                else:
+                    direction = "This entity is not in the range."
+            else:  # Tree
+                cor2_x = cor2[0][0]
+                cor2_z = cor2[0][1]
+                if cor1[0] < cor2_x + 4 and cor1[0] > cor2_x - 4 and cor1[1] < cor2_z + 4 and cor1[1] > cor2_z - 4:
+                    direction = "This entity is around the tree."
+                else:
+                    direction = "This entity is not in the range."
         return direction
 
     def find_closest_animal(self, block_type, num=1):

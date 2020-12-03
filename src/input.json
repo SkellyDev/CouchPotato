@@ -40,11 +40,11 @@
       "tag": "get_direction_of_entity_relative_block",
       "patterns": [
         "Where is the closest sheep around a house?",
-        "Tell me where is the closest pig near the lake.",
+        "Tell me where is the closest sheep near the lake.",
         "Where is the closest cow around the house?",
         "Where is the closest sheep around the house?",
         "Where is the closest pig around the house?",
-        "Tell me the location of the closest pig near the lake.",
+        "Tell me the location of the closest cow around you.",
         "Where is the closest pig around the tree?",
         "Tell me the location of the closest cow around the tree."
       ]

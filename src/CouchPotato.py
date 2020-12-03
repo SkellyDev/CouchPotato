@@ -147,17 +147,17 @@ while world_state.is_mission_running:
         elif tag == 'get_direction_of_entity_relative_agent':
             CT = CommandTagger(user_command)
             animal = CT.get_full_tag_list(tag)
-            direction = action_class.get_direction_of_entity_relative_agent(
-                animal)
+            direction = action_class.get_direction_of_entity_relative(
+                animal, "agent")
             print(f"The closest {animal} is {direction}")
 
         elif tag == 'get_direction_of_entity_relative_block':
             CT = CommandTagger(user_command)
             animal, block = CT.get_full_tag_list(tag)
-            direction = action_class.get_direction_of_entity_relative_block(
+            direction = action_class.get_direction_of_entity_relative(
                 animal, block)
             print(
-                f"The cloest {animal} is on {direction} relative to the {block}")
+                f"The closest {animal} is {direction} relative to the {block}")
 
         elif tag == 'find_animal_inside_block':
             CT = CommandTagger(user_command)
