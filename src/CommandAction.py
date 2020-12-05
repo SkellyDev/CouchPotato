@@ -108,8 +108,13 @@ class CommandAction:
         if block_type == "agent":
             x = self.get_agent_pos()[0]
             z = self.get_agent_pos()[1]
-        else:
 
+        elif type(block_type) == list and block_type[0][0] in ['Pig', 'Cow', 'Sheep']:
+            x = block_type[0][1][0]
+            z = block_type[0][1][1]
+            #print(x, z)
+
+        else:
             x = self.find_closest_block_relative_agent(block_type)[0]
             z = self.find_closest_block_relative_agent(block_type)[1]
 
@@ -118,7 +123,8 @@ class CommandAction:
             entity_x = e["x"]
             entity_z = e["z"]
             dist = self.get_distance(x, entity_x, z, entity_z)
-            entity_distance_dict.append((e["name"], dist))
+            entity_distance_dict.append(
+                (e["name"], dist, (entity_x, entity_z)))
         entity_distance_dict.sort(key=lambda x: x[1])
         # print(entity_distance_dict)
         return entity_distance_dict
@@ -240,17 +246,19 @@ class CommandAction:
 
     def find_closest_animal(self, block_type, num=1):
         '''
-        input block type: "agent"/global variable(block type)
+        input block type: "agent"/global variable(block type)/animal type
         output name of closest animal
         '''
         entity_list = self.get_entity_closest_relative_block(block_type)
+        if type(block_type) == list:
+            entity_list = entity_list[1:]
         # print(entity_list)
         count = 0
         result = []
         index = 0
         while count < num:
             if entity_list[index][0] in ['Pig', 'Cow', 'Sheep']:
-                result.append(entity_list[index][0])
+                result.append((entity_list[index][0], entity_list[index][2]))
                 count += 1
             index += 1
         return result

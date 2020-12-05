@@ -138,6 +138,12 @@ while world_state.is_mission_running:
         action_class = CommandAction(agent_host)
         action_class.get_observation()
 
+        if user_command == "What is the closest animal around the closest animal of you?":
+            animal1 = action_class.find_closest_animal("agent")
+            print(animal1)
+            animal2 = action_class.find_closest_animal(animal1)
+            print(animal2)
+        '''
         if tag == 'find_closest_animal':
             CT = CommandTagger(user_command)
             block = CT.get_full_tag_list(tag)
@@ -175,3 +181,4 @@ while world_state.is_mission_running:
 
         elif tag == 'describe_environment':
             print(action_class.describe_agent_location())
+        '''
