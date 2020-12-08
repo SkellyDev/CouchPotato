@@ -163,7 +163,7 @@ class CommandAction:
 
     ####### --------------------------- ACTION FUNCTION ------------------------------------- #############
 
-    def get_direction_of_entity_relative(self, entity_type, target):
+    def getDirection(self, entity_type, target="agent"):
         '''
         Get the direction of entity correlated to the agent or an architect
         '''
@@ -244,7 +244,7 @@ class CommandAction:
                     direction = "This entity is not in the range."
         return direction
 
-    def find_closest_animal(self, block_type, num=1):
+    def closest(self, block_type, num=1):
         '''
         input block type: "agent"/global variable(block type)/animal type
         output name of closest animal
@@ -263,7 +263,7 @@ class CommandAction:
             index += 1
         return result
 
-    def find_animal_inside_block(self, block):
+    def inside(self, block):
         inside = []
         if block == "house":
             block = HOUSE
@@ -280,7 +280,7 @@ class CommandAction:
                     inside.append(key)
         return inside
 
-    def count_quantity(self, animal, block):
+    def count(self, animal, block):
         inside = self.find_animal_inside_block(block)
         if animal != 'animals':
             num = inside.count(animal)

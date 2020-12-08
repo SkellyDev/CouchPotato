@@ -17,9 +17,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from numpy.random import randint
 from Mission import Mission
-from CommandParse import CommandParse
-from CommandAction import CommandAction
-from CommandTagger import CommandTagger
+from CommandParse2 import TreeNode
+from CommandParse2 import TreeVisitor
+from allennlp.predictors.predictor import Predictor
+import allennlp_models.structured_prediction
+PREDICTOR = Predictor.from_path("https://storage.googleapis.com/allennlp-public-models/elmo-constituency-parser-2020.02.10.tar.gz")
 
 TREE_LST = [(7, 13), (43, 17), (38, 11), (7, 50)]
 HOUSE = [(30, 30), (40, 40)]
@@ -69,6 +71,7 @@ while not world_state.has_mission_begun:
         print("Error:", error.text)
 
 action_index = 0
+'''
 CP = CommandParse("")
 model = CP.save_model()
 
@@ -76,7 +79,7 @@ words = CP.get_words()
 labels = CP.get_labels()
 
 model.load("model.tflearn")
-
+'''
 ##### Model build finished ####
 
 print("Usage: Type any question or 'Perform action' to move and 'Finish' to stop.")
@@ -129,6 +132,11 @@ while world_state.is_mission_running:
             else:
                 print('Invalid move command')
     else:
+        tree_string = PREDICTOR.predict(user_command)["trees"]
+        TN = TreeNode(tree_string)
+        TV = TreeVisitor(TN, agent_host)
+
+        '''
         # Get question tag returned from NN model
         CP = CommandParse(user_command)
         tag = CP.return_tag(model, words, labels)
@@ -143,7 +151,7 @@ while world_state.is_mission_running:
             print(animal1)
             animal2 = action_class.find_closest_animal(animal1)
             print(animal2)
-        '''
+        
         if tag == 'find_closest_animal':
             CT = CommandTagger(user_command)
             block = CT.get_full_tag_list(tag)
