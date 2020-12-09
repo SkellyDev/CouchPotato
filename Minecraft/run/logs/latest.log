@@ -1,216 +1,634 @@
-[18:57:04] [Client thread/INFO]: Setting user: Player561
-[18:57:08] [Client thread/WARN]: Skipping bad option: lastServer:
-[18:57:08] [Client thread/INFO]: LWJGL Version: 2.9.2
-[18:57:08] [Client thread/INFO]: [STDOUT]: MALMO: Attempting to transform MinecraftServer
-[18:57:09] [Client thread/INFO]: [STDOUT]: MALMO: Found GlStateManager, attempting to transform it
-[18:57:09] [Client thread/INFO]: [STDOUT]: MALMO: Found GlStateManager.bindTexture() method, attempting to transform it
-[18:57:09] [Client thread/INFO]: [STDOUT]: MALMO: Hooked into call to GlStateManager.bindTexture()
-[18:57:11] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Microsoft Malmo Mod
-[18:57:11] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
-[18:57:11] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
-[18:57:11] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
-[18:57:11] [Client thread/INFO]: [STDOUT]: Testing schemas against internal version number: 0.37
-[18:57:12] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[18:57:13] [Thread-6/INFO]: Initializing LWJGL OpenAL
-[18:57:13] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[18:57:13] [Thread-6/INFO]: OpenAL initialized.
-[18:57:13] [Sound Library Loader/INFO]: Sound engine started
-[18:57:15] [Client thread/INFO]: Created: 16x16 textures-atlas
-[18:57:16] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_MOD_READY
-[18:57:16] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Microsoft Malmo Mod
-[18:57:16] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
-[18:57:16] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
-[18:57:16] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
-[18:57:16] [Client thread/INFO]: SoundSystem shutting down...
-[18:57:17] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
-[18:57:17] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[18:57:17] [Thread-8/INFO]: Initializing LWJGL OpenAL
-[18:57:17] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[18:57:17] [Thread-8/INFO]: OpenAL initialized.
-[18:57:17] [Sound Library Loader/INFO]: Sound engine started
-[18:57:18] [Client thread/INFO]: Created: 512x512 textures-atlas
-[18:57:19] [Client thread/WARN]: Skipping bad option: lastServer:
-[18:57:19] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_MOD_READY
-[18:57:19] [Thread-10/INFO]: [STDOUT]: INFO: ->mcp(0) Listening for messages on port 10000
-[18:57:19] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
-[18:57:19] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
-[18:57:20] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[18:57:57] [Thread-12/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
-[18:57:57] [Thread-12/INFO]: [STDOUT]: ==== RES:  - -1607482677813
-[18:57:57] [Thread-12/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
-[18:57:57] [Thread-14/INFO]: [STDOUT]: Received from localhost:<?xml version="1.0" encoding="utf-8"?><MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0"><Mission>                                         <About>                    <Summary>Environment Description</Summary></About><ServerSection>                                <ServerInitialConditions>                                                            <Time>                                                        <StartTime>6000</StartTime><AllowPassageOfTime>true</AllowPassageOfTime></Time><Weather>normal</Weather><AllowSpawning>false</AllowSpawning></ServerInitialConditions><ServerHandlers>                                                            <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/><DrawingDecorator><DrawCuboid x1="0" x2="60" y1="3" y2="3" z1="0" z2="60" type="grass"/><DrawEntity x="22" y="5" z="4" type="Cow"/><DrawEntity x="0" y="5" z="19" type="Pig"/><DrawEntity x="3
-[18:57:59] [Thread-14/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
-[18:57:59] [Client thread/INFO]: [STDOUT]: Mission received: Environment Description
-[18:57:59] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
-[18:57:59] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
-[18:57:59] [Thread-15/INFO]: [STDOUT]: INFO: ->com(0) Listening for messages on port 10933
-[18:57:59] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
-[18:57:59] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
-[18:57:59] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_NEW_WORLD
-[18:58:00] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_NEW_WORLD
-[18:58:01] [Server thread/INFO]: Starting integrated minecraft server version 1.11.2
-[18:58:01] [Server thread/INFO]: Generating keypair
-[18:58:03] [Server thread/INFO]: Preparing start region for level 0
-[18:58:04] [Server thread/INFO]: Changing view distance to 6, from 10
-[18:58:06] [Client thread/INFO]: Deleting level TEMP_10000_2e25039d-f501-448f-815d-50a29a0c5052
-[18:58:06] [Client thread/INFO]: Attempt 1...
-[18:58:06] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_MOD_READY
-[18:58:06] [Server thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
-[18:58:06] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
-[18:58:06] [Netty Local Client IO #0/INFO]: [STDOUT]: Transformed Name: net.minecraft.client.entity.EntityOtherPlayerMP
-[18:58:06] [Netty Local Client IO #0/INFO]: [STDOUT]: MALMO: Attempting to transform MinecraftServer
-[18:58:06] [Netty Local Client IO #0/INFO]: [STDOUT]: MALMO: Found EntityOtherPlayerMP, attempting to transform it
-[18:58:06] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_MOD_READY
-[18:58:06] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
-[18:58:06] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
-[18:58:06] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through ServerStateMachine constructor.
-[18:58:06] [Server thread/INFO]: [STDOUT]: Mission received: Environment Description
-[18:58:06] [Server thread/INFO]: Received mission: §9Environment Description
-[18:58:06] [Server thread/INFO]: Source: §alocalhost
-[18:58:06] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
-[18:58:06] [Server thread/INFO]: Environment Description[local:E:83bb3b57] logged in with entity id 0 at (696.5, 4.0, -659.5)
-[18:58:06] [Server thread/INFO]: Environment Description joined the game
-[18:58:06] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
-[18:58:07] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
-[18:58:07] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
-[18:58:07] [Server thread/INFO]: [STDOUT]: Experiment requires: 
-[18:58:07] [Server thread/INFO]: [STDOUT]: >>>> Environment Description
-[18:58:08] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
-[18:58:09] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
-[18:58:09] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
-[18:58:09] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
-[18:58:09] [Client thread/INFO]: [STDOUT]: Resized the window
-[18:58:09] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
-[19:00:16] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now HUMAN
-[19:00:19] [Server thread/INFO]: Environment Description has just earned the achievement [Taking Inventory]
-[19:00:19] [Client thread/INFO]: [CHAT] Environment Description has just earned the achievement [Taking Inventory]
-[19:00:29] [Server thread/INFO]: Saving and pausing game...
-[19:00:29] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_4fd3886b-feee-4ed7-8815-d209e749ae72'/Overworld
-[19:00:29] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_4fd3886b-feee-4ed7-8815-d209e749ae72'/Nether
-[19:00:29] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_4fd3886b-feee-4ed7-8815-d209e749ae72'/The End
-[19:04:58] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10670) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
-[19:04:58] [Client thread/INFO]: [STDOUT]: SEVERE: <-mcp(localhost:10300) Failed to send TCP bytes -- retrying : java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
-[19:04:58] [Client thread/INFO]: [STDOUT]: SEVERE: <-mcp(localhost:10300) Failed to reconnect: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused
-[19:04:58] [Client thread/INFO]: [STDOUT]: Error - agent is not responding to pings.
-[19:04:58] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
-[19:04:58] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
-[19:05:48] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
-[19:05:48] [Client thread/INFO]: Warning: Clientside chunk ticking took 153 ms
-[19:05:48] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_QUIT
-[19:05:48] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_QUIT
-[19:05:49] [Client thread/INFO]: [STDOUT]: CLIENT request state: MISSION_ENDED
-[19:05:49] [Client thread/INFO]: [STDOUT]: CLIENT enter state: MISSION_ENDED
-[19:05:49] [Client thread/INFO]: [STDOUT]: Sending mission ended message to localhost:10300.
-[19:05:49] [Client thread/INFO]: [STDOUT]: SEVERE: <-mcp(localhost:10300) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
-[19:05:49] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_MISSION_END
-[19:05:49] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_MISSION_END
-[19:05:49] [Server thread/INFO]: [STDOUT]: SERVER request state: CLEAN_UP
-[19:05:49] [Server thread/INFO]: [STDOUT]: SERVER enter state: CLEAN_UP
-[19:05:49] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
-[19:05:49] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
-[19:05:49] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
-[19:05:49] [Client thread/INFO]: [STDOUT]: JETTISONING 0 COMMANDS
-[19:05:51] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
-[19:05:56] [Thread-20/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
-[19:05:56] [Thread-20/INFO]: [STDOUT]: ==== RES:  - -459045
-[19:05:56] [Thread-20/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
-[19:05:56] [Thread-22/INFO]: [STDOUT]: Received from localhost:<?xml version="1.0" encoding="utf-8"?><MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0"><Mission>                                         <About>                    <Summary>Environment Description</Summary></About><ServerSection>                                <ServerInitialConditions>                                                            <Time>                                                        <StartTime>6000</StartTime><AllowPassageOfTime>true</AllowPassageOfTime></Time><Weather>normal</Weather><AllowSpawning>false</AllowSpawning></ServerInitialConditions><ServerHandlers>                                                            <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/><DrawingDecorator><DrawCuboid x1="0" x2="60" y1="3" y2="3" z1="0" z2="60" type="grass"/><DrawEntity x="17" y="5" z="46" type="Sheep"/><DrawEntity x="13" y="5" z="20" type="Pig"/><DrawEntity 
-[19:05:57] [Thread-22/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
-[19:05:57] [Client thread/INFO]: [STDOUT]: Mission received: Environment Description
-[19:05:57] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
-[19:05:57] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
-[19:05:57] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
-[19:05:57] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
-[19:05:57] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
-[19:05:57] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through queue.
-[19:05:57] [Server thread/INFO]: [STDOUT]: Mission received: Environment Description
-[19:05:57] [Server thread/INFO]: Received mission: §9Environment Description
-[19:05:57] [Server thread/INFO]: Source: §alocalhost
-[19:05:57] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
-[19:05:57] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
-[19:05:57] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
-[19:05:57] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
-[19:05:57] [Server thread/INFO]: [STDOUT]: Experiment requires: 
-[19:05:57] [Server thread/INFO]: [STDOUT]: >>>> Environment Description
-[19:05:57] [Client thread/INFO]: [CHAT] Received mission: §9Environment Description
-[19:05:57] [Client thread/INFO]: [CHAT] Source: §alocalhost
-[19:05:57] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
-[19:05:57] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
-[19:05:57] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
-[19:05:57] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
-[19:05:57] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
-[19:05:57] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
-[19:05:57] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
-[19:06:01] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now HUMAN
-[19:06:09] [Server thread/INFO]: Saving and pausing game...
-[19:06:09] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_4fd3886b-feee-4ed7-8815-d209e749ae72'/Overworld
-[19:06:09] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_4fd3886b-feee-4ed7-8815-d209e749ae72'/Nether
-[19:06:09] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_4fd3886b-feee-4ed7-8815-d209e749ae72'/The End
-[19:06:25] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10233) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
-[19:06:25] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10904) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
-[19:06:25] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10904) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
-[19:06:25] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10904) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
-[19:06:25] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10904) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
-[19:06:25] [Client thread/INFO]: [STDOUT]: ERROR: TCP messages are not getting through - quitting mission.
-[19:06:25] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
-[19:06:25] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
-[19:07:01] [Thread-26/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
-[19:07:01] [Thread-26/INFO]: [STDOUT]: REPLYING WITH: MALMOBUSY
-[19:07:02] [Server thread/INFO]: [STDOUT]: Warning: managed 11/20 ticks this second.
-[19:07:02] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_QUIT
-[19:07:02] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_QUIT
-[19:07:02] [Client thread/INFO]: [STDOUT]: CLIENT request state: MISSION_ENDED
-[19:07:02] [Client thread/INFO]: [STDOUT]: CLIENT enter state: MISSION_ENDED
-[19:07:03] [Client thread/INFO]: [STDOUT]: Sending mission ended message to localhost:10191.
-[19:07:03] [Client thread/INFO]: [STDOUT]: SEVERE: <-mcp(localhost:10191) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
-[19:07:03] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_MISSION_END
-[19:07:03] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_MISSION_END
-[19:07:03] [Server thread/INFO]: [STDOUT]: SERVER request state: CLEAN_UP
-[19:07:03] [Server thread/INFO]: [STDOUT]: SERVER enter state: CLEAN_UP
-[19:07:03] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
-[19:07:03] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
-[19:07:03] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
-[19:07:03] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
-[19:07:03] [Client thread/INFO]: [STDOUT]: JETTISONING 0 COMMANDS
-[19:07:04] [Thread-28/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
-[19:07:04] [Thread-28/INFO]: [STDOUT]: ==== RES:  - -47619
-[19:07:04] [Thread-28/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
-[19:07:04] [Thread-30/INFO]: [STDOUT]: Received from localhost:<?xml version="1.0" encoding="utf-8"?><MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0"><Mission>                                         <About>                    <Summary>Environment Description</Summary></About><ServerSection>                                <ServerInitialConditions>                                                            <Time>                                                        <StartTime>6000</StartTime><AllowPassageOfTime>true</AllowPassageOfTime></Time><Weather>normal</Weather><AllowSpawning>false</AllowSpawning></ServerInitialConditions><ServerHandlers>                                                            <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/><DrawingDecorator><DrawCuboid x1="0" x2="60" y1="3" y2="3" z1="0" z2="60" type="grass"/><DrawEntity x="49" y="5" z="56" type="Pig"/><DrawEntity x="15" y="5" z="1" type="Sheep"/><DrawEntity x
-[19:07:04] [Thread-30/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
-[19:07:04] [Client thread/INFO]: [STDOUT]: Mission received: Environment Description
-[19:07:04] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
-[19:07:04] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
-[19:07:04] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
-[19:07:04] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
-[19:07:04] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
-[19:07:04] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
-[19:07:04] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
-[19:07:04] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through queue.
-[19:07:04] [Server thread/INFO]: [STDOUT]: Mission received: Environment Description
-[19:07:04] [Server thread/INFO]: Received mission: §9Environment Description
-[19:07:04] [Server thread/INFO]: Source: §alocalhost
-[19:07:04] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
-[19:07:04] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
-[19:07:04] [Client thread/INFO]: [CHAT] Received mission: §9Environment Description
-[19:07:04] [Client thread/INFO]: [CHAT] Source: §alocalhost
-[19:07:04] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
-[19:07:04] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
-[19:07:04] [Server thread/INFO]: [STDOUT]: Experiment requires: 
-[19:07:04] [Server thread/INFO]: [STDOUT]: >>>> Environment Description
-[19:07:05] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
-[19:07:05] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
-[19:07:05] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
-[19:07:05] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
-[19:07:05] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
-[19:07:07] [Server thread/INFO]: Saving and pausing game...
-[19:07:07] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_4fd3886b-feee-4ed7-8815-d209e749ae72'/Overworld
-[19:07:07] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_4fd3886b-feee-4ed7-8815-d209e749ae72'/Nether
-[19:07:07] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_4fd3886b-feee-4ed7-8815-d209e749ae72'/The End
-[19:07:25] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10511) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
-[19:07:25] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10541) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
-[19:07:25] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10541) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
-[19:07:25] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10541) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
-[19:07:25] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10541) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
-[19:07:25] [Client thread/INFO]: [STDOUT]: ERROR: TCP messages are not getting through - quitting mission.
-[19:07:25] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
-[19:07:25] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
+[20:33:02] [Client thread/INFO]: Setting user: Player834
+[20:33:08] [Client thread/WARN]: Skipping bad option: lastServer:
+[20:33:08] [Client thread/INFO]: LWJGL Version: 2.9.2
+[20:33:08] [Client thread/INFO]: [STDOUT]: MALMO: Attempting to transform MinecraftServer
+[20:33:08] [Client thread/INFO]: [STDOUT]: MALMO: Found GlStateManager, attempting to transform it
+[20:33:08] [Client thread/INFO]: [STDOUT]: MALMO: Found GlStateManager.bindTexture() method, attempting to transform it
+[20:33:08] [Client thread/INFO]: [STDOUT]: MALMO: Hooked into call to GlStateManager.bindTexture()
+[20:33:11] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Microsoft Malmo Mod
+[20:33:11] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
+[20:33:11] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
+[20:33:11] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
+[20:33:11] [Client thread/INFO]: [STDOUT]: Testing schemas against internal version number: 0.37
+[20:33:13] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[20:33:13] [Thread-6/INFO]: Initializing LWJGL OpenAL
+[20:33:13] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[20:33:13] [Thread-6/INFO]: OpenAL initialized.
+[20:33:13] [Sound Library Loader/INFO]: Sound engine started
+[20:33:18] [Client thread/INFO]: Created: 16x16 textures-atlas
+[20:33:19] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_MOD_READY
+[20:33:19] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Microsoft Malmo Mod
+[20:33:19] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
+[20:33:19] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
+[20:33:19] [Client thread/WARN]: ResourcePack: ignored non-lowercase namespace: MalmoMod in /Users/shiyuerong/Desktop/CouchPotato/Minecraft/build/libs/MalmoMod-0.37.0.jar
+[20:33:20] [Client thread/INFO]: SoundSystem shutting down...
+[20:33:20] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[20:33:20] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[20:33:20] [Thread-8/INFO]: Initializing LWJGL OpenAL
+[20:33:20] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[20:33:20] [Thread-8/INFO]: OpenAL initialized.
+[20:33:21] [Sound Library Loader/INFO]: Sound engine started
+[20:33:24] [Client thread/INFO]: Created: 512x512 textures-atlas
+[20:33:29] [Client thread/WARN]: Skipping bad option: lastServer:
+[20:33:33] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_MOD_READY
+[20:33:33] [Thread-10/INFO]: [STDOUT]: INFO: ->mcp(0) Listening for messages on port 10000
+[20:33:33] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
+[20:33:33] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
+[20:33:39] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[20:40:06] [Thread-12/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
+[20:40:06] [Thread-12/INFO]: [STDOUT]: ==== RES:  - -1607488806348
+[20:40:06] [Thread-12/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[20:40:06] [Thread-14/INFO]: [STDOUT]: Received from localhost:<?xml version="1.0" encoding="utf-8"?><MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0"><Mission>                                         <About>                    <Summary>Environment Description</Summary></About><ServerSection>                                <ServerInitialConditions>                                                            <Time>                                                        <StartTime>6000</StartTime><AllowPassageOfTime>true</AllowPassageOfTime></Time><Weather>normal</Weather><AllowSpawning>false</AllowSpawning></ServerInitialConditions><ServerHandlers>                                                            <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/><DrawingDecorator><DrawCuboid x1="0" x2="60" y1="3" y2="3" z1="0" z2="60" type="grass"/><DrawEntity x="2" y="5" z="44" type="Pig"/><DrawEntity x="60" y="5" z="1" type="Pig"/><DrawEntity x="4
+[20:40:08] [Thread-14/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[20:40:09] [Client thread/INFO]: [STDOUT]: Mission received: Environment Description
+[20:40:09] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
+[20:40:09] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
+[20:40:09] [Thread-15/INFO]: [STDOUT]: INFO: ->com(0) Listening for messages on port 10899
+[20:40:09] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
+[20:40:09] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
+[20:40:09] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_NEW_WORLD
+[20:40:10] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_NEW_WORLD
+[20:40:12] [Server thread/INFO]: Starting integrated minecraft server version 1.11.2
+[20:40:12] [Server thread/INFO]: Generating keypair
+[20:40:14] [Server thread/INFO]: Preparing start region for level 0
+[20:40:15] [Server thread/INFO]: Changing view distance to 6, from 10
+[20:40:15] [Client thread/INFO]: Deleting level TEMP_10000_0b4efdb8-d8be-4a18-b711-e227ed7fbcc4
+[20:40:15] [Client thread/INFO]: Attempt 1...
+[20:40:15] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_MOD_READY
+[20:40:16] [Server thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
+[20:40:16] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_MOD_READY
+[20:40:16] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
+[20:40:16] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
+[20:40:16] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through ServerStateMachine constructor.
+[20:40:16] [Server thread/INFO]: [STDOUT]: Mission received: Environment Description
+[20:40:16] [Server thread/INFO]: Received mission: §9Environment Description
+[20:40:16] [Server thread/INFO]: Source: §alocalhost
+[20:40:16] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
+[20:40:16] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
+[20:40:16] [Netty Local Client IO #0/INFO]: [STDOUT]: Transformed Name: net.minecraft.client.entity.EntityOtherPlayerMP
+[20:40:16] [Netty Local Client IO #0/INFO]: [STDOUT]: MALMO: Attempting to transform MinecraftServer
+[20:40:16] [Netty Local Client IO #0/INFO]: [STDOUT]: MALMO: Found EntityOtherPlayerMP, attempting to transform it
+[20:40:16] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
+[20:40:17] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[20:40:17] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[20:40:17] [Server thread/INFO]: [STDOUT]: Experiment requires: 
+[20:40:17] [Server thread/INFO]: [STDOUT]: >>>> Environment Description
+[20:40:17] [Server thread/INFO]: Environment Description[local:E:4c62f83e] logged in with entity id 0 at (242.5, 4.0, 169.5)
+[20:40:17] [Server thread/INFO]: Environment Description joined the game
+[20:40:19] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[20:40:20] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
+[20:40:20] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
+[20:40:20] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
+[20:40:20] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
+[20:40:20] [Client thread/INFO]: [STDOUT]: Resized the window
+[20:40:28] [Server thread/INFO]: [STDOUT]: Warning: managed 15/20 ticks this second.
+[20:40:29] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now HUMAN
+[20:41:00] [Server thread/INFO]: [STDOUT]: Warning: managed 19/20 ticks this second.
+[20:42:46] [Server thread/INFO]: Saving and pausing game...
+[20:42:46] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Overworld
+[20:42:46] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Nether
+[20:42:46] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/The End
+[20:52:09] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10893) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[20:52:09] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10509) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[20:52:09] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10509) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[20:52:09] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10509) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[20:52:09] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10509) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[20:52:09] [Client thread/INFO]: [STDOUT]: ERROR: TCP messages are not getting through - quitting mission.
+[20:52:09] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
+[20:52:09] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
+[20:52:13] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[20:52:13] [Client thread/INFO]: Warning: Clientside chunk ticking took 138 ms
+[20:52:13] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_QUIT
+[20:52:13] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_QUIT
+[20:52:13] [Client thread/INFO]: [STDOUT]: CLIENT request state: MISSION_ENDED
+[20:52:13] [Client thread/INFO]: [STDOUT]: CLIENT enter state: MISSION_ENDED
+[20:52:14] [Client thread/INFO]: [STDOUT]: Sending mission ended message to localhost:10847.
+[20:52:14] [Client thread/INFO]: [STDOUT]: SEVERE: <-mcp(localhost:10847) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[20:52:14] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_MISSION_END
+[20:52:14] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_MISSION_END
+[20:52:14] [Server thread/INFO]: [STDOUT]: SERVER request state: CLEAN_UP
+[20:52:14] [Server thread/INFO]: [STDOUT]: SERVER enter state: CLEAN_UP
+[20:52:14] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
+[20:52:14] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
+[20:52:14] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
+[20:52:14] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
+[20:52:14] [Client thread/INFO]: [STDOUT]: JETTISONING 0 COMMANDS
+[20:52:39] [Thread-20/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
+[20:52:39] [Thread-20/INFO]: [STDOUT]: ==== RES:  - -732674
+[20:52:39] [Thread-20/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[20:52:39] [Thread-22/INFO]: [STDOUT]: Received from localhost:<?xml version="1.0" encoding="utf-8"?><MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0"><Mission>                                         <About>                    <Summary>Environment Description</Summary></About><ServerSection>                                <ServerInitialConditions>                                                            <Time>                                                        <StartTime>6000</StartTime><AllowPassageOfTime>true</AllowPassageOfTime></Time><Weather>normal</Weather><AllowSpawning>false</AllowSpawning></ServerInitialConditions><ServerHandlers>                                                            <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/><DrawingDecorator><DrawCuboid x1="0" x2="60" y1="3" y2="3" z1="0" z2="60" type="grass"/><DrawEntity x="14" y="5" z="8" type="Pig"/><DrawEntity x="13" y="5" z="48" type="Sheep"/><DrawEntity x
+[20:52:39] [Thread-22/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[20:52:39] [Client thread/INFO]: [STDOUT]: Mission received: Environment Description
+[20:52:39] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
+[20:52:39] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
+[20:52:39] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
+[20:52:39] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
+[20:52:39] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
+[20:52:39] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
+[20:52:39] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through queue.
+[20:52:39] [Server thread/INFO]: [STDOUT]: Mission received: Environment Description
+[20:52:39] [Server thread/INFO]: Received mission: §9Environment Description
+[20:52:39] [Server thread/INFO]: Source: §alocalhost
+[20:52:39] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
+[20:52:39] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
+[20:52:39] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[20:52:39] [Client thread/INFO]: [CHAT] Received mission: §9Environment Description
+[20:52:39] [Client thread/INFO]: [CHAT] Source: §alocalhost
+[20:52:39] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[20:52:39] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[20:52:39] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[20:52:39] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[20:52:39] [Server thread/INFO]: [STDOUT]: Experiment requires: 
+[20:52:39] [Server thread/INFO]: [STDOUT]: >>>> Environment Description
+[20:52:40] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[20:52:40] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
+[20:52:40] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
+[20:52:40] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
+[20:52:40] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
+[20:52:42] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now HUMAN
+[20:52:49] [Server thread/INFO]: Saving and pausing game...
+[20:52:49] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Overworld
+[20:52:49] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Nether
+[20:52:49] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/The End
+[20:53:10] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10580) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[20:53:10] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10085) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[20:53:10] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10085) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[20:53:10] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10085) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[20:53:10] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10085) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[20:53:10] [Client thread/INFO]: [STDOUT]: ERROR: TCP messages are not getting through - quitting mission.
+[20:53:10] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
+[20:53:10] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
+[20:53:13] [Server thread/INFO]: [STDOUT]: Warning: managed 8/20 ticks this second.
+[20:53:13] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_QUIT
+[20:53:13] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_QUIT
+[20:53:13] [Client thread/INFO]: [STDOUT]: CLIENT request state: MISSION_ENDED
+[20:53:13] [Client thread/INFO]: [STDOUT]: CLIENT enter state: MISSION_ENDED
+[20:53:13] [Client thread/INFO]: [STDOUT]: Sending mission ended message to localhost:10443.
+[20:53:13] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_MISSION_END
+[20:53:13] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_MISSION_END
+[20:53:13] [Server thread/INFO]: [STDOUT]: SERVER request state: CLEAN_UP
+[20:53:13] [Server thread/INFO]: [STDOUT]: SERVER enter state: CLEAN_UP
+[20:53:13] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
+[20:53:13] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
+[20:53:14] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
+[20:53:14] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
+[20:53:14] [Client thread/INFO]: [STDOUT]: JETTISONING 0 COMMANDS
+[20:53:40] [Thread-26/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
+[20:53:40] [Thread-26/INFO]: [STDOUT]: ==== RES:  - -41319
+[20:53:40] [Thread-26/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[20:53:40] [Thread-28/INFO]: [STDOUT]: Received from localhost:<?xml version="1.0" encoding="utf-8"?><MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0"><Mission>                                         <About>                    <Summary>Environment Description</Summary></About><ServerSection>                                <ServerInitialConditions>                                                            <Time>                                                        <StartTime>6000</StartTime><AllowPassageOfTime>true</AllowPassageOfTime></Time><Weather>normal</Weather><AllowSpawning>false</AllowSpawning></ServerInitialConditions><ServerHandlers>                                                            <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/><DrawingDecorator><DrawCuboid x1="0" x2="60" y1="3" y2="3" z1="0" z2="60" type="grass"/><DrawEntity x="39" y="5" z="56" type="Sheep"/><DrawEntity x="40" y="5" z="54" type="Sheep"/><DrawEntit
+[20:53:40] [Thread-28/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[20:53:40] [Client thread/INFO]: [STDOUT]: Mission received: Environment Description
+[20:53:40] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
+[20:53:40] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
+[20:53:40] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
+[20:53:40] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
+[20:53:40] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
+[20:53:40] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
+[20:53:40] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[20:53:40] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through queue.
+[20:53:40] [Server thread/INFO]: [STDOUT]: Mission received: Environment Description
+[20:53:40] [Server thread/INFO]: Received mission: §9Environment Description
+[20:53:40] [Server thread/INFO]: Source: §alocalhost
+[20:53:40] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
+[20:53:40] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
+[20:53:40] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[20:53:41] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[20:53:41] [Server thread/INFO]: [STDOUT]: Experiment requires: 
+[20:53:41] [Server thread/INFO]: [STDOUT]: >>>> Environment Description
+[20:53:41] [Client thread/INFO]: [CHAT] Received mission: §9Environment Description
+[20:53:41] [Client thread/INFO]: [CHAT] Source: §alocalhost
+[20:53:41] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[20:53:41] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[20:53:41] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
+[20:53:41] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
+[20:53:41] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
+[20:53:41] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
+[20:53:50] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now HUMAN
+[20:54:56] [Server thread/INFO]: Saving and pausing game...
+[20:54:56] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Overworld
+[20:54:56] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Nether
+[20:54:56] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/The End
+[20:57:47] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10460) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[20:57:47] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10678) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[20:57:47] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10678) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[20:57:47] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10678) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[20:57:47] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10678) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[20:57:47] [Client thread/INFO]: [STDOUT]: ERROR: TCP messages are not getting through - quitting mission.
+[20:57:47] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
+[20:57:47] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
+[20:57:53] [Server thread/INFO]: [STDOUT]: Warning: managed 12/20 ticks this second.
+[20:57:53] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_QUIT
+[20:57:53] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_QUIT
+[20:57:53] [Client thread/INFO]: [STDOUT]: CLIENT request state: MISSION_ENDED
+[20:57:53] [Client thread/INFO]: [STDOUT]: CLIENT enter state: MISSION_ENDED
+[20:57:53] [Client thread/INFO]: [STDOUT]: Sending mission ended message to localhost:10705.
+[20:57:53] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_MISSION_END
+[20:57:53] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_MISSION_END
+[20:57:53] [Server thread/INFO]: [STDOUT]: SERVER request state: CLEAN_UP
+[20:57:53] [Server thread/INFO]: [STDOUT]: SERVER enter state: CLEAN_UP
+[20:57:53] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
+[20:57:53] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
+[20:57:53] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
+[20:57:53] [Client thread/INFO]: [STDOUT]: JETTISONING 0 COMMANDS
+[20:57:55] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
+[20:58:16] [Thread-32/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
+[20:58:16] [Thread-32/INFO]: [STDOUT]: ==== RES:  - -256309
+[20:58:16] [Thread-32/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[20:58:16] [Thread-34/INFO]: [STDOUT]: Received from localhost:<?xml version="1.0" encoding="utf-8"?><MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0"><Mission>                                         <About>                    <Summary>Environment Description</Summary></About><ServerSection>                                <ServerInitialConditions>                                                            <Time>                                                        <StartTime>6000</StartTime><AllowPassageOfTime>true</AllowPassageOfTime></Time><Weather>normal</Weather><AllowSpawning>false</AllowSpawning></ServerInitialConditions><ServerHandlers>                                                            <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/><DrawingDecorator><DrawCuboid x1="0" x2="60" y1="3" y2="3" z1="0" z2="60" type="grass"/><DrawEntity x="50" y="5" z="47" type="Cow"/><DrawEntity x="2" y="5" z="48" type="Sheep"/><DrawEntity x
+[20:58:16] [Thread-34/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[20:58:17] [Client thread/INFO]: [STDOUT]: Mission received: Environment Description
+[20:58:17] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
+[20:58:17] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
+[20:58:17] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
+[20:58:17] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
+[20:58:17] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
+[20:58:17] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
+[20:58:17] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[20:58:17] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through queue.
+[20:58:17] [Server thread/INFO]: [STDOUT]: Mission received: Environment Description
+[20:58:17] [Server thread/INFO]: Received mission: §9Environment Description
+[20:58:17] [Server thread/INFO]: Source: §alocalhost
+[20:58:17] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
+[20:58:17] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
+[20:58:17] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[20:58:17] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[20:58:17] [Server thread/INFO]: [STDOUT]: Experiment requires: 
+[20:58:17] [Server thread/INFO]: [STDOUT]: >>>> Environment Description
+[20:58:17] [Client thread/INFO]: [CHAT] Received mission: §9Environment Description
+[20:58:17] [Client thread/INFO]: [CHAT] Source: §alocalhost
+[20:58:17] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[20:58:17] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[20:58:17] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
+[20:58:17] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
+[20:58:17] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
+[20:58:17] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
+[20:58:21] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now HUMAN
+[20:59:14] [Server thread/INFO]: Saving and pausing game...
+[20:59:14] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Overworld
+[20:59:14] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Nether
+[20:59:14] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/The End
+[21:05:22] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10546) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:05:22] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10063) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:05:22] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10063) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:05:22] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10063) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:05:22] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10063) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:05:22] [Client thread/INFO]: [STDOUT]: ERROR: TCP messages are not getting through - quitting mission.
+[21:05:23] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
+[21:05:23] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
+[21:05:28] [Server thread/INFO]: [STDOUT]: Warning: managed 11/20 ticks this second.
+[21:05:28] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_QUIT
+[21:05:28] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_QUIT
+[21:05:28] [Client thread/INFO]: [STDOUT]: CLIENT request state: MISSION_ENDED
+[21:05:28] [Client thread/INFO]: [STDOUT]: CLIENT enter state: MISSION_ENDED
+[21:05:28] [Client thread/INFO]: [STDOUT]: Sending mission ended message to localhost:10730.
+[21:05:28] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_MISSION_END
+[21:05:28] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_MISSION_END
+[21:05:28] [Server thread/INFO]: [STDOUT]: SERVER request state: CLEAN_UP
+[21:05:28] [Server thread/INFO]: [STDOUT]: SERVER enter state: CLEAN_UP
+[21:05:28] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
+[21:05:28] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
+[21:05:28] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
+[21:05:28] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
+[21:05:28] [Client thread/INFO]: [STDOUT]: JETTISONING 0 COMMANDS
+[21:05:52] [Thread-38/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
+[21:05:52] [Thread-38/INFO]: [STDOUT]: ==== RES:  - -435966
+[21:05:52] [Thread-38/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[21:05:52] [Thread-40/INFO]: [STDOUT]: Received from localhost:<?xml version="1.0" encoding="utf-8"?><MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0"><Mission>                                         <About>                    <Summary>Environment Description</Summary></About><ServerSection>                                <ServerInitialConditions>                                                            <Time>                                                        <StartTime>6000</StartTime><AllowPassageOfTime>true</AllowPassageOfTime></Time><Weather>normal</Weather><AllowSpawning>false</AllowSpawning></ServerInitialConditions><ServerHandlers>                                                            <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/><DrawingDecorator><DrawCuboid x1="0" x2="60" y1="3" y2="3" z1="0" z2="60" type="grass"/><DrawEntity x="21" y="5" z="24" type="Pig"/><DrawEntity x="36" y="5" z="50" type="Pig"/><DrawEntity x=
+[21:05:52] [Thread-40/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[21:05:53] [Client thread/INFO]: [STDOUT]: Mission received: Environment Description
+[21:05:53] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
+[21:05:53] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
+[21:05:53] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
+[21:05:53] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
+[21:05:53] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
+[21:05:53] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
+[21:05:53] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:05:53] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through queue.
+[21:05:53] [Server thread/INFO]: [STDOUT]: Mission received: Environment Description
+[21:05:53] [Server thread/INFO]: Received mission: §9Environment Description
+[21:05:53] [Server thread/INFO]: Source: §alocalhost
+[21:05:53] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
+[21:05:53] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
+[21:05:53] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[21:05:53] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[21:05:53] [Server thread/INFO]: [STDOUT]: Experiment requires: 
+[21:05:53] [Server thread/INFO]: [STDOUT]: >>>> Environment Description
+[21:05:53] [Client thread/INFO]: [CHAT] Received mission: §9Environment Description
+[21:05:53] [Client thread/INFO]: [CHAT] Source: §alocalhost
+[21:05:53] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:05:53] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:05:54] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
+[21:05:54] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
+[21:05:54] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
+[21:05:54] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
+[21:05:58] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now HUMAN
+[21:06:19] [Server thread/INFO]: Saving and pausing game...
+[21:06:19] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Overworld
+[21:06:19] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Nether
+[21:06:19] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/The End
+[21:06:31] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10559) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:06:31] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10670) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:06:31] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10670) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:06:31] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10670) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:06:31] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10670) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:06:31] [Client thread/INFO]: [STDOUT]: ERROR: TCP messages are not getting through - quitting mission.
+[21:06:31] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
+[21:06:31] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
+[21:06:34] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[21:06:34] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_QUIT
+[21:06:34] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_QUIT
+[21:06:34] [Client thread/INFO]: [STDOUT]: CLIENT request state: MISSION_ENDED
+[21:06:34] [Client thread/INFO]: [STDOUT]: CLIENT enter state: MISSION_ENDED
+[21:06:34] [Client thread/INFO]: [STDOUT]: Sending mission ended message to localhost:10784.
+[21:06:34] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_MISSION_END
+[21:06:34] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_MISSION_END
+[21:06:34] [Server thread/INFO]: [STDOUT]: SERVER request state: CLEAN_UP
+[21:06:34] [Server thread/INFO]: [STDOUT]: SERVER enter state: CLEAN_UP
+[21:06:34] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
+[21:06:34] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
+[21:06:34] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
+[21:06:34] [Client thread/INFO]: [STDOUT]: JETTISONING 0 COMMANDS
+[21:06:35] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
+[21:06:58] [Thread-44/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
+[21:06:58] [Thread-44/INFO]: [STDOUT]: ==== RES:  - -45412
+[21:06:58] [Thread-44/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[21:06:58] [Thread-46/INFO]: [STDOUT]: Received from localhost:<?xml version="1.0" encoding="utf-8"?><MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0"><Mission>                                         <About>                    <Summary>Environment Description</Summary></About><ServerSection>                                <ServerInitialConditions>                                                            <Time>                                                        <StartTime>6000</StartTime><AllowPassageOfTime>true</AllowPassageOfTime></Time><Weather>normal</Weather><AllowSpawning>false</AllowSpawning></ServerInitialConditions><ServerHandlers>                                                            <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/><DrawingDecorator><DrawCuboid x1="0" x2="60" y1="3" y2="3" z1="0" z2="60" type="grass"/><DrawEntity x="14" y="5" z="13" type="Sheep"/><DrawEntity x="2" y="5" z="49" type="Sheep"/><DrawEntity
+[21:06:58] [Thread-46/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[21:06:58] [Client thread/INFO]: [STDOUT]: Mission received: Environment Description
+[21:06:58] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
+[21:06:58] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
+[21:06:58] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
+[21:06:58] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
+[21:06:58] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
+[21:06:58] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
+[21:06:58] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:06:58] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through queue.
+[21:06:58] [Server thread/INFO]: [STDOUT]: Mission received: Environment Description
+[21:06:58] [Server thread/INFO]: Received mission: §9Environment Description
+[21:06:58] [Server thread/INFO]: Source: §alocalhost
+[21:06:58] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:06:58] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
+[21:06:58] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
+[21:06:58] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[21:06:58] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[21:06:58] [Server thread/INFO]: [STDOUT]: Experiment requires: 
+[21:06:58] [Server thread/INFO]: [STDOUT]: >>>> Environment Description
+[21:06:59] [Client thread/INFO]: [CHAT] Received mission: §9Environment Description
+[21:06:59] [Client thread/INFO]: [CHAT] Source: §alocalhost
+[21:06:59] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:07:00] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
+[21:07:00] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
+[21:07:00] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
+[21:07:00] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
+[21:07:04] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now HUMAN
+[21:07:55] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now AI
+[21:07:55] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now HUMAN
+[21:09:04] [Server thread/INFO]: Saving and pausing game...
+[21:09:04] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Overworld
+[21:09:04] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Nether
+[21:09:04] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/The End
+[21:11:31] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10083) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:11:31] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10902) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:11:31] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10902) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:11:32] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10902) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:11:32] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10902) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:11:32] [Client thread/INFO]: [STDOUT]: ERROR: TCP messages are not getting through - quitting mission.
+[21:11:32] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
+[21:11:32] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
+[21:11:36] [Server thread/INFO]: [STDOUT]: Warning: managed 16/20 ticks this second.
+[21:11:36] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_QUIT
+[21:11:36] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_QUIT
+[21:11:36] [Client thread/INFO]: [STDOUT]: CLIENT request state: MISSION_ENDED
+[21:11:36] [Client thread/INFO]: [STDOUT]: CLIENT enter state: MISSION_ENDED
+[21:11:36] [Client thread/INFO]: [STDOUT]: Sending mission ended message to localhost:10209.
+[21:11:36] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_MISSION_END
+[21:11:36] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_MISSION_END
+[21:11:36] [Server thread/INFO]: [STDOUT]: SERVER request state: CLEAN_UP
+[21:11:36] [Server thread/INFO]: [STDOUT]: SERVER enter state: CLEAN_UP
+[21:11:36] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
+[21:11:36] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
+[21:11:36] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
+[21:11:36] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
+[21:11:36] [Client thread/INFO]: [STDOUT]: JETTISONING 0 COMMANDS
+[21:11:39] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2612ms behind, skipping 52 tick(s)
+[21:12:01] [Thread-50/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
+[21:12:01] [Thread-50/INFO]: [STDOUT]: ==== RES:  - -283687
+[21:12:01] [Thread-50/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[21:12:01] [Thread-52/INFO]: [STDOUT]: Received from localhost:<?xml version="1.0" encoding="utf-8"?><MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0"><Mission>                                         <About>                    <Summary>Environment Description</Summary></About><ServerSection>                                <ServerInitialConditions>                                                            <Time>                                                        <StartTime>6000</StartTime><AllowPassageOfTime>true</AllowPassageOfTime></Time><Weather>normal</Weather><AllowSpawning>false</AllowSpawning></ServerInitialConditions><ServerHandlers>                                                            <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/><DrawingDecorator><DrawCuboid x1="0" x2="60" y1="3" y2="3" z1="0" z2="60" type="grass"/><DrawEntity x="7" y="5" z="15" type="Pig"/><DrawEntity x="12" y="5" z="6" type="Pig"/><DrawEntity x="3
+[21:12:01] [Thread-52/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[21:12:01] [Client thread/INFO]: [STDOUT]: Mission received: Environment Description
+[21:12:01] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
+[21:12:01] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
+[21:12:01] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
+[21:12:01] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
+[21:12:01] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
+[21:12:01] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
+[21:12:01] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:12:01] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through queue.
+[21:12:01] [Server thread/INFO]: [STDOUT]: Mission received: Environment Description
+[21:12:01] [Server thread/INFO]: Received mission: §9Environment Description
+[21:12:01] [Server thread/INFO]: Source: §alocalhost
+[21:12:01] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
+[21:12:01] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
+[21:12:01] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[21:12:02] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[21:12:02] [Server thread/INFO]: [STDOUT]: Experiment requires: 
+[21:12:02] [Server thread/INFO]: [STDOUT]: >>>> Environment Description
+[21:12:02] [Client thread/INFO]: [CHAT] Received mission: §9Environment Description
+[21:12:02] [Client thread/INFO]: [CHAT] Source: §alocalhost
+[21:12:02] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:12:02] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
+[21:12:02] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
+[21:12:02] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
+[21:12:02] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
+[21:12:08] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now HUMAN
+[21:12:49] [Server thread/INFO]: Saving and pausing game...
+[21:12:49] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Overworld
+[21:12:49] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Nether
+[21:12:49] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/The End
+[21:13:59] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10359) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:13:59] [Client thread/INFO]: [STDOUT]: SEVERE: <-mcp(localhost:10346) Failed to send TCP bytes -- retrying : java.util.concurrent.ExecutionException: java.io.IOException: Protocol wrong type for socket
+[21:13:59] [Client thread/INFO]: [STDOUT]: SEVERE: <-mcp(localhost:10346) Failed to reconnect: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused
+[21:13:59] [Client thread/INFO]: [STDOUT]: Error - agent is not responding to pings.
+[21:13:59] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
+[21:13:59] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
+[21:14:02] [Server thread/INFO]: [STDOUT]: Warning: managed 16/20 ticks this second.
+[21:14:02] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_QUIT
+[21:14:02] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_QUIT
+[21:14:02] [Client thread/INFO]: [STDOUT]: CLIENT request state: MISSION_ENDED
+[21:14:02] [Client thread/INFO]: [STDOUT]: CLIENT enter state: MISSION_ENDED
+[21:14:02] [Client thread/INFO]: [STDOUT]: Sending mission ended message to localhost:10346.
+[21:14:02] [Client thread/INFO]: [STDOUT]: SEVERE: <-mcp(localhost:10346) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:14:02] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_MISSION_END
+[21:14:02] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_MISSION_END
+[21:14:03] [Server thread/INFO]: [STDOUT]: SERVER request state: CLEAN_UP
+[21:14:03] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
+[21:14:03] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
+[21:14:03] [Server thread/INFO]: [STDOUT]: SERVER enter state: CLEAN_UP
+[21:14:03] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
+[21:14:03] [Client thread/INFO]: [STDOUT]: JETTISONING 0 COMMANDS
+[21:14:04] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
+[21:14:27] [Thread-56/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
+[21:14:27] [Thread-56/INFO]: [STDOUT]: ==== RES:  - -125330
+[21:14:27] [Thread-56/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[21:14:27] [Thread-58/INFO]: [STDOUT]: Received from localhost:<?xml version="1.0" encoding="utf-8"?><MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0"><Mission>                                         <About>                    <Summary>Environment Description</Summary></About><ServerSection>                                <ServerInitialConditions>                                                            <Time>                                                        <StartTime>6000</StartTime><AllowPassageOfTime>true</AllowPassageOfTime></Time><Weather>normal</Weather><AllowSpawning>false</AllowSpawning></ServerInitialConditions><ServerHandlers>                                                            <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/><DrawingDecorator><DrawCuboid x1="0" x2="60" y1="3" y2="3" z1="0" z2="60" type="grass"/><DrawEntity x="58" y="5" z="9" type="Cow"/><DrawEntity x="40" y="5" z="37" type="Cow"/><DrawEntity x="
+[21:14:27] [Thread-58/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[21:14:27] [Client thread/INFO]: [STDOUT]: Mission received: Environment Description
+[21:14:27] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
+[21:14:27] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
+[21:14:27] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
+[21:14:27] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
+[21:14:27] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
+[21:14:27] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
+[21:14:27] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:14:27] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:14:27] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through queue.
+[21:14:27] [Server thread/INFO]: [STDOUT]: Mission received: Environment Description
+[21:14:27] [Server thread/INFO]: Received mission: §9Environment Description
+[21:14:27] [Server thread/INFO]: Source: §alocalhost
+[21:14:27] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
+[21:14:27] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
+[21:14:27] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[21:14:27] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[21:14:27] [Server thread/INFO]: [STDOUT]: Experiment requires: 
+[21:14:27] [Server thread/INFO]: [STDOUT]: >>>> Environment Description
+[21:14:28] [Client thread/INFO]: [CHAT] Received mission: §9Environment Description
+[21:14:28] [Client thread/INFO]: [CHAT] Source: §alocalhost
+[21:14:28] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:14:28] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
+[21:14:28] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
+[21:14:28] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
+[21:14:28] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
+[21:14:32] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now HUMAN
+[21:15:57] [Server thread/INFO]: Saving and pausing game...
+[21:15:57] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Overworld
+[21:15:57] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Nether
+[21:15:57] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/The End
+[21:16:18] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10104) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:16:18] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10418) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:16:18] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10418) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:16:18] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10418) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:16:18] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10418) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:16:18] [Client thread/INFO]: [STDOUT]: ERROR: TCP messages are not getting through - quitting mission.
+[21:16:18] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
+[21:16:18] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
+[21:16:31] [Server thread/INFO]: [STDOUT]: Warning: managed 11/20 ticks this second.
+[21:16:31] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_QUIT
+[21:16:31] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_QUIT
+[21:16:31] [Client thread/INFO]: [STDOUT]: CLIENT request state: MISSION_ENDED
+[21:16:31] [Client thread/INFO]: [STDOUT]: CLIENT enter state: MISSION_ENDED
+[21:16:31] [Client thread/INFO]: [STDOUT]: Sending mission ended message to localhost:10717.
+[21:16:31] [Client thread/INFO]: [STDOUT]: SEVERE: <-mcp(localhost:10717) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:16:31] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_MISSION_END
+[21:16:31] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_MISSION_END
+[21:16:31] [Server thread/INFO]: [STDOUT]: SERVER request state: CLEAN_UP
+[21:16:31] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
+[21:16:31] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
+[21:16:31] [Client thread/INFO]: [STDOUT]: JETTISONING 0 COMMANDS
+[21:16:32] [Server thread/INFO]: [STDOUT]: SERVER enter state: CLEAN_UP
+[21:16:32] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
+[21:16:32] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
+[21:16:47] [Thread-62/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
+[21:16:47] [Thread-62/INFO]: [STDOUT]: ==== RES:  - -120064
+[21:16:47] [Thread-62/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[21:16:47] [Thread-64/INFO]: [STDOUT]: Received from localhost:<?xml version="1.0" encoding="utf-8"?><MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0"><Mission>                                         <About>                    <Summary>Environment Description</Summary></About><ServerSection>                                <ServerInitialConditions>                                                            <Time>                                                        <StartTime>6000</StartTime><AllowPassageOfTime>true</AllowPassageOfTime></Time><Weather>normal</Weather><AllowSpawning>false</AllowSpawning></ServerInitialConditions><ServerHandlers>                                                            <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/><DrawingDecorator><DrawCuboid x1="0" x2="60" y1="3" y2="3" z1="0" z2="60" type="grass"/><DrawEntity x="38" y="5" z="30" type="Sheep"/><DrawEntity x="56" y="5" z="37" type="Sheep"/><DrawEntit
+[21:16:47] [Thread-64/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[21:16:47] [Client thread/INFO]: [STDOUT]: Mission received: Environment Description
+[21:16:47] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
+[21:16:47] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
+[21:16:47] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
+[21:16:47] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
+[21:16:47] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
+[21:16:47] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
+[21:16:47] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:16:47] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through queue.
+[21:16:47] [Server thread/INFO]: [STDOUT]: Mission received: Environment Description
+[21:16:47] [Server thread/INFO]: Received mission: §9Environment Description
+[21:16:47] [Server thread/INFO]: Source: §alocalhost
+[21:16:47] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
+[21:16:47] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
+[21:16:47] [Client thread/INFO]: [CHAT] Received mission: §9Environment Description
+[21:16:47] [Client thread/INFO]: [CHAT] Source: §alocalhost
+[21:16:47] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[21:16:47] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[21:16:47] [Server thread/INFO]: [STDOUT]: Experiment requires: 
+[21:16:47] [Server thread/INFO]: [STDOUT]: >>>> Environment Description
+[21:16:47] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:16:47] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
+[21:16:47] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
+[21:16:47] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
+[21:16:47] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
+[21:16:50] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now HUMAN
+[21:17:21] [Server thread/INFO]: Saving and pausing game...
+[21:17:21] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Overworld
+[21:17:21] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Nether
+[21:17:21] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/The End
+[21:19:21] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10399) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:19:21] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10103) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:19:21] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10103) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:19:21] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10103) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:19:21] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10103) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:19:21] [Client thread/INFO]: [STDOUT]: ERROR: TCP messages are not getting through - quitting mission.
+[21:19:21] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
+[21:19:21] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
+[21:20:25] [Server thread/INFO]: [STDOUT]: Warning: managed 10/20 ticks this second.
+[21:20:25] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_QUIT
+[21:20:25] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_QUIT
+[21:20:25] [Client thread/INFO]: [STDOUT]: CLIENT request state: MISSION_ENDED
+[21:20:25] [Client thread/INFO]: [STDOUT]: CLIENT enter state: MISSION_ENDED
+[21:20:25] [Client thread/INFO]: [STDOUT]: Sending mission ended message to localhost:10929.
+[21:20:25] [Client thread/INFO]: [STDOUT]: SEVERE: <-mcp(localhost:10929) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:20:25] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_MISSION_END
+[21:20:25] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_MISSION_END
+[21:20:25] [Server thread/INFO]: [STDOUT]: SERVER request state: CLEAN_UP
+[21:20:25] [Server thread/INFO]: [STDOUT]: SERVER enter state: CLEAN_UP
+[21:20:25] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
+[21:20:25] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
+[21:20:25] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
+[21:20:25] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
+[21:20:25] [Client thread/INFO]: [STDOUT]: JETTISONING 0 COMMANDS
+[21:20:49] [Thread-68/INFO]: [STDOUT]: Received from localhost:MALMO_REQUEST_CLIENT:0.37.0:20000:
+[21:20:49] [Thread-68/INFO]: [STDOUT]: ==== RES:  - -222678
+[21:20:49] [Thread-68/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[21:20:49] [Thread-70/INFO]: [STDOUT]: Received from localhost:<?xml version="1.0" encoding="utf-8"?><MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0"><Mission>                                         <About>                    <Summary>Environment Description</Summary></About><ServerSection>                                <ServerInitialConditions>                                                            <Time>                                                        <StartTime>6000</StartTime><AllowPassageOfTime>true</AllowPassageOfTime></Time><Weather>normal</Weather><AllowSpawning>false</AllowSpawning></ServerInitialConditions><ServerHandlers>                                                            <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/><DrawingDecorator><DrawCuboid x1="0" x2="60" y1="3" y2="3" z1="0" z2="60" type="grass"/><DrawEntity x="55" y="5" z="40" type="Pig"/><DrawEntity x="27" y="5" z="10" type="Pig"/><DrawEntity x=
+[21:20:49] [Thread-70/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[21:20:50] [Client thread/INFO]: [STDOUT]: Mission received: Environment Description
+[21:20:50] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
+[21:20:50] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
+[21:20:50] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
+[21:20:50] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
+[21:20:50] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
+[21:20:50] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
+[21:20:50] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:20:50] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through queue.
+[21:20:50] [Server thread/INFO]: [STDOUT]: Mission received: Environment Description
+[21:20:50] [Server thread/INFO]: Received mission: §9Environment Description
+[21:20:50] [Server thread/INFO]: Source: §alocalhost
+[21:20:50] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
+[21:20:50] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
+[21:20:50] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[21:20:50] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[21:20:50] [Server thread/INFO]: [STDOUT]: Experiment requires: 
+[21:20:50] [Server thread/INFO]: [STDOUT]: >>>> Environment Description
+[21:20:50] [Client thread/INFO]: [CHAT] Received mission: §9Environment Description
+[21:20:50] [Client thread/INFO]: [CHAT] Source: §alocalhost
+[21:20:50] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:20:50] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - Environment Description
+[21:20:50] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
+[21:20:50] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
+[21:20:50] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
+[21:20:50] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
+[21:20:55] [Client thread/INFO]: [STDOUT]: Toggling control between human and AI - now HUMAN
+[21:23:01] [Server thread/INFO]: Saving and pausing game...
+[21:23:01] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Overworld
+[21:23:01] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/Nether
+[21:23:01] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_a83726a3-9c89-496c-b786-c377a132a366'/The End
+[21:25:07] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10294) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:25:07] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10940) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[21:25:07] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10940) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:25:07] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10940) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:25:07] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10940) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[21:25:07] [Client thread/INFO]: [STDOUT]: ERROR: TCP messages are not getting through - quitting mission.
+[21:25:07] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
+[21:25:07] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING

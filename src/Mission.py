@@ -22,7 +22,7 @@ class Mission:
     def draw_tree(self, x, z):
         result_xml = ""
         for l in range(3, 9):
-            result_xml += f"<DrawBlock x='{x}'  y='{l}' z='{z}' type='dirt' />"
+            result_xml += f"<DrawBlock x='{x}'  y='{l}' z='{z}' type='log' />"
         # Draw leaves
         leave_density = 0.9
         for i, l in zip([2, 2, 1], range(7, 10)):
@@ -85,6 +85,18 @@ class Mission:
             for j in range(z1, z2+1):
                 result_xml += f"<DrawBlock x='{x1}'  y='{l}' z='{j}' type='dark_oak_fence' />"
                 result_xml += f"<DrawBlock x='{x2}'  y='{l}' z='{j}' type='dark_oak_fence'/>"
+        for l in range(7, 11):
+            for i in range(0, 16):
+                result_xml += f"<DrawBlock x='{i}'  y='{l}' z='{z2}' type='dark_oak_fence' />"
+            for j in range(44, 60):
+                result_xml += f"<DrawBlock x='{x1}'  y='{l}' z='{j}' type='dark_oak_fence' />"
+
+        result_xml += f"<DrawBlock x='16'  y='7' z='{z2}' type='dark_oak_fence' />"
+        result_xml += f"<DrawBlock x='16'  y='8' z='{z2}' type='dark_oak_fence' />"
+        result_xml += f"<DrawBlock x='17'  y='7' z='{z2}' type='dark_oak_fence' />"
+        result_xml += f"<DrawBlock x='{x1}'  y='7' z='43' type='dark_oak_fence' />"
+        result_xml += f"<DrawBlock x='{x1}'  y='8' z='43' type='dark_oak_fence' />"
+        result_xml += f"<DrawBlock x='{x1}'  y='7' z='42' type='dark_oak_fence' />"
 
         return result_xml
 
@@ -93,7 +105,7 @@ class Mission:
         for x in range(x1, x2+1):
             for z in range(z1, z2+1):
                 result_xml += f"<DrawBlock x='{x}'  y='3' z='{z}' type='water'/>"
-                result_xml += f"<DrawBlock x='{x}'  y='2' z='{z}' type='water'/>"
+                #result_xml += f"<DrawBlock x='{x}'  y='2' z='{z}' type='water'/>"
         #result_xml += f"<DrawCuboid x1='{x1}' x2='{x2}' y1='3' y2='3' z1='{z1}' z2='{z2}' type='water'/>"
         # Draw stairs
         for l in range(3, 5):
@@ -139,13 +151,23 @@ class Mission:
                 zd2 = random.randint(z1-1, z2+1)
             result_xml += f"<DrawBlock x='{x2+1}'  y='4' z='{zd2}' type='{random.choice(flower_list)}' />"
             zd_list2.append(zd2)
-        # Draw fish
-        fish_num = 4
-        for i in range(fish_num):
-            x = random.randint(x1+1, x2-1)
-            z = random.randint(z1+1, z2-1)
-            type = random.choice(['Pig', 'Cow', 'Sheep'])
-            result_xml += f"<DrawEntity x='{x}' y='3' z='{z}' type='{type}'/>"
+        # Draw flower
+
+        flower_type = random.choice(["yellow_flower", "red_flower"])
+        for x in range(x1+1, x1+6):
+            for z in range(z1+1, z1+6):
+                result_xml += f"<DrawBlock x='{x}' y='3' z='{z}' type='{flower_type}'/>"
+        return result_xml
+
+    def draw_hill(self, x1, x2, z1, z2):
+        result_xml = ""
+        for i, l in zip(range(5), [4, 5, 6, 7, 8]):
+            #random_margin = [(random.randint(1, x2+1-i), z1+i)for j in range(5-i)]
+            #random_margin.extend([(x2+1-i, random.randint(z1+i, z2+1))for j in range(5-i)])
+            for x in range(x1, x2+1-i):
+                for z in range(z1+i, z2+1):
+                    result_xml += f"<DrawBlock x='{x}'  y='{l}' z='{z}' type='grass'/>"
+
         return result_xml
 
     def GetMission(self):
@@ -171,13 +193,16 @@ class Mission:
                 <FlatWorldGenerator generatorString="3;7,2*3,1;1;biome_1,village,lake,lava_lake"/>
                 <DrawingDecorator>''' +  \
             "<DrawCuboid x1='{}' x2='{}' y1='3' y2='3' z1='{}' z2='{}' type='grass'/>".format(0, self._SIZE, 0, self._SIZE) + \
-            self.spawn_type(['Pig', 'Cow', 'Sheep']) + self.draw_wall(0, self._SIZE, 0, self._SIZE) + self.draw_house(30, 40, 30, 40) + self.draw_tree(20, 41) + \
-            self.draw_tree(7, 13) + self.draw_tree(43, 17) + self.draw_tree(38, 11) + self.draw_tree(7, 50) + self.draw_lake(15, 25, 10, 20) + \
-            '''</DrawingDecorator>
+            self.spawn_type(['Pig', 'Cow', 'Sheep']) + self.draw_wall(0, self._SIZE, 0, self._SIZE) + self.draw_house(30, 40, 30, 40) + \
+            self.draw_tree(20, 41) + self.draw_tree(7, 13) + self.draw_tree(43, 17) + self.draw_tree(38, 11) + self.draw_tree(8, 35) + \
+            self.draw_lake(15, 25, 10, 20) + self.draw_hill(1, 16, 44, 59) + self.draw_tree(17, 59) + self.draw_tree(22, 53) + \
+            self.draw_tree(24, 57) + self.draw_tree(46, 14)\
+
+        '''</DrawingDecorator>
                 <ServerQuitWhenAnyAgentFinishes/>
             </ServerHandlers>
         </ServerSection>
-        
+
          <AgentSection mode="Creative">
             <Name>Environment Description</Name>
             <AgentStart>

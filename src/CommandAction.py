@@ -25,9 +25,10 @@ import numpy as np
 
 
 #### GLOABL #####
-TREE_LIST = [(7, 13), (43, 17), (38, 11), (7, 50)]
+TREE_LIST = [(7, 13), (43, 17), (38, 11), (8, 35)]
 HOUSE = [(30, 30), (40, 40)]
-LAKE = [(10, 20), (15, 25)]
+LAKE = [(15, 10), (25, 20)]
+HILL = [(1, 44), (16, 59)]
 ###############
 
 
@@ -273,6 +274,8 @@ class CommandAction:
             block = HOUSE
         elif block == "lake":
             block = LAKE
+        elif block == "hill":
+            block = HILL
         entity_dict = self.get_entity_dict(block)
         x1 = block[0][0]
         x2 = block[1][0]
