@@ -21,7 +21,8 @@ from CommandParse2 import TreeNode
 from CommandParse2 import TreeVisitor
 from allennlp.predictors.predictor import Predictor
 import allennlp_models.structured_prediction
-PREDICTOR = Predictor.from_path("https://storage.googleapis.com/allennlp-public-models/elmo-constituency-parser-2020.02.10.tar.gz")
+PREDICTOR = Predictor.from_path(
+    "https://storage.googleapis.com/allennlp-public-models/elmo-constituency-parser-2020.02.10.tar.gz")
 
 TREE_LST = [(7, 13), (43, 17), (38, 11), (7, 50)]
 HOUSE = [(30, 30), (40, 40)]
@@ -70,7 +71,7 @@ while not world_state.has_mission_begun:
     for error in world_state.errors:
         print("Error:", error.text)
 
-action_index = 0
+#action_index = 0
 '''
 CP = CommandParse("")
 model = CP.save_model()
@@ -108,7 +109,7 @@ while world_state.is_mission_running:
 
             if move_command.startswith('move'):
                 step = int(move_command.split(' ')[1])
-                print(step)
+                # print(step)
                 if step > 0:
                     for i in range(abs(step)):
                         print(i)

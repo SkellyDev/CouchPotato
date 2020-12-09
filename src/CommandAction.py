@@ -58,9 +58,6 @@ class CommandAction:
     def get_agent_pos(self):
         return (self.observation['XPos'], self.observation['ZPos'])
 
-    def count(self):
-        return 0
-
     def get_distance(self, x1, x2, z1, z2):
         """
         Get distance of two coordinate
@@ -80,7 +77,8 @@ class CommandAction:
         input: block type include agent and others "agent"/global variable
         return a dict of all types of entities : [distance, angle, coord]
         """
-        entity_dict = defaultdict(list)
+        print(block_type)
+        entity_dict = {}
         if block_type == "agent":
             x = self.get_agent_pos()[0]
             z = self.get_agent_pos()[1]
@@ -93,10 +91,13 @@ class CommandAction:
             entity_x = e["x"]
             entity_z = e["z"]
             entity_name = e["name"]
-            angle = self.entity_angle((x, z))
+            angle = self.entity_angle((entity_x, entity_z))
             dist = self.get_distance(x, entity_x, z, entity_z)
+            if entity_name not in entity_dict.keys():
+                entity_dict[entity_name] = []
             entity_dict[entity_name].append(
                 (dist, angle, (entity_x, entity_z)))
+        # print(entity_dict)
         return entity_dict
 
     def get_entity_closest_relative_block(self, block_type):
@@ -154,9 +155,10 @@ class CommandAction:
         input: an entity type : string
         output: a list [distance, angle, coord] of closest entity(type)
         '''
-        entity_list = self.get_entity_dict(block_type)[entity_type]
+        entity_list = self.get_entity_dict(
+            block_type)[entity_type.capitalize()]
         entity_list = sorted(entity_list, key=lambda entity: entity[0])
-
+        # print(entity_list)
         return entity_list[0]
 
     ####### --------------------------- END OF HELPER FUNCTION ------------------------------------- ########
@@ -167,8 +169,10 @@ class CommandAction:
         '''
         Get the direction of entity correlated to the agent or an architect
         '''
+        # print(entity_type)
         closest_entity = self.find_closest_entity_relative_to_block(
             target, entity_type)
+        # print(closest_entity)
         direction = ""
         if target == "agent":
             agent_yaw = self.observation['Yaw']
@@ -281,7 +285,7 @@ class CommandAction:
         return inside
 
     def count(self, animal, block):
-        inside = self.find_animal_inside_block(block)
+        inside = self.inside(block)
         if animal != 'animals':
             num = inside.count(animal)
         else:
@@ -290,7 +294,7 @@ class CommandAction:
 
     def describe_agent_location(self):
         ground = self.get_grid_from_observation()
-        agent_x, agent_z = self.get_agent_pos()
+        #agent_x, agent_z = self.get_agent_pos()
 
         stand = ""
         if ground[1] == "grass":
@@ -300,7 +304,7 @@ class CommandAction:
         elif ground[1] == "water":
             stand = "in the water"
 
-        entity = self.find_closest_animal("agent", 3)
+        entity = self.closest("agent", 3)
         entity = ",".join(entity)
 
         result = f"I am standing {stand}, and I can see there are {entity} near me"
