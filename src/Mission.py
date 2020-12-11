@@ -196,32 +196,31 @@ class Mission:
             self.spawn_type(['Pig', 'Cow', 'Sheep']) + self.draw_wall(0, self._SIZE, 0, self._SIZE) + self.draw_house(30, 40, 30, 40) + \
             self.draw_tree(20, 41) + self.draw_tree(7, 13) + self.draw_tree(43, 17) + self.draw_tree(38, 11) + self.draw_tree(8, 35) + \
             self.draw_lake(15, 25, 10, 20) + self.draw_hill(1, 16, 44, 59) + self.draw_tree(17, 59) + self.draw_tree(22, 53) + \
-            self.draw_tree(24, 57) + self.draw_tree(46, 14)\
+            self.draw_tree(24, 57) + self.draw_tree(46, 14) + \
+            '''</DrawingDecorator>
+                    <ServerQuitWhenAnyAgentFinishes/>
+                </ServerHandlers>
+            </ServerSection>
 
-        '''</DrawingDecorator>
-                <ServerQuitWhenAnyAgentFinishes/>
-            </ServerHandlers>
-        </ServerSection>
-
-         <AgentSection mode="Creative">
-            <Name>Environment Description</Name>
-            <AgentStart>
-                <Placement x="30" y="4" z="30" yaw="0"/>
-            </AgentStart>
-            <AgentHandlers>
-                <ObservationFromFullStats/>
-                <ObservationFromRay/>
-                <ObservationFromNearbyEntities>
-                    <Range name="Entities" xrange="120" yrange="9" zrange="120"/>
-                </ObservationFromNearbyEntities>
-                <ObservationFromGrid>
-                    <Grid name="ground_layer">
-                        <min x="-1" y="-1" z="-1"/>
-                        <max x="1" y="-1" z="1"/>
-                    </Grid>
-                </ObservationFromGrid>
-                    <ContinuousMovementCommands turnSpeedDegs="180"/>
-            </AgentHandlers>
-        </AgentSection>
-        </Mission>
-        '''
+            <AgentSection mode="Creative">
+                <Name>Environment Description</Name>
+                <AgentStart>
+                    <Placement x="30" y="4" z="30" yaw="0"/>
+                </AgentStart>
+                <AgentHandlers>
+                    <ObservationFromFullStats/>
+                    <ObservationFromRay/>
+                    <ObservationFromNearbyEntities>
+                        <Range name="Entities" xrange="120" yrange="9" zrange="120"/>
+                    </ObservationFromNearbyEntities>
+                    <ObservationFromGrid>
+                        <Grid name="ground_layer">
+                            <min x="-1" y="-1" z="-1"/>
+                            <max x="1" y="-1" z="1"/>
+                        </Grid>
+                    </ObservationFromGrid>
+                        <ContinuousMovementCommands turnSpeedDegs="180"/>
+                </AgentHandlers>
+            </AgentSection>
+            </Mission>
+            '''
