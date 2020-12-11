@@ -79,10 +79,9 @@ class TreeVisitor:
 
     def visit_sbarq(self, n):
         if n.children[0].text.lower() == "where":
-            nn = self.visit(n.children[1])
-            print(nn)
-            result = self.CA.getDirection('cow')
-            print(result)
+            self.tag = "direction"
+            return self.visit(n.children[1])
 
     def visit_nn(self, n):
-        return n.text
+        if self.tag == "direction":
+            print(self.CA.getDirection(n.text))
