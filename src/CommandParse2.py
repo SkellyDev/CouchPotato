@@ -57,7 +57,9 @@ class TreeVisitor:
     def __init__(self, TreeNode, agent):
         self.CA = CommandAction(agent)
         self.nodeStack = []
+        self.nn = []
         self.visit(TreeNode)
+        self.call_function()
 
     def visit(self, node):
         for n in node.children:
@@ -65,7 +67,7 @@ class TreeVisitor:
                 # print(n.label)
                 self.nodeStack.append(n)  # w p np
 
-        if node.label == "SBARQ":
+        if node.label == "SBARQ" or "SBAR":
             return self.visit_sbarq(node)
         elif node.label == "NN":
             return self.visit_nn(node)
@@ -74,14 +76,35 @@ class TreeVisitor:
             if node in self.nodeStack:
                 i = self.nodeStack.index(node)
                 self.nodeStack.pop(i)
-            new = self.nodeStack.pop()
+            new = self.nodeStack.pop(0)
             self.visit(new)
 
     def visit_sbarq(self, n):
         if n.children[0].text.lower() == "where":
             self.tag = "direction"
-            return self.visit(n.children[1])
+        elif n.children[0].text.lower() == "what":
+            self.tag = "nearest"
+        elif re.findall('\w+\s{1}\w+', n.text.lower())[0] == "how many":
+            self.tag = "count"
+        return self.visit(n.children[1])
 
     def visit_nn(self, n):
+        a = n.text
+        self.nn.append(a)
+        if len(self.nodeStack) > 0:
+            ne = self.nodeStack.pop(0)
+            return self.visit(ne)
+
+    def call_function(self):
         if self.tag == "direction":
-            print(self.CA.getDirection(n.text))
+            if len(self.nn) == 1:
+                print(self.CA.getDirection(self.nn[0]))
+            else:
+                print(self.CA.getDirection(self.nn[0], self.nn[1]))
+        elif self.tag == "nearest":
+            if len(self.nn) == 1:
+                print(self.CA.closest())
+            else:
+                print(self.CA.closest(self.nn[1]))
+        elif self.tag == "":
+            return 0
