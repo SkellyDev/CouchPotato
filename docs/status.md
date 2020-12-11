@@ -9,7 +9,7 @@ title: Status
 
 ## Project Summary
 
-We intent to build a environment description system for this project which enable users to ask questions to our Malmo agent and then get the answer back through the terminal. All scenario information will be obtained from the Malmo APL, and envrionment describing functions are implemented to compute the target results based on the raw world state information. Questions will include but not limit to “how many pigs can you see in your view”, “what is the river” and “How many black sheep can you see?”. Our project is expected to train a Deep Neural Network Model in order to match user command with correct envrionment describing function. Natural Language Processing (NLP) will be used to parse users' command passing as correct argument. We will handle the situation of different expressions for the same way asking by using a Deep Neural Network Model.
+We intent to build a environment description system for this project which enable users to ask questions to our Malmo agent and then get the answer back through the terminal. All scenario information will be obtained from the Malmo API, and envrionment describing functions are implemented to compute the target results based on the raw world state information. Questions will include but not limit to “how many pigs can you see in your view”, “what is the river” and “How many black sheep can you see?”. Our project is expected to train a Deep Neural Network Model in order to match user command with correct envrionment describing function. Natural Language Processing (NLP) will be used to parse users' command passing as correct argument. We will handle the situation of different expressions for the same way asking by using a Deep Neural Network Model.
 
 ## Approach
 
@@ -29,7 +29,7 @@ Evaluation will be divided into two parts based on our project stages: (1) check
 
 <p><img src="assets/BlackBox_testing.png" width="650" alt/><em>Figure 1: Black Box Testing Result </em></p>
 
-<br> (2) To check DNN model accuracy, we evaluate the accuracy rate returned from our trained DNN model. (Figure 2) From the figure below you can see, our trained model finally recorded 100% for our training data. 
+<br> (2) To check DNN model accuracy, we evaluate the accuracy rate returned from our trained DNN model. (Figure 2) From the figure below you can see, our trained model finally recorded 100% for our training data.
 
 <p><img src="assets/accuracy_graph.png" width="650" alt/><em>Figure 2: DNN model accuracy</em></p>
 

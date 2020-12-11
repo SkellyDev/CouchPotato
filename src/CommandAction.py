@@ -162,6 +162,18 @@ class CommandAction:
         # print(entity_list)
         return entity_list[0]
 
+    def block_type_convert(self, block_type):
+        if block_type.lower() == "tree":
+            return TREE_LIST
+        elif block_type.lower() == "house":
+            return HOUSE
+        elif block_type.lower() == "lake":
+            return LAKE
+        elif block_type.lower() == "hill":
+            return HILL
+        else:
+            return block_type
+
     ####### --------------------------- END OF HELPER FUNCTION ------------------------------------- ########
 
     ####### --------------------------- ACTION FUNCTION ------------------------------------- #############
@@ -171,6 +183,7 @@ class CommandAction:
         Get the direction of entity correlated to the agent or an architect
         '''
         # print(entity_type)
+        target = self.block_type_convert(target)
         closest_entity = self.find_closest_entity_relative_to_block(
             target, entity_type)
         # print(closest_entity)
@@ -201,6 +214,7 @@ class CommandAction:
                 else:
                     direction = f"right in front of me"
         else:
+            target
             cor1 = closest_entity[2]
             if target == HOUSE:
                 cor2 = HOUSE
@@ -247,13 +261,15 @@ class CommandAction:
                     direction = "This entity is around the tree."
                 else:
                     direction = "This entity is not in the range."
+        print(direction)
         return direction
 
-    def closest(self, block_type, num=1):
+    def closest(self, block_type="agent", num=1):
         '''
         input block type: "agent"/global variable(block type)/animal type
         output name of closest animal
         '''
+        block_type = self.block_type_convert(block_type)
         entity_list = self.get_entity_closest_relative_block(block_type)
         if type(block_type) == list:
             entity_list = entity_list[1:]
@@ -266,9 +282,10 @@ class CommandAction:
                 result.append((entity_list[index][0], entity_list[index][2]))
                 count += 1
             index += 1
+        print(result)
         return result
 
-    def inside(self, block):
+    def inside(self, block: str):
         inside = []
         if block == "house":
             block = HOUSE
@@ -285,6 +302,7 @@ class CommandAction:
             for each in entity_dict[key]:
                 if each[2][0] > x1 and each[2][0] < x2 and each[2][1] > z1 and each[2][1] < z2:
                     inside.append(key)
+        print(inside)
         return inside
 
     def count(self, animal, block):
@@ -293,6 +311,7 @@ class CommandAction:
             num = inside.count(animal)
         else:
             num = len(inside)
+        print(num)
         return num
 
     def describe_agent_location(self):
@@ -311,4 +330,5 @@ class CommandAction:
         entity = ",".join(entity)
 
         result = f"I am standing {stand}, and I can see there are {entity} near me"
+        print(result)
         return result
