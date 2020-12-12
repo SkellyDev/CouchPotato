@@ -74,9 +74,7 @@ class TreeVisitor:
             return self.visit_nn(node)
         elif node.label == "S":
             return self.visit_s(node)
-        elif node.label == "VB":
-            return self.visit_vb(node)
-        elif node.label == "IN" and "how many" not in self.treenode.children[0].text.lower() and node.text.lower() not in ["near", "to", "of"]:
+        elif node.label == "IN" and "how many" not in self.treenode.children[0].text.lower() and node.text.lower() != "near":
             return self.visit_in(node)
         else:
             #print("node label", node.label)
@@ -108,18 +106,12 @@ class TreeVisitor:
         if len(self.nodeStack) > 0:
             ne = self.nodeStack.pop(0)
             return self.visit(ne)
-
-    def visit_s(self, n):
+    
+    def visit_s(self,n):
         '''陈述句'''
         return self.visit(n.children[0])
 
-    def visit_vb(self, n):
-        self.tag = "describe"
-
     def call_function(self):
-        if self.tag == "describe":
-            return self.CA.describe_agent_location()
-
         if self.nn[0].lower() == "direction":
             self.tag = "direction"
             self.nn.pop(0)
@@ -136,11 +128,9 @@ class TreeVisitor:
             else:
                 if self.nn.count("animal") > 1:
                     num = self.nn.count("animal")
-                    print('self.nn.count("animal")', num)
                     param = self.nn[-1] if self.nn[-1] != "animal" else "agent"
                     while num > 0:
                         param = self.CA.closest(param)
-                        print('return result param', param)
                         num -= 1
                     print("the closest animal is", param)
                 else:

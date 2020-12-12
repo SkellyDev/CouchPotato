@@ -11,6 +11,7 @@ import json
 import math
 from collections import defaultdict
 import numpy as np
+import math
 
 # What is the closest entity (relative to agent)? ✅
 # Where is the closest (entity) (relative to agent) ?
@@ -104,16 +105,14 @@ class CommandAction:
     def get_entity_closest_relative_block(self, block_type):
         '''
         input: "agent"/global variable(block type)
-        Return list of tuple : [('Pig', 4.234), ('Cow', 5)...] For getting
-        animal distances
         '''
         if block_type == "agent":
             x = self.get_agent_pos()[0]
             z = self.get_agent_pos()[1]
 
-        elif type(block_type) == list and block_type[0][0] in ['Pig', 'Cow', 'Sheep']:
-            x = block_type[0][1][0]
-            z = block_type[0][1][1]
+        elif type(block_type) == tuple:
+            x = block_type[0]
+            z = block_type[1]
             #print(x, z)
 
         else:
@@ -149,6 +148,8 @@ class CommandAction:
             return (35, 35)
         elif block_type == LAKE:
             return (12.5, 22.5)
+        elif block_type == HILL:
+            return (9, 51)
 
     def find_closest_entity_relative_to_block(self, block_type, entity_type: str):
         '''
@@ -163,14 +164,19 @@ class CommandAction:
         return entity_list[0]
 
     def block_type_convert(self, block_type):
-        if block_type.lower() == "tree":
+        #block_type = block_type.strip()
+        if block_type.strip().lower() == "tree":
             return TREE_LIST
-        elif block_type.lower() == "house":
+        elif block_type.strip().lower() == "house":
             return HOUSE
-        elif block_type.lower() == "lake":
+        elif block_type.strip().lower() == "lake":
             return LAKE
-        elif block_type.lower() == "hill":
+        elif block_type.strip().lower() == "hill":
             return HILL
+        elif block_type.strip().capitalize() in ['Pig', 'Sheep', 'Cow']:
+            closest_entity = self.find_closest_entity_relative_to_block(
+                "agent", block_type)
+            return closest_entity[2]
         else:
             return block_type
 
@@ -190,29 +196,62 @@ class CommandAction:
         direction = ""
         if target == "agent":
             agent_yaw = self.observation['Yaw']
-            direction_of_closet = agent_yaw-closest_entity[1]
-            entity_dist = self.get_distance(
-                closest_entity[2][0], 0, closest_entity[2][1], 0)
-            agent_dist = self.get_distance(
-                self.get_agent_pos()[0], 0, self.get_agent_pos()[1], 0)
-            if entity_dist > agent_dist:
-                if direction_of_closet >= -50 and direction_of_closet <= 50:
-                    direction = "right in front of me"
-                elif direction_of_closet < -50 and direction_of_closet >= -160:
-                    direction = "on my right hand"
-                elif direction_of_closet > 50 and direction_of_closet < 160:
-                    direction = "on my left hand"
-                else:
-                    direction = f"I cannot see any {entity_type}, maybe it's behind me"
-            else:
-                if direction_of_closet >= -50 and direction_of_closet <= 50:
-                    direction = f"I cannot see any {entity_type}, maybe it's behind me"
-                elif direction_of_closet < -50 and direction_of_closet >= -160:
-                    direction = "on my left hand"
-                elif direction_of_closet > 50 and direction_of_closet < 160:
-                    direction = "on my right hand"
-                else:
-                    direction = f"right in front of me"
+            if agent_yaw > 180:
+                agent_yaw = -(360-agent_yaw)
+            elif agent_yaw < -180:
+                agent_yaw = 360-agent_yaw
+            print(agent_yaw)
+            entity_x = closest_entity[2][0]
+            entity_y = closest_entity[2][1]
+            agent_x = self.get_agent_pos()[0]
+            agent_y = self.get_agent_pos()[1]
+
+            entity_agent_degree = math.atan(
+                (float)(agent_y-entity_y)/(-agent_x-(-entity_x))) * 180 / math.pi
+            degree_diff = entity_agent_degree + agent_yaw
+            #entity_dist = self.get_distance(entity_x, 0, entity_y, 0)
+            #agent_dist = self.get_distance(agent_x, 0, agent_y, 0)
+
+            if entity_y > agent_y:
+                if entity_x < agent_x:
+                    if degree_diff < 110 and degree_diff > 70:
+                        direction = "I can see the {entity_type} is right in front of me"
+                    elif degree_diff > 0 and degree_diff <= 70:
+                        direction = "I can see the {entity_type} is on my right hand side"
+                    elif degree_diff >= 110 and degree_diff < 180:
+                        direction = "I can see the {entity_type} is on my left hand side"
+                    else:
+                        direction = "I cannot see any {entity_type}, maybe it's behind me."
+                else:  # entity_x > agent_x
+                    if degree_diff < -70 and degree_diff > -110:
+                        direction = "I can see the {entity_type} is right in front of me"
+                    elif degree_diff < 0 and degree_diff >= -70:
+                        direction = "I can see the {entity_type} is on my left hand side"
+                    elif degree_diff <= -110 and degree_diff > -180:
+                        direction = "I can see the {entity_type} is on my right hand side"
+                    else:
+                        direction = "I cannot see any {entity_type}, maybe it's behind me."
+            else:  # entity_y < agent_y
+                if entity_x > agent_x:
+                    if degree_diff >= 0 and degree_diff <= 180:
+                        direction = "I cannot see any {entity_type}, maybe it's behind me."
+                    elif degree_diff < 0 and degree_diff > -70:
+                        direction = "I can see the {entity_type} is on my left hand side"
+                    elif degree_diff <= -70 and degree_diff >= -110:
+                        direction = "I can see the {entity_type} is right in front of me"
+                    else:
+                        direction = "I can see the {entity_type} is on my right hand side"
+
+                else:  # entity_x < agent_x
+                    if degree_diff >= 70 and degree_diff <= 110:
+                        direction = "I can see the {entity_type} is right in front of me"
+                    elif degree_diff <= 0 and degree_diff >= -180:
+                        direction = "I cannot see any {entity_type}, maybe it's behind me."
+                    elif degree_diff > 0 and degree_diff < 70:
+                        direction = "I can see the {entity_type} is on my right hand side"
+
+                    else:
+                        direction = "I can see the {entity_type} is on my left hand side"
         else:
             target
             cor1 = closest_entity[2]
@@ -220,6 +259,8 @@ class CommandAction:
                 cor2 = HOUSE
             elif target == LAKE:
                 cor2 = LAKE
+            elif target == HILL:
+                cor2 = HILL
             else:  # Tree
                 cor2 = [self.find_closest_block_relative_agent(target)]
             if len(cor2) != 1:
@@ -269,9 +310,11 @@ class CommandAction:
         input block type: "agent"/global variable(block type)/animal type
         output name of closest animal
         '''
+        #print('block_type', block_type)
         block_type = self.block_type_convert(block_type)
+        #print('self.block_type_convert(block_type)', block_type)
         entity_list = self.get_entity_closest_relative_block(block_type)
-        if type(block_type) == list:
+        if type(block_type) == tuple:
             entity_list = entity_list[1:]
         # print(entity_list)
         count = 0
@@ -279,20 +322,30 @@ class CommandAction:
         index = 0
         while count < num:
             if entity_list[index][0] in ['Pig', 'Cow', 'Sheep']:
-                result.append((entity_list[index][0], entity_list[index][2]))
-                count += 1
+                if block_type == "agent" or block_type == TREE_LIST or type(block_type) == tuple:
+                    result.append(
+                        (entity_list[index][0], entity_list[index][2]))
+                    count += 1
+                else:
+                    x1 = block_type[0][0]
+                    x2 = block_type[1][0]
+                    z1 = block_type[0][1]
+                    z2 = block_type[1][1]
+                    animal_cor = entity_list[index][2]
+                    if not (animal_cor[0] > x1 and animal_cor[0] < x2 and animal_cor[1] > z1 and animal_cor[1] < z2):
+                        result.append(
+                            (entity_list[index][0], entity_list[index][2]))
+                        count += 1
             index += 1
-        print(result)
+        result_list = [i[0] for i in result]
+        result = ''.join(result_list)
+        # print(result)
+
         return result
 
     def inside(self, block: str):
         inside = []
-        if block == "house":
-            block = HOUSE
-        elif block == "lake":
-            block = LAKE
-        elif block == "hill":
-            block = HILL
+        block = self.block_type_convert(block)
         entity_dict = self.get_entity_dict(block)
         x1 = block[0][0]
         x2 = block[1][0]
@@ -300,35 +353,44 @@ class CommandAction:
         z2 = block[1][1]
         for key in entity_dict.keys():
             for each in entity_dict[key]:
-                if each[2][0] > x1 and each[2][0] < x2 and each[2][1] > z1 and each[2][1] < z2:
+                if each[0] in ['Pig', 'Cow', 'Sheep'] and each[2][0] > x1 and each[2][0] < x2 and each[2][1] > z1 and each[2][1] < z2:
                     inside.append(key)
-        print(inside)
+        print(' and '.join(list(set(inside))) + " are inside the house")
         return inside
 
     def count(self, animal, block):
         inside = self.inside(block)
         if animal != 'animals':
-            num = inside.count(animal)
+            num = inside.count(animal[:-1].capitalize())
+            print(f'There are {num} {animal} inside the {block}.')
         else:
             num = len(inside)
-        print(num)
+            print(f'There are total {num} animals inside the {block}')
         return num
 
     def describe_agent_location(self):
-        ground = self.get_grid_from_observation()
-        #agent_x, agent_z = self.get_agent_pos()
-
+        x = self.get_agent_pos()[0]
+        z = self.get_agent_pos()[1]
+        #print(x, z)
         stand = ""
-        if ground[1] == "grass":
-            stand = "on the grass"
-        elif ground[1] == "sand":
-            stand = "inside the house"
-        elif ground[1] == "water":
-            stand = "in the water"
+        if x > 1 and x < 16 and z > 44 and z < 59:
+            stand = "hill"
+        elif x > 17 and x < 20 and z >= 9 and z <= 21:
+            stand = "bridge"
+        else:
+            stand = "grass"
+        sight = ""
+        position = "in front of"
+        if z < 9:
+            sight = "a lake, a house and a hill"
+        elif z > 9 and z < 30:
+            sight = "a house and a hill"
+        elif stand == "hill":
+            sight = "a house and a lake"
+            position = "below"
+        else:
+            sight = "a hill"
 
-        entity = self.closest("agent", 3)
-        entity = ",".join(entity)
-
-        result = f"I am standing {stand}, and I can see there are {entity} near me"
+        result = f"I am standing on the {stand} in a village, and I can see there is {sight} {position} me"
         print(result)
         return result
