@@ -133,6 +133,9 @@ while world_state.is_mission_running:
             else:
                 print('Invalid move command')
     else:
+        user_command = user_command.strip()
+        if user_command.endswith('.') or user_command.endswith(',') or user_command.endswith('?'):
+            user_command = user_command[:-1]
         tree_string = PREDICTOR.predict(user_command)["trees"]
         TN = TreeNode(tree_string)
         TV = TreeVisitor(TN, agent_host)

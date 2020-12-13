@@ -103,7 +103,9 @@ Then we will compare their difference based on four difference cases.
 2. agent_y > entity_y, agent_x < entity_x
 3. agent_y < entity_y, agent_x > entity_x
 4. agent_y < entity_y, agent_x < entity_x
+
 For example, we first add up agent yaw(figure 3) and entity degree(figure 4) which is equal to -90 degree. If we are now in the case 4, we could discover that when their degree summation is around -90 degree, the entity is at the front of the agent. (Figure 5 could be used for reference). Undoubtedly, all the "in front of" situations are different in the above four cases, as well as "right", "left" or "behind". Therefore, this is the process of how we figure out this pattern.
+
 <p><img src="assets/result_calculation.png" width="400" alt/><em>Figure 5: Result calculation</em></p>
 
 #### Count entities inside based on position

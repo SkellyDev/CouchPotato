@@ -275,29 +275,29 @@ class CommandAction:
                 if cor1[0] < center_x + 20 and cor1[0] > center_x - 20 and cor1[1] < center_y + 20 and cor1[1] > center_y - 20:
                     if cor1[1] > cor2_z2:
                         if cor1[0] > cor2_x2:
-                            direction = "Top left corner"
+                            direction = f"It's in the top left corner of the {block_loc}"
                         elif cor1[0] > cor2_x1 and cor1[0] < cor2_x2:
-                            direction = "Behind"
+                            direction = f"It's behind the {block_loc}"
                         else:
-                            direction = "Top right corner"
+                            direction = f"It's in the top right corner of the {block_loc}"
                     elif cor1[1] > cor2_z1 and cor1[1] < cor2_z2:
                         if cor1[0] > cor2_x2:
-                            direction = "Left"
+                            direction = f"It's on the left side of the {block_loc}"
                         elif cor1[0] > cor2_x1 and cor1[0] < cor2_x2:
-                            direction = "inside"
+                            direction = f"It's inside the {block_loc}"
                             if block_loc.lower() == "hill":
-                                direction = "on"
+                                direction = f"It's on the {block_loc}"
                         else:
-                            direction = "Right"
+                            direction = f"It's on the right side of the {block_loc}"
                     else:
                         if cor1[0] > cor2_x2:
-                            direction = "Bottom left corner"
+                            direction = f"It's in the bottom left corner of the {block_loc}"
                         elif cor1[0] > cor2_x1 and cor1[0] < cor2_x2:
-                            direction = "Front"
+                            direction = f"It's in front of the {block_loc}"
                         else:
-                            direction = "Bottom right corner"
+                            direction = f"It's in the bottom right corner of the {block_loc}"
                 else:
-                    direction = "This entity is not in the range."
+                    direction = "This entity is not in the range of the {block_loc}."
             else:  # Tree
                 cor2_x = cor2[0][0]
                 cor2_z = cor2[0][1]
@@ -348,6 +348,7 @@ class CommandAction:
 
     def inside(self, block: str):
         inside = []
+        block_loc = block
         block = self.block_type_convert(block)
         entity_dict = self.get_entity_dict(block)
         x1 = block[0][0]
@@ -358,14 +359,23 @@ class CommandAction:
             for each in entity_dict[key]:
                 if key in ['Pig', 'Cow', 'Sheep'] and each[2][0] > x1 and each[2][0] < x2 and each[2][1] > z1 and each[2][1] < z2:
                     inside.append(key)
-        print(' and '.join(list(set(inside))) + " are inside the house")
-        return inside
+        p = ""
+        if len(inside) == 1:
+            p = 'is'
+        else:
+            p = 'are'
+        result = ' and '.join(list(set(inside))) + \
+            f" {p} inside the {block_loc}"
+        return inside, result
 
     def count(self, animal, block):
-        inside = self.inside(block)
+        inside = self.inside(block)[0]
         if animal != 'animals':
             num = inside.count(animal[:-1].capitalize())
-            print(f'There are {num} {animal} inside the {block}.')
+            if num == 1:
+                print(f'There is {num} {animal[:-1]} inside the {block}.')
+            else:
+                print(f'There are {num} {animal} inside the {block}.')
         else:
             num = len(inside)
             print(f'There are total {num} animals inside the {block}')

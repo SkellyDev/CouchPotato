@@ -136,18 +136,19 @@ class TreeVisitor:
             else:
                 if self.nn.count("animal") > 1:
                     num = self.nn.count("animal")
-                    print('self.nn.count("animal")', num)
+                    #print('self.nn.count("animal")', num)
                     param = self.nn[-1] if self.nn[-1] != "animal" else "agent"
                     while num > 0:
                         param = self.CA.closest(param)
-                        print('return result param', param)
+                        #print('return result param', param)
                         num -= 1
-                    print("the closest animal is", param)
+                    print("The closest animal is", param)
                 else:
-                    print(self.CA.closest(self.nn[1]))
+                    print("The closest animal is", self.CA.closest(self.nn[1]))
 
         elif self.tag == "count":
-            print(self.CA.count(self.nn[0], self.nn[1]))
+            return self.CA.count(self.nn[0], self.nn[1])
 
         elif self.tag == "inside":
-            print(self.CA.inside(self.nn[1]))
+            inside = self.CA.inside(self.nn[1])[1]
+            print(inside)
