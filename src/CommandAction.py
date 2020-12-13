@@ -26,7 +26,8 @@ import math
 
 
 #### GLOABL #####
-TREE_LIST = [(7, 13), (43, 17), (38, 11), (8, 35)]
+TREE_LIST = [(7, 13), (43, 17), (38, 11), (8, 35),
+             (17, 59), (22, 53), (24, 57), (46, 14)]
 HOUSE = [(30, 30), (40, 40)]
 LAKE = [(15, 10), (25, 20)]
 HILL = [(1, 44), (16, 59)]
@@ -79,7 +80,7 @@ class CommandAction:
         input: block type include agent and others "agent"/global variable
         return a dict of all types of entities : [distance, angle, coord]
         """
-        print(block_type)
+        # print(block_type)
         entity_dict = {}
         if block_type == "agent":
             x = self.get_agent_pos()[0]
@@ -189,6 +190,7 @@ class CommandAction:
         Get the direction of entity correlated to the agent or an architect
         '''
         # print(entity_type)
+        block_loc = target
         target = self.block_type_convert(target)
         closest_entity = self.find_closest_entity_relative_to_block(
             target, entity_type)
@@ -200,7 +202,7 @@ class CommandAction:
                 agent_yaw = -(360-agent_yaw)
             elif agent_yaw < -180:
                 agent_yaw = 360-agent_yaw
-            print(agent_yaw)
+            # print(agent_yaw)
             entity_x = closest_entity[2][0]
             entity_y = closest_entity[2][1]
             agent_x = self.get_agent_pos()[0]
@@ -215,43 +217,43 @@ class CommandAction:
             if entity_y > agent_y:
                 if entity_x < agent_x:
                     if degree_diff < 110 and degree_diff > 70:
-                        direction = "I can see the {entity_type} is right in front of me"
+                        direction = f"I can see the {entity_type} is right in front of me"
                     elif degree_diff > 0 and degree_diff <= 70:
-                        direction = "I can see the {entity_type} is on my right hand side"
+                        direction = f"I can see the {entity_type} is on my right hand side"
                     elif degree_diff >= 110 and degree_diff < 180:
-                        direction = "I can see the {entity_type} is on my left hand side"
+                        direction = f"I can see the {entity_type} is on my left hand side"
                     else:
-                        direction = "I cannot see any {entity_type}, maybe it's behind me."
+                        direction = f"I cannot see any {entity_type}, maybe it's behind me."
                 else:  # entity_x > agent_x
                     if degree_diff < -70 and degree_diff > -110:
-                        direction = "I can see the {entity_type} is right in front of me"
+                        direction = f"I can see the {entity_type} is right in front of me"
                     elif degree_diff < 0 and degree_diff >= -70:
-                        direction = "I can see the {entity_type} is on my left hand side"
+                        direction = f"I can see the {entity_type} is on my left hand side"
                     elif degree_diff <= -110 and degree_diff > -180:
-                        direction = "I can see the {entity_type} is on my right hand side"
+                        direction = f"I can see the {entity_type} is on my right hand side"
                     else:
-                        direction = "I cannot see any {entity_type}, maybe it's behind me."
+                        direction = f"I cannot see any {entity_type}, maybe it's behind me."
             else:  # entity_y < agent_y
                 if entity_x > agent_x:
                     if degree_diff >= 0 and degree_diff <= 180:
-                        direction = "I cannot see any {entity_type}, maybe it's behind me."
+                        direction = f"I cannot see any {entity_type}, maybe it's behind me."
                     elif degree_diff < 0 and degree_diff > -70:
-                        direction = "I can see the {entity_type} is on my left hand side"
+                        direction = f"I can see the {entity_type} is on my left hand side"
                     elif degree_diff <= -70 and degree_diff >= -110:
-                        direction = "I can see the {entity_type} is right in front of me"
+                        direction = f"I can see the {entity_type} is right in front of me"
                     else:
-                        direction = "I can see the {entity_type} is on my right hand side"
+                        direction = f"I can see the {entity_type} is on my right hand side"
 
                 else:  # entity_x < agent_x
                     if degree_diff >= 70 and degree_diff <= 110:
-                        direction = "I can see the {entity_type} is right in front of me"
+                        direction = f"I can see the {entity_type} is right in front of me"
                     elif degree_diff <= 0 and degree_diff >= -180:
-                        direction = "I cannot see any {entity_type}, maybe it's behind me."
+                        direction = f"I cannot see any {entity_type}, maybe it's behind me."
                     elif degree_diff > 0 and degree_diff < 70:
-                        direction = "I can see the {entity_type} is on my right hand side"
+                        direction = f"I can see the {entity_type} is on my right hand side"
 
                     else:
-                        direction = "I can see the {entity_type} is on my left hand side"
+                        direction = f"I can see the {entity_type} is on my left hand side"
         else:
             target
             cor1 = closest_entity[2]
@@ -284,6 +286,8 @@ class CommandAction:
                             direction = "Left"
                         elif cor1[0] > cor2_x1 and cor1[0] < cor2_x2:
                             direction = "inside"
+                            if block_loc.lower() == "hill":
+                                direction = "on"
                         else:
                             direction = "Right"
                     else:
@@ -302,7 +306,7 @@ class CommandAction:
                     direction = "This entity is around the tree."
                 else:
                     direction = "This entity is not in the range."
-        print(direction)
+        # print(direction)
         return direction
 
     def closest(self, block_type="agent", num=1):
@@ -353,7 +357,7 @@ class CommandAction:
         z2 = block[1][1]
         for key in entity_dict.keys():
             for each in entity_dict[key]:
-                if each[0] in ['Pig', 'Cow', 'Sheep'] and each[2][0] > x1 and each[2][0] < x2 and each[2][1] > z1 and each[2][1] < z2:
+                if key in ['Pig', 'Cow', 'Sheep'] and each[2][0] > x1 and each[2][0] < x2 and each[2][1] > z1 and each[2][1] < z2:
                     inside.append(key)
         print(' and '.join(list(set(inside))) + " are inside the house")
         return inside

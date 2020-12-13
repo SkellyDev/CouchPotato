@@ -81,6 +81,22 @@ class TreeVisitor:
 
 ### Environmental Describing Function
 
+To get the observation results from our agent, we generate our answers based on using the Malmo build-in function: **agent.peekWorldState()**. From the converted json text, we could get information of the surrounding envrionment based on our agent's current position. All of our four types of questions are implemented in the **CommandAction** Class.
+
+#### Find closest entity relative to agent architecture or other landscapes
+
+To get the closest entity near the agent or other lansacapes in the world, we will first get the current coordinate of the agent or the coordinates for our lansacpes. So far, our lansacpes (house, lake and hill) are defined by four coordinates, except for trees, which are defined by one coordinate. By computing the distance of the surrounding entities to our target, we will sort this result by their distance and then outputed the closest entity name. For house, lake and hill, we also excludes the
+
+#### Identify entity location relative to agent architecture or other landscapes
+
+#### Count entities based on position
+
+#### Describe current environment (such as find animals around the tree, and tell the location of the agent)
+
 ## Evaluation
 
 ## References
+
+#### [AllenNLP: Constituency Parsing](https://demo.allennlp.org/constituency-parsing)
+
+#### [Project Malmo](https://github.com/microsoft/malmo)
