@@ -26,6 +26,7 @@ Besides understanding users' question, we also need environment describing funct
 The challenge behind this part is that we need to be familiar and knowledgable enough to Malmo and efficiently convert the provided information to our environment describing function.
 
 ## Approaches
+
 <p><img src="assets/flowchart.png" width="500" alt/><em>Figure 1: Project Idea </em></p>
 
 ### Natural Language Processing through Constituency Parsing
@@ -82,28 +83,48 @@ class TreeVisitor:
 
 ### Environmental Describing Function
 
-To get the observation results from our agent, we generate our answers based on using the Malmo build-in function: **agent.peekWorldState()**. From the converted json text, we could get information of the surrounding envrionment based on our agent's current position. All of our four types of questions are implemented in the **CommandAction** Class.
+To get the observation results from our agent, we generate our answers based on using the Malmo build-in function: **agent.peekWorldState()**. From the converted json text, we could get information of the surrounding envrionment based on our agent's current position, like entity names, entity coordinates and the degree where they are facing. All of our four types of questions are implemented in the **CommandAction** Class. In particular, our functions also support calling in compositions. For example, if the question is "What is the closest animal of the closest animal of you", the function closest() will be called twice which takes closest('agent') as the parameter to the second calling.
 
 #### Find closest entity relative to agent architecture or other landscapes
 
-To get the closest entity near the agent or other lansacapes in the world, we will first get the current coordinate of the agent or the coordinates for our lansacpes. So far, our lansacpes (house, lake and hill) are defined by four coordinates, except for trees, which are defined by one coordinate. By computing the distance of the surrounding entities to our target, we will sort this result by their distance and then outputed the closest entity name. For house, lake and hill, we also excludes the
+To get the closest entity near the agent or other lansacapes in the world, we will first get the current coordinate of the agent or the coordinates for our lansacpes. So far, our lansacpes (house, lake and hill) are defined by four coordinates, except for trees, which are defined by one coordinate. By computing the distance of the surrounding entities to our target, we will sort this result by their distance and then outputed the closest entity name. For house, lake and hill, we also excludes the entities inside these space.
 
 #### Identify entity location relative to agent architecture or other landscapes
 
-#### Count entities based on position
+To get the entity location, such as left, right or front of some object, we also need to know how their current coordinate compared to the coordinate of your target. If the user did not specify the entity type ('Pig', 'Cow' or 'Sheep'), our function will output the direction of the closest entity to the target in the default mode.
+For computing entity location relative to the agent, we also need to consider the degree of where our agent is facing as one variable to our algorithm. The following two graphs shows the difference between the "yaw" outputed by Malmo and the entity degree calculated by the arctan function [$\arctan$ $( (y1-y2)/(x1-x2) ) * 180$ $/$ $\pi$]. Since the coordinate system of Mlamo is different to the normal mathematical coordinate system, we also converts x coordinates to negative when calculate degrees.
 
-#### Describe current environment (such as find animals around the tree, and tell the location of the agent)
+<p><img src="assets/agent_yaw.png" width="400" alt/><em>Figure 3: Agent Yaw</em></p>
+<p><img src="assets/entity_degree_calculation.png" width="400" alt/><em>Figure 4: Entity Degree Calculation</em></p>
+
+Then we will compare their difference based on four difference cases.
+
+1. agent_y > entity_y, agent_x > entity_x
+2. agent_y > entity_y, agent_x < entity_x
+3. agent_y < entity_y, agent_x > entity_x
+4. agent_y < entity_y, agent_x < entity_x
+For example, we first add up agent yaw(figure 3) and entity degree(figure 4) which is equal to -90 degree. If we are now in the case 4, we could discover that when their degree summation is around -90 degree, the entity is at the front of the agent. (Figure 5 could be used for reference). Undoubtedly, all the "in front of" situations are different in the above four cases, as well as "right", "left" or "behind". Therefore, this is the process of how we figure out this pattern.
+<p><img src="assets/result_calculation.png" width="400" alt/><em>Figure 5: Result calculation</em></p>
+
+#### Count entities inside based on position
+
+For this type of question, we support asking what animals are inside in a certain location(house, lake, hill) and what's the number of the total animal or what's the number of a specific animal. Based on comparing entity coordinates and our location space defined by four coordinates, we will output a list of entities if their coordinates are inside the range of the current space. Then, from this list, we could get the total count and the count of any specific entity types.
+
+#### Describe current environment / tell the location of the agent
+
+Based on the current coordinate of our agent, we will output where is the agent standing based on its current observation and what landscapes our agent can see right now. For example, if our agent is standing on the hill in our map, our system will output "I am standing on the hiil in a village, and I can see there is a house and a lake below me."
 
 ## Evaluation
-During the evaluation process, we focus on 1/evaluating the returning value of our **TreeNode**, 2/Accuracy of our **environment describing functions**, and 3/**TreeVisitor** functionality. Therefore, we divided our evaluation process into three phrases accordingly. To start with, we listed 10 sample questions based on each environmental describing function, and used them as sample input to test the success for each phrase. Here is a sample testing table of our "getDirection" function. 
-<p><img src="assets/table.png" width="500" alt/><em>Figure 3: Sample Test Table </em></p>
 
-In order to evaluate the TreeNode class, we built a __iter__ function in the class, in order to visually evaluate if it succesfully match syntatic label with its covering text. Since the success of our class TreeNode is discrete, by printing out each node's label and text, we are able to manually compare it with the constructed constituency tree and tell if it is successful or not. 
+During the evaluation process, we focus on 1/evaluating the returning value of our **TreeNode**, 2/Accuracy of our **environment describing functions**, and 3/**TreeVisitor** functionality. Therefore, we divided our evaluation process into three phrases accordingly. To start with, we listed 10 sample questions based on each environmental describing function, and used them as sample input to test the success for each phrase. Here is a sample testing table of our "getDirection" function.
 
-这里写如何test function的
+<p><img src="assets/table.png" width="500" alt/><em>Figure 5: Sample Test Table </em></p>
 
-We tested the TreeVisitor class after testing TreeNode and function. Since the TreeVisitor class used the return value of TreeNode as input and connect user command with our environmental describing functions, we need to make sure the accuracy of the first two phrases before going to this step. In this phrase, we focus on evaluating if 1/it successfully extract information to connect the input (user question) with our function, and if the argument is positioned into the right place. We tested TreeVisitor class by connecting with our environment describing functions in order to visually see the pass/failture of our class in Malmo. 
+In order to evaluate the TreeNode class, we built a **iter** function in the class, in order to visually evaluate if it succesfully match syntatic label with its covering text. Since the success of our class TreeNode is discrete, by printing out each node's label and text, we are able to manually compare it with the constructed constituency tree and tell if it is successful or not.
 
+这里写如何 test function 的
+
+We tested the TreeVisitor class after testing TreeNode and function. Since the TreeVisitor class used the return value of TreeNode as input and connect user command with our environmental describing functions, we need to make sure the accuracy of the first two phrases before going to this step. In this phrase, we focus on evaluating if 1/it successfully extract information to connect the input (user question) with our function, and if the argument is positioned into the right place. We tested TreeVisitor class by connecting with our environment describing functions in order to visually see the pass/failture of our class in Malmo.
 
 ## References
 

@@ -255,7 +255,6 @@ class CommandAction:
                     else:
                         direction = f"I can see the {entity_type} is on my left hand side"
         else:
-            target
             cor1 = closest_entity[2]
             if target == HOUSE:
                 cor2 = HOUSE
