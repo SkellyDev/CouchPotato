@@ -5,6 +5,8 @@ title: Final Report
 
 ## Video
 
+<iframe width="600" height="336" src="https://www.youtube.com/embed/PkxCH6EV8Pk" frameborder="0" allowfullscreen></iframe>
+
 ## Project Summary
 
 The main goal of this project is to build an "environment-describing chatbot" which can understand users' questions about surrounding environment and answer expected information retrieved through Malmo API. To achieve this goal, we focused on two parts: the first part is natural language processing (NLP), and the second part is implement environment decribing functions to retrieve related information.
@@ -126,7 +128,7 @@ To start with, we listed 10 sample questions based on each environmental describ
 
 In order to evaluate the TreeNode class, we built a **iter** function in the class, in order to visually evaluate if it succesfully match syntatic label with its covering text. Since the success of our class TreeNode is discrete, by printing out each node's label and text, we are able to manually compare it with the constructed constituency tree and tell if it is successful or not.
 
-For the environment describing function testing, we used the black box testing technique to test the success/failure of our function. We manually give multiple valid input for each function, and compare the output with our expectation. We partition our input for each environemnt describing function for testing purpose. To ensure the flexibility of our functions, we evaluate their accuracy in cases with different parameters. Below is the summary of input partition and testing result.  Here, "target" often refers to 'agent', 'house', 'tree', 'hill' or 'lake' and "entity_type" refers to 'Pig', 'Cow' and 'Sheep'. 
+For the environment describing function testing, we used the black box testing technique to test the success/failure of our function. We manually give multiple valid input for each function, and compare the output with our expectation. We partition our input for each environemnt describing function for testing purpose. To ensure the flexibility of our functions, we evaluate their accuracy in cases with different parameters. Below is the summary of input partition and testing result. Here, "target" often refers to 'agent', 'house', 'tree', 'hill' or 'lake' and "entity_type" refers to 'Pig', 'Cow' and 'Sheep'.
 
 <p><img src="assets/final_black_box.png" width="700" alt/><em>Figure 7: Black Box Testing Result </em></p>
 
@@ -147,4 +149,4 @@ Overall, as shown in the video, we also garantee that the total response time is
 
 #### [Project Malmo](https://github.com/microsoft/malmo)
 
-#### Professor Sameer Singh Pseudocode 
+#### Professor Sameer Singh Pseudocode

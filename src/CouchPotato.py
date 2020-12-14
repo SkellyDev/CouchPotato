@@ -112,13 +112,13 @@ while world_state.is_mission_running:
                 # print(step)
                 if step > 0:
                     for i in range(abs(step)):
-                        print(i)
+                        # print(i)
                         agent_host.sendCommand('move 1')
                         time.sleep(0.3)
                         agent_host.sendCommand('move 0')
                 else:
                     for i in range(abs(step)):
-                        print(i)
+                        # print(i)
                         agent_host.sendCommand('move -1')
                         time.sleep(0.3)
                         agent_host.sendCommand('move 0')
