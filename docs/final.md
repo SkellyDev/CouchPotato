@@ -31,7 +31,7 @@ The challenge behind this part is that we need to be familiar and knowledgable e
 
 ### Natural Language Processing through Constituency Parsing
 
-In this project, we utilize the **AllenNLP constituency parsing** to to understand the syntatic structure of user's question, and build a new tree to store the constituency tree based on our needs and visit the new tree matching it with our function. Below is the picture showing the constituency tree AllenNLP generated for us: <p><img src="assets/ct.png" width="350" alt/><em>Figure 2: Sample Constituency Tree </em></p>
+In this project, we utilize the **AllenNLP constituency parsing** to to understand the syntatic structure of user's question, and build a new tree to store the constituency tree based on our needs and visit the new tree matching it with our function. Below is the picture showing the constituency tree AllenNLP generated for us: <p><img src="assets/ct.png" width="400" alt/><em>Figure 2: Sample Constituency Tree </em></p>
 
 The sample question of the above tree is "Where is the tree near the house", and the linearized version of the above contituency tree looks like '(SBARQ (WHADVP (WRB Where)) (SQ (VBZ is) (NP (NP (DT the) (NN tree)) (PP (IN near) (NP (DT the) (NN house))))))'. The basic idea is that we firstly built a new tree to store the contituency tree by pairing its label and covering texts. Then, we implement a tree vistor in order to go over all the tree and get part of the information we need to match with our functions and pass correct arguments. To accomplish that, we firstly pass the tree root to the visitor and use a stack structure to store the node's children. By recursively call visit on the children, we will go over all the node types, which we will ignore some useless labels/texts, and only extract information from valuable node. For instance, suppose we have a question like "Where is the cow near the house". We will firstly pass the tree node to our visitor, which is a node with label (SBARQ) and text "Where is the tree near the house". Then, by visiting its children node text, we will know it is a where question, so we match the question with our "getDirection(entity, target)" question. Then, we will recursively visit the node's children by pop(0) from our node stack structure and find "NN" label(noun) and pass it to our function.
 
@@ -95,7 +95,7 @@ To get the entity location, such as left, right or front of some object, we also
 For computing entity location relative to the agent, we also need to consider the degree of where our agent is facing as one variable to our algorithm. The following two graphs shows the difference between the "yaw" outputed by Malmo and the entity degree calculated by the arctan function [$\arctan$ $( (y1-y2)/(x1-x2) ) * 180$ $/$ $\pi$]. Since the coordinate system of Mlamo is different to the normal mathematical coordinate system, we also converts x coordinates to negative when calculate degrees.
 
 <p><img src="assets/agent_yaw.png" width="400" alt/><em>Figure 3: Agent Yaw</em></p>
-<p><img src="assets/entity_degree_calculation.png" width="400" alt/><em>Figure 4: Entity Degree Calculation</em></p>
+<p><img src="assets/entity_degree_calculation.png" width="450" alt/><em>Figure 4: Entity Degree Calculation</em></p>
 
 Then we will compare their difference based on four difference cases.
 
@@ -106,7 +106,7 @@ Then we will compare their difference based on four difference cases.
 
 For example, we first add up agent yaw(figure 3) and entity degree(figure 4) which is equal to -90 degree. If we are now in the case 4, we could discover that when their degree summation is around -90 degree, the entity is at the front of the agent. (Figure 5 could be used for reference). Undoubtedly, all the "in front of" situations are different in the above four cases, as well as "right", "left" or "behind". Therefore, this is the process of how we figure out this pattern.
 
-<p><img src="assets/result_calculation.png" width="400" alt/><em>Figure 5: Result calculation</em></p>
+<p><img src="assets/result_calculation.png" width="450" alt/><em>Figure 5: Result calculation</em></p>
 
 #### Count entities inside based on position
 
@@ -118,15 +118,32 @@ Based on the current coordinate of our agent, we will output where is the agent 
 
 ## Evaluation
 
-During the evaluation process, we focus on 1/evaluating the returning value of our **TreeNode**, 2/Accuracy of our **environment describing functions**, and 3/**TreeVisitor** functionality. Therefore, we divided our evaluation process into three phrases accordingly. To start with, we listed 10 sample questions based on each environmental describing function, and used them as sample input to test the success for each phrase. Here is a sample testing table of our "getDirection" function.
+During the evaluation process, we focus on a)evaluating the returning value of our **TreeNode**, b)Accuracy of our **environment describing functions**, and c)**TreeVisitor** functionality. Therefore, we divided our evaluation process into three phrases accordingly.
 
-<p><img src="assets/table.png" width="500" alt/><em>Figure 5: Sample Test Table </em></p>
+a) To start with, we listed 10 sample questions based on each environmental describing function, and used them as sample input to test the success for each phrase. Here is a sample testing table of our "getDirection" function.
+
+<p><img src="assets/table.png" width="600" alt/><em>Figure 6: Sample Test Table </em></p>
 
 In order to evaluate the TreeNode class, we built a **iter** function in the class, in order to visually evaluate if it succesfully match syntatic label with its covering text. Since the success of our class TreeNode is discrete, by printing out each node's label and text, we are able to manually compare it with the constructed constituency tree and tell if it is successful or not.
 
-这里写如何 test function 的
+b) For the environment describing function testing, we used the black box testing technique for the quantitative evaluation and manually checking for the qualitative evaluation.
 
-We tested the TreeVisitor class after testing TreeNode and function. Since the TreeVisitor class used the return value of TreeNode as input and connect user command with our environmental describing functions, we need to make sure the accuracy of the first two phrases before going to this step. In this phrase, we focus on evaluating if 1/it successfully extract information to connect the input (user question) with our function, and if the argument is positioned into the right place. We tested TreeVisitor class by connecting with our environment describing functions in order to visually see the pass/failture of our class in Malmo.
+#### Quantitative Evaluation
+
+To ensure the flexibility of our functions, we evaluate their accuracy in cases with different parameters. Except for "describing agent location" which is computed only based on the current coordinate of the agent, all of our other functions requires one target parameter or one entity_type parameter with one target parameter. Here, "target" often refers to 'agent', 'house', 'tree', 'hill' or 'lake' and "entity_type" refers to 'Pig', 'Cow' and 'Sheep'. Figure 7 listed all possible cases for our functions in a single calling.
+
+<p><img src="assets/final_black_box.png" width="600" alt/><em>Figure 7: Black Box Testing Result </em></p>
+
+#### Qualitative Evaluation
+
+For this part, we manually checks the response with what we truly perceive in the game world. Figure 8 presents several examples about that.
+
+<p><img src="assets/execution_scenario.png" width="700" alt/><em>Figure 8: Real execution scenario </em></p>
+Refer to figure 8, we can see all cases are in the correct state.
+
+c) We tested the TreeVisitor class after testing TreeNode and function. Since the TreeVisitor class used the return value of TreeNode as input and connect user command with our environmental describing functions, we need to make sure the accuracy of the first two phrases before going to this step. In this phrase, we focus on evaluating if 1/it successfully extract information to connect the input (user question) with our function, and if the argument is positioned into the right place. We tested TreeVisitor class by connecting with our environment describing functions in order to visually see the pass/failture of our class in Malmo.
+
+Overall, as shown in the video, we also garantee that the total response time is no more than 1 second through the above three steps which also fullfilled the basic requirment of this chat bot system.
 
 ## References
 
