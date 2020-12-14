@@ -89,3 +89,27 @@
 [19:19:45] [Server thread/INFO]: Saving chunks for level 'TEMP_10000_015e9653-e1a6-4002-be7b-05fd3cda7dd7'/The End
 [19:20:47] [Server thread/INFO]: [STDOUT]: Warning: managed 15/20 ticks this second.
 [19:21:23] [Server thread/INFO]: [STDOUT]: Warning: managed 19/20 ticks this second.
+[19:25:46] [Client thread/INFO]: [STDOUT]: SEVERE: <-vid(localhost:10578) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[19:25:46] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10972) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.io.IOException: Broken pipe
+[19:25:46] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10972) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[19:25:46] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10972) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[19:25:46] [Client thread/INFO]: [STDOUT]: SEVERE: <-obs(localhost:10972) Failed to send TCP bytes: java.util.concurrent.ExecutionException: java.nio.channels.ClosedChannelException
+[19:25:46] [Client thread/INFO]: [STDOUT]: ERROR: TCP messages are not getting through - quitting mission.
+[19:25:46] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_QUIT
+[19:25:46] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_QUIT
+[19:25:46] [Client thread/INFO]: [STDOUT]: CLIENT request state: IDLING
+[19:25:46] [Client thread/INFO]: [STDOUT]: CLIENT enter state: IDLING
+[19:25:46] [Client thread/INFO]: [STDOUT]: CLIENT request state: MISSION_ENDED
+[19:25:46] [Client thread/INFO]: [STDOUT]: CLIENT enter state: MISSION_ENDED
+[19:25:46] [Client thread/INFO]: [STDOUT]: Sending mission ended message to localhost:10049.
+[19:25:46] [Client thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_MISSION_END
+[19:25:46] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_MISSION_END
+[19:25:46] [Server thread/INFO]: [STDOUT]: SERVER request state: CLEAN_UP
+[19:25:46] [Server thread/INFO]: [STDOUT]: SERVER enter state: CLEAN_UP
+[19:25:46] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
+[19:25:46] [Client thread/INFO]: [STDOUT]: CLIENT request state: DORMANT
+[19:25:46] [Client thread/INFO]: [STDOUT]: CLIENT enter state: DORMANT
+[19:25:46] [Client thread/INFO]: [STDOUT]: JETTISONING 0 COMMANDS
+[19:25:47] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
+[19:25:47] [Client Shutdown Thread/INFO]: Stopping server
+[19:25:47] [Client Shutdown Thread/INFO]: Saving players
