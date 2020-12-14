@@ -122,7 +122,7 @@ During the evaluation process, we focus on a)evaluating the returning value of o
 
 a) To start with, we listed 10 sample questions based on each environmental describing function, and used them as sample input to test the success for each phrase. Here is a sample testing table of our "getDirection" function.
 
-<p><img src="assets/table.png" width="600" alt/><em>Figure 6: Sample Test Table </em></p>
+<p><img src="assets/table.png" width="700" alt/><em>Figure 6: Sample Test Table </em></p>
 
 In order to evaluate the TreeNode class, we built a **iter** function in the class, in order to visually evaluate if it succesfully match syntatic label with its covering text. Since the success of our class TreeNode is discrete, by printing out each node's label and text, we are able to manually compare it with the constructed constituency tree and tell if it is successful or not.
 
@@ -132,13 +132,13 @@ b) For the environment describing function testing, we used the black box testin
 
 To ensure the flexibility of our functions, we evaluate their accuracy in cases with different parameters. Except for "describing agent location" which is computed only based on the current coordinate of the agent, all of our other functions requires one target parameter or one entity_type parameter with one target parameter. Here, "target" often refers to 'agent', 'house', 'tree', 'hill' or 'lake' and "entity_type" refers to 'Pig', 'Cow' and 'Sheep'. Figure 7 listed all possible cases for our functions in a single calling.
 
-<p><img src="assets/final_black_box.png" width="600" alt/><em>Figure 7: Black Box Testing Result </em></p>
+<p><img src="assets/final_black_box.png" width="700" alt/><em>Figure 7: Black Box Testing Result </em></p>
 
 #### Qualitative Evaluation
 
 For this part, we manually checks the response with what we truly perceive in the game world. Figure 8 presents several examples about that.
 
-<p><img src="assets/execution_scenario.png" width="700" alt/><em>Figure 8: Real execution scenario </em></p>
+<p><img src="assets/execution_scenario.png" width="900" alt/><em>Figure 8: Real execution scenario </em></p>
 Refer to figure 8, we can see all cases are in the correct state.
 
 c) We tested the TreeVisitor class after testing TreeNode and function. Since the TreeVisitor class used the return value of TreeNode as input and connect user command with our environmental describing functions, we need to make sure the accuracy of the first two phrases before going to this step. In this phrase, we focus on evaluating if 1/it successfully extract information to connect the input (user question) with our function, and if the argument is positioned into the right place. We tested TreeVisitor class by connecting with our environment describing functions in order to visually see the pass/failture of our class in Malmo.
