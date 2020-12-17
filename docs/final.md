@@ -35,69 +35,34 @@ The challenge behind this part is that we need to be familiar and knowledgable e
 
 In this project, we utilize the **AllenNLP constituency parsing** to to understand the syntatic structure of user's question, and build a new tree to store the constituency tree based on our needs and visit the new tree matching it with our function. Below is the picture showing the constituency tree AllenNLP generated for us: <p><img src="assets/ct.png" width="400" alt/><em>Figure 2: Sample Constituency Tree </em></p>
 
-The sample question of the above tree is "Where is the sheep near the house", and the linearized version of the above contituency tree looks like '(SBARQ (WHADVP (WRB Where)) (SQ (VBZ is) (NP (NP (DT the) (NN sheep)) (PP (IN near) (NP (DT the) (NN house))))))'. The basic idea is that we firstly built a new tree to store the contituency tree by pairing its label and covering texts. Then, we implement a tree vistor in order to go over all the tree and get part of the information we need to match with our functions and pass correct arguments. To accomplish that, we firstly pass the tree root to the visitor and use a stack structure to store the node's children. By recursively call visit on the children, we will go over all the node types, which we will ignore some useless labels/texts, and only extract information from valuable node. For instance, suppose we have a question like "Where is the cow near the house". We will firstly pass the tree node to our visitor, which is a node with label (SBARQ) and text "Where is the tree near the house". Then, by visiting its children node text, we will know it is a where question, so we match the question with our "getDirection(entity, target)" question. Then, we will recursively visit the node's children by pop(0) from our node stack structure and find "NN" label(noun) and pass it to our function.
+The sample question of the above tree is "Where is the sheep near the house", and the linearized version of the above contituency tree looks like '(SBARQ (WHADVP (WRB Where)) (SQ (VBZ is) (NP (NP (DT the) (NN sheep)) (PP (IN near) (NP (DT the) (NN house))))))'. After getting the tree string that AllenNLP returned, we constructed a new tree to store it by pairing label and its covering texts. For instance, in the above tree, we can access to all the labels and its covering texts. Figure 2 shows an example of TreeNode output of the above constituency tree string as input.
+<p><img src="assets/treenode.png" width="500" alt/><em>Figure 3: TreeNode Output </em></p>
 
-Here are some pseudocode for our TreeNode and TreeVisitor:
-
-```python
-# store the constituency tree
-class TreeNode:
-    self.children = [] # to store all the Node
-    self.label = "" # Node Label, e.g NN(Noun), NP(Noun Phrase) ...
-    self.text = "" # Node Text: text that certain label covering  e.g. IN - near, NN - house
-
-    def find_label:
-        #all label are capital letter begin after "(" and stop at blank space
-
-    def find_node:
-        #find node label by matching "(" with ")" and construct new node and add it into self.children
-
-    def find_text:
-        #use regex to find text begin with white space and end before ")"
-
-class TreeVisitor:
-    self.nodeStack = [] #to store node children
-
-    def visit(n):
-      for n in n.children:
-        self.nodeStack.append(n) #if children not in nodeStack
-
-      if node.label == "SBARQ":
-          return self.visit_sbarq(n)
-      elif node.label == "NN":
-          return self.visit_nn(n)
-      elif ....:
-
-      else:
-          self.nodeStack.pop # to ignore useless node such as ("is", "the")
-      ...
-
-   def visit_sbarq(n):
-      if n.children[0].text.lower() == "where":
-            self.tag = "direction"
-      return self.visit(n.children[1])
-
-  def visit_nn(n):
-      if self.tag == "direction":
-            getDirection()
-      elif ...
-```
+Then, we implement a tree vistor in order to go over all the tree node and extract "valuable" information we need to match with our functions and pass correct arguments. To accomplish that, we firstly pass the tree root to the visitor and use a stack structure to store the node's children. By recursively call visit on the children, we will go over all the node types, which we will ignore some useless labels/texts, and only extract information from valuable node. For instance, suppose we have a question like "Where is the cow near the house". We will firstly pass the tree node to our visitor, which is a node with label (SBARQ) and text "Where is the tree near the house". Then, by visiting its children node text, we will know it is a where question, so we can match the question with our "getDirection(entity, target)" question. Then, we will recursively visit the node's children by pop(0) from our node stack structure and find "NN" label(noun) and pass it to our function. Since the getDirection function takes two Noun words as parameter, the first Noun (NN) we popped out from node stack will be passed as "entity" and the second Noun(NN) we met will be passed as "target". 
 
 ### Environmental Describing Function
 
-To get the observation results from our agent, we generate our answers based on using the Malmo build-in function: **agent.peekWorldState()**. From the converted json text, we could get information of the surrounding envrionment based on our agent's current position, like entity names, entity coordinates and the degree where they are facing. All of our four types of questions are implemented in the **CommandAction** Class. In particular, our functions also support calling in compositions. For example, if the question is "What is the closest animal of the closest animal of you", the function closest() will be called twice which takes closest('agent') as the parameter to the second calling.
+To get the observation results from our agent, we generate our answers using the Malmo build-in function: **agent.peekWorldState()**. From the converted json text, we could get information of the surrounding envrionment based on our agent's current position, like entity names, entity coordinates and the degree where they are facing. All of our four types of questions are implemented in the **CommandAction** Class. The image below shows the summary of all our functions, and what kind of scenario our chatbot can handle. 
+
+<p><img src="assets/functions.png" width="750" alt/><em> Figure 4: Function List </em></p>
 
 #### Find closest entity relative to agent architecture or other landscapes
+
+Function name: closest(block: str)
+This function take architectures in the string format as our input and then returns one or more entity names in the string format. Possible inputs includes "agent", "house", "tree", "lake" and "hill".
 
 To get the closest entity near the agent or other lansacapes in the world, we will first get the current coordinate of the agent or the coordinates for our lansacpes. So far, our lansacpes (house, lake and hill) are defined by four coordinates, except for trees, which are defined by one coordinate. By computing the distance of the surrounding entities to our target, we will sort this result by their distance and then outputed the closest entity name. For house, lake and hill, we also excludes the entities inside these space.
 
 #### Identify entity location relative to agent architecture or other landscapes
 
+Function name: getDirection(entity_type: str, target: str)
+This function take entity_type and architectures as target in the string format, it then returns the direction of the selected entity to the target in the string format.
+
 To get the entity location, such as left, right or front of some object, we also need to know how their current coordinate compared to the coordinate of your target. If the user did not specify the entity type ('Pig', 'Cow' or 'Sheep'), our function will output the direction of the closest entity to the target in the default mode.
 For computing entity location relative to the agent, we also need to consider the degree of where our agent is facing as one variable to our algorithm. The following two graphs shows the difference between the "yaw" outputed by Malmo and the entity degree calculated by the arctan function [$\arctan$ $( (y1-y2)/(x1-x2) ) * 180$ $/$ $\pi$]. Since the coordinate system of Mlamo is different to the normal mathematical coordinate system, we also converts x coordinates to negative when calculate degrees.
 
-<p><img src="assets/agent_yaw.png" width="400" alt/><em>Figure 3: Agent Yaw</em></p>
-<p><img src="assets/entity_degree_calculation.png" width="450" alt/><em>Figure 4: Entity Degree Calculation</em></p>
+<p>< img src="assets/agent_yaw.png" width="400" alt/><em> Figure 5: Agent Yaw</em></p >
+<p>< img src="assets/entity_degree_calculation.png" width="450" alt/><em> Figure 6: Entity Degree Calculation</em></p >
 
 Then we will compare their difference based on four difference cases.
 
@@ -108,15 +73,24 @@ Then we will compare their difference based on four difference cases.
 
 For example, we first add up agent yaw(figure 3) and entity degree(figure 4) which is equal to -90 degree. If we are now in the case 4, we could discover that when their degree summation is around -90 degree, the entity is at the front of the agent. (Figure 5 could be used for reference). Undoubtedly, all the "in front of" situations are different in the above four cases, as well as "right", "left" or "behind". Therefore, this is the process of how we figure out this pattern.
 
-<p><img src="assets/result_calculation.png" width="450" alt/><em>Figure 5: Result calculation</em></p>
+<p>< img src="assets/result_calculation.png" width="450" alt/><em>Figure 7: Result calculation</em></p >
 
 #### Count entities inside based on position
+
+Function name: inside(block: str)
+This function take architectures in the string format and then returns the a list of entity types which are inside that architecture.
+
+Function name: count(entity_type: str, block: str)
+This function take entity_type and architectures as input in the string format, it then returns the count of total entities in that architecture or the count of a specific entity.
 
 For this type of question, we support asking what animals are inside in a certain location(house, lake, hill) and what's the number of the total animal or what's the number of a specific animal. Based on comparing entity coordinates and our location space defined by four coordinates, we will output a list of entities if their coordinates are inside the range of the current space. Then, from this list, we could get the total count and the count of any specific entity types.
 
 #### Describe current environment / tell the location of the agent
 
-Based on the current coordinate of our agent, we will output where is the agent standing based on its current observation and what landscapes our agent can see right now. For example, if our agent is standing on the hill in our map, our system will output "I am standing on the hiil in a village, and I can see there is a house and a lake below me."
+Function name: describe_agent_location()
+This function takes no parameters; it only based on the current coordinate and the current yaw of the agent to output the current view of what we can see in this whole game world.
+
+Based on the current coordinate and yaw of our agent, we will output where is the agent standing based on its current observation and what landscapes in the game world our agent can see right now. For example, if our agent is standing on the hill in our map, our system will output "I am standing on the hiil in a village, and I can see there is a house and a lake below me."
 
 ## Evaluation
 
@@ -124,17 +98,17 @@ During the evaluation process, we focus on a)evaluating the returning value of o
 
 To start with, we listed 10 sample questions based on each environmental describing function, and used them as sample input to test the success for each phrase. Here is a sample testing table of our "getDirection" function.
 
-<p><img src="assets/table.png" width="700" alt/><em>Figure 6: Sample Test Table </em></p>
+<p><img src="assets/table.png" width="700" alt/><em>Figure 8: Sample Test Table </em></p>
 
 In order to evaluate the TreeNode class, we built a **iter** function in the class, in order to visually evaluate if it succesfully match syntatic label with its covering text. Since the success of our class TreeNode is discrete, by printing out each node's label and text, we are able to manually compare it with the constructed constituency tree and tell if it is successful or not.
 
 For the environment describing function testing, we used the black box testing technique to test the success/failure of our function. We manually give multiple valid input for each function, and compare the output with our expectation. We partition our input for each environemnt describing function for testing purpose. To ensure the flexibility of our functions, we evaluate their accuracy in cases with different parameters. Below is the summary of input partition and testing result. Here, "target" often refers to 'agent', 'house', 'tree', 'hill' or 'lake' and "entity_type" refers to 'Pig', 'Cow' and 'Sheep'.
 
-<p><img src="assets/final_black_box.png" width="700" alt/><em>Figure 7: Black Box Testing Result </em></p>
+<p><img src="assets/final_black_box.png" width="700" alt/><em>Figure 9: Black Box Testing Result </em></p>
 
 For this part, we manually compare the terminal output with with what we truly perceive in the game world. Figure 8 indicates some screenshots while we did the testing process.
 
-<p><img src="assets/execution_scenario.png" width="900" alt/><em>Figure 8: Real execution scenario </em></p>
+<p><img src="assets/execution_scenario.png" width="900" alt/><em>Figure 10: Real execution scenario </em></p>
 Refer to figure 8, we can see all cases are in the correct state.
 
 c) We tested the TreeVisitor class after testing TreeNode and function. Since the TreeVisitor class used the return value of TreeNode as input and connect user command with our environmental describing functions, we need to make sure the accuracy of the first two phrases before going to this step. In this phrase, we focus on evaluating if 1/it successfully extract information to connect the input (user question) with our function, and if the argument is positioned into the right place. We tested TreeVisitor class by connecting with our environment describing functions in order to visually see the pass/failture of our class in Malmo.
