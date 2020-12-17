@@ -103,7 +103,7 @@ To start with, we listed 10 sample questions based on each environmental describ
 
 a) In order to evaluate the TreeNode class, we built a **iter** function in the class, in order to visually evaluate if it succesfully match syntatic label with its covering text. Since the success of our class TreeNode is discrete, by printing out each node's label and text, we are able to manually compare it with the constructed constituency tree and tell if it is successful or not.
 
-b) For the environment describing function testing, we used the black box testing technique to test the success/failure of our function. We manually give multiple valid input for each function, and compare the output with our expectation. We partition our input for each environemnt describing function for testing purpose. To ensure the flexibility of our functions, we evaluate their accuracy in cases with different parameters. For this part, we manually compare the terminal output with with what we truly perceive in the game world.
+b) For the qualitative environment describing function testing, we manually compare the terminal output with what we truly perceive in the game world. Figure 10 shows six passed examples of that. 
 
 <p><img src="assets/execution_scenario.png" width="900" alt/><em>Figure 10: Real execution scenario</em></p>
 
