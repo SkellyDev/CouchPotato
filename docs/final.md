@@ -99,7 +99,7 @@ During the evaluation process, we focus on a)evaluating the returning value of o
 To start with, we listed 10 sample questions based on each environmental describing function, and used them as sample input to test the success for each phrase. Here is a sample testing table of our "getDirection" and "closest" functions.
 
 <p><img src="assets/getdirection.png" width="700" alt/><em>Figure 8: getDirection Test Table</em></p>
-<p><img src="assets/getdirection.png" width="700" alt/><em>Figure 9: Closest Test Table</em></p>
+<p><img src="assets/closest.png" width="700" alt/><em>Figure 9: Closest Test Table</em></p>
 
 a) In order to evaluate the TreeNode class, we built a **iter** function in the class, in order to visually evaluate if it succesfully match syntatic label with its covering text. Since the success of our class TreeNode is discrete, by printing out each node's label and text, we are able to manually compare it with the constructed constituency tree and tell if it is successful or not.
 
